@@ -9,6 +9,8 @@
 
 $(eval $(call gb_ExtensionPackageSet_ExtensionPackageSet,misc_extensions))
 
+$(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,NDCHelp,NDCHelp.oxt))
+
 ifneq ($(BARCODE_EXTENSION_PACK),)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,Barcode,$(BARCODE_EXTENSION_PACK)))
 endif

@@ -120,6 +120,21 @@ Module gid_Module_Optional_Extensions_CPMLIBRE
 End
 #endif
 
+/* ** NDCHelp ** */
+
+#ifdef WITH_EXTENSION_NDCHELP
+Module gid_Module_Optional_Extensions_NDCHELP
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_NDCHELP);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_NDCHELP );
+    Minimal = NO;
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
 /* ** OSSIIMenus ** */
 
 #ifdef WITH_EXTENSION_OSIMNU

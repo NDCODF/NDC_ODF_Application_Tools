@@ -767,6 +767,10 @@ $(eval $(call gb_Helper_register_packages_for_install,extensions_numbertext,\
 ))
 endif
 
+$(eval $(call gb_Helper_register_packages_for_install,extensions_NDCHelp,\
+	ndchelp \
+))
+
 $(eval $(call gb_Helper_register_jars,OXT, \
 	EvolutionarySolver \
 	active_java \
