@@ -48,7 +48,7 @@
     <menu:menu menu:id=".uno:HelpMenu">
         <menu:menupopup>
             <menu:menuseparator/>
-            <menu:menuitem menu:id=".uno:SendFeedback"/>
+            <!-- <menu:menuitem menu:id=".uno:SendFeedback"/> -->
             <menu:menuseparator/>
             <menu:menuitem menu:id=".uno:ShowLicense"/>
             <menu:menuitem menu:id=".uno:About"/>
