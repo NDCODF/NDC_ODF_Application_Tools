@@ -65,4 +65,6 @@ ifneq ($(WATCH_WINDOW_EXTENSION_PACK),)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,WatchWindow,$(WATCH_WINDOW_EXTENSION_PACK)))
 endif
 
+$(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,cpmlibre,cpmlibre.oxt))
+
 # vim: set noet sw=4 ts=4:

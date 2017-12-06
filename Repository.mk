@@ -751,6 +751,10 @@ $(eval $(call gb_Helper_register_packages_for_install,accessories_gallery,\
 
 endif
 
+$(eval $(call gb_Helper_register_packages_for_install,extensions_CPMLIBRE,\
+	cpmlibre \
+))
+
 ifeq (CT2N,$(filter CT2N,$(BUILD_TYPE)))
 $(eval $(call gb_Helper_register_packages_for_install,extensions_ct2n,\
 	ct2n \
