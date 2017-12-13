@@ -1,0 +1,31 @@
+From b3981429d3043102b1879b8a4625854c1edca253 Mon Sep 17 00:00:00 2001
+From: Wind <yc.yan@ossii.com.tw>
+Date: Fri, 2 Jun 2017 10:39:43 +0800
+Subject: [PATCH] =?UTF-8?q?(=E5=9C=8B=E7=99=BC=E6=9C=83)remove=20product?=
+ =?UTF-8?q?=20version?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+for msi title & windows app title
+
+Change-Id: Icb57baf60803cd96afcc1c47292db4fa57f5c0cc
+---
+ solenv/bin/modules/installer/ziplist.pm | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/solenv/bin/modules/installer/ziplist.pm b/solenv/bin/modules/installer/ziplist.pm
+index 638d671..6cf1ba5 100644
+--- a/solenv/bin/modules/installer/ziplist.pm
++++ b/solenv/bin/modules/installer/ziplist.pm
+@@ -718,6 +718,7 @@ sub set_default_productversion_if_required
+     {
+         $allvariables->{'PRODUCTVERSION'} = 1;  # FAKE
+     }
++    $allvariables->{'PRODUCTVERSION'} = " ";
+ }
+ 
+ ####################################################
+-- 
+2.7.0
+

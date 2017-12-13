@@ -1,0 +1,57 @@
+--- misc/icu/source/config/mh-linux	2013-10-05 03:50:00.000000000 +0700
++++ misc/build/icu/source/config/mh-linux	2013-11-10 17:11:46.856222557 +0700
+@@ -25,7 +25,7 @@
+ 
+ ## Compiler switch to embed a library name
+ # The initial tab in the next line is to prevent icu-config from reading it.
+-	LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
++	#LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
+ #SH# # We can't depend on MIDDLE_SO_TARGET being set.
+ #SH# LD_SONAME=
+ 
+--- misc/icu/source/configure	2013-10-05 03:54:58.000000000 +0700
++++ misc/build/icu/source/configure	2013-11-10 17:19:19.200218763 +0700
+@@ -4872,7 +4872,7 @@
+ 	else
+ 		icu_cv_host_frag=mh-linux-va
+ 	fi ;;
+-*-*-linux*|*-*-gnu|*-*-k*bsd*-gnu|*-*-kopensolaris*-gnu) icu_cv_host_frag=mh-linux ;;
++*-*-linux*|*-*-gnu|*-*-k*bsd*-gnu|*-*-kopensolaris*-gnu|*-*-*-androideabi*) icu_cv_host_frag=mh-linux ;;
+ i[34567]86-*-cygwin)
+ 	if test "$GCC" = yes; then
+ 		icu_cv_host_frag=mh-cygwin
+@@ -6032,6 +6032,10 @@
+ # Check to see if genccode can generate simple assembly.
+ GENCCODE_ASSEMBLY=
+ case "${host}" in
++arm-*-linux-androideabi)
++    if test "$GCC" = yes; then
++        GENCCODE_ASSEMBLY="-a gcc-android-arm"
++    fi ;;
+ *-linux*|*-kfreebsd*-gnu*|i*86-*-*bsd*|i*86-pc-gnu)
+     if test "$GCC" = yes; then
+         # We're using gcc, and the simple -a gcc command line works for genccode
+@@ -7104,6 +7108,10 @@
+     # wchar_t can be used
+     CHECK_UTF16_STRING_RESULT="available"
+     ;;
++*-*-*-androideabi|mips-unknown-linux-android)
++    # no UTF-16 strings thanks, I think, this is to avoid the -std=c++0x which causes trouble with uint64_t
++    CHECK_UTF16_STRING_RESULT="nope"
++    ;;
+ *)
+     ;;
+ esac
+
+--- misc/icu/source/common/unicode/platform.h	2013-10-05 03:49:10.000000000 +0700
++++ misc/build/icu/source/common/unicode/platform.h	2013-11-10 17:22:27.160217186 +0700
+@@ -703,7 +703,7 @@
+ #elif defined(U_STATIC_IMPLEMENTATION)
+ #   define U_EXPORT
+ #elif defined(__GNUC__)
+-#   define U_EXPORT __attribute__((visibility("default")))
++#   define U_EXPORT
+ #elif (defined(__SUNPRO_CC) && __SUNPRO_CC >= 0x550) \
+    || (defined(__SUNPRO_C) && __SUNPRO_C >= 0x550) 
+ #   define U_EXPORT __global
+

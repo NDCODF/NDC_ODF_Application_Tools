@@ -1,0 +1,272 @@
+From 799a8adfc9e3df951126a2fe1a33a1c1f2e8bb17 Mon Sep 17 00:00:00 2001
+From: Wind <yc.yan@ossii.com.tw>
+Date: Wed, 28 Jun 2017 10:01:57 +0800
+Subject: [PATCH] uiconfig: remove .HelpIndex
+
+Change-Id: I5ab1a774a8288aba6cd6f8af261ecf575b56dc43
+---
+ basctl/uiconfig/basicide/menubar/menubar.xml          | 1 -
+ chart2/uiconfig/menubar/menubar.xml                   | 1 -
+ dbaccess/uiconfig/dbapp/menubar/menubar.xml           | 1 -
+ dbaccess/uiconfig/dbquery/menubar/menubar.xml         | 1 -
+ dbaccess/uiconfig/dbrelation/menubar/menubar.xml      | 1 -
+ dbaccess/uiconfig/dbtable/menubar/menubar.xml         | 1 -
+ dbaccess/uiconfig/dbtdata/menubar/menubar.xml         | 1 -
+ extensions/uiconfig/sbibliography/menubar/menubar.xml | 1 -
+ framework/uiconfig/startmodule/menubar/menubar.xml    | 1 -
+ reportdesign/uiconfig/dbreport/menubar/menubar.xml    | 1 -
+ sc/uiconfig/scalc/menubar/menubar.xml                 | 1 -
+ sd/uiconfig/sdraw/menubar/menubar.xml                 | 1 -
+ sd/uiconfig/simpress/menubar/menubar.xml              | 1 -
+ starmath/uiconfig/smath/menubar/menubar.xml           | 1 -
+ sw/uiconfig/sglobal/menubar/menubar.xml               | 1 -
+ sw/uiconfig/sweb/menubar/menubar.xml                  | 1 -
+ sw/uiconfig/swform/menubar/menubar.xml                | 1 -
+ sw/uiconfig/swreport/menubar/menubar.xml              | 1 -
+ sw/uiconfig/swriter/menubar/menubar.xml               | 1 -
+ sw/uiconfig/swxform/menubar/menubar.xml               | 1 -
+ 20 files changed, 20 deletions(-)
+
+diff --git a/basctl/uiconfig/basicide/menubar/menubar.xml b/basctl/uiconfig/basicide/menubar/menubar.xml
+index 4d680f6..c6cb8c8 100644
+--- a/basctl/uiconfig/basicide/menubar/menubar.xml
++++ b/basctl/uiconfig/basicide/menubar/menubar.xml
+@@ -94,7 +94,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/chart2/uiconfig/menubar/menubar.xml b/chart2/uiconfig/menubar/menubar.xml
+index b4d579a..a2af007 100644
+--- a/chart2/uiconfig/menubar/menubar.xml
++++ b/chart2/uiconfig/menubar/menubar.xml
+@@ -165,7 +165,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/dbaccess/uiconfig/dbapp/menubar/menubar.xml b/dbaccess/uiconfig/dbapp/menubar/menubar.xml
+index 38760fd..121fa20 100644
+--- a/dbaccess/uiconfig/dbapp/menubar/menubar.xml
++++ b/dbaccess/uiconfig/dbapp/menubar/menubar.xml
+@@ -150,7 +150,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/dbaccess/uiconfig/dbquery/menubar/menubar.xml b/dbaccess/uiconfig/dbquery/menubar/menubar.xml
+index b60371f..e2e70d2 100644
+--- a/dbaccess/uiconfig/dbquery/menubar/menubar.xml
++++ b/dbaccess/uiconfig/dbquery/menubar/menubar.xml
+@@ -91,7 +91,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/dbaccess/uiconfig/dbrelation/menubar/menubar.xml b/dbaccess/uiconfig/dbrelation/menubar/menubar.xml
+index f4a9ffc..d70ce26 100644
+--- a/dbaccess/uiconfig/dbrelation/menubar/menubar.xml
++++ b/dbaccess/uiconfig/dbrelation/menubar/menubar.xml
+@@ -74,7 +74,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/dbaccess/uiconfig/dbtable/menubar/menubar.xml b/dbaccess/uiconfig/dbtable/menubar/menubar.xml
+index 63982ad..a1c73a2 100644
+--- a/dbaccess/uiconfig/dbtable/menubar/menubar.xml
++++ b/dbaccess/uiconfig/dbtable/menubar/menubar.xml
+@@ -75,7 +75,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/dbaccess/uiconfig/dbtdata/menubar/menubar.xml b/dbaccess/uiconfig/dbtdata/menubar/menubar.xml
+index 95c327e..3910008 100644
+--- a/dbaccess/uiconfig/dbtdata/menubar/menubar.xml
++++ b/dbaccess/uiconfig/dbtdata/menubar/menubar.xml
+@@ -83,7 +83,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/extensions/uiconfig/sbibliography/menubar/menubar.xml b/extensions/uiconfig/sbibliography/menubar/menubar.xml
+index 39d113b..b60db19 100644
+--- a/extensions/uiconfig/sbibliography/menubar/menubar.xml
++++ b/extensions/uiconfig/sbibliography/menubar/menubar.xml
+@@ -76,7 +76,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/framework/uiconfig/startmodule/menubar/menubar.xml b/framework/uiconfig/startmodule/menubar/menubar.xml
+index cc2bdaf..5f6b715 100644
+--- a/framework/uiconfig/startmodule/menubar/menubar.xml
++++ b/framework/uiconfig/startmodule/menubar/menubar.xml
+@@ -47,7 +47,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+             <menu:menuseparator/>
+diff --git a/reportdesign/uiconfig/dbreport/menubar/menubar.xml b/reportdesign/uiconfig/dbreport/menubar/menubar.xml
+index 02487c7..4eb681d 100644
+--- a/reportdesign/uiconfig/dbreport/menubar/menubar.xml
++++ b/reportdesign/uiconfig/dbreport/menubar/menubar.xml
+@@ -280,7 +280,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sc/uiconfig/scalc/menubar/menubar.xml b/sc/uiconfig/scalc/menubar/menubar.xml
+index 54676dd..c93d36c 100644
+--- a/sc/uiconfig/scalc/menubar/menubar.xml
++++ b/sc/uiconfig/scalc/menubar/menubar.xml
+@@ -614,7 +614,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sd/uiconfig/sdraw/menubar/menubar.xml b/sd/uiconfig/sdraw/menubar/menubar.xml
+index 0095780..8429708 100644
+--- a/sd/uiconfig/sdraw/menubar/menubar.xml
++++ b/sd/uiconfig/sdraw/menubar/menubar.xml
+@@ -367,7 +367,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sd/uiconfig/simpress/menubar/menubar.xml b/sd/uiconfig/simpress/menubar/menubar.xml
+index 3402212..0cc96a7 100644
+--- a/sd/uiconfig/simpress/menubar/menubar.xml
++++ b/sd/uiconfig/simpress/menubar/menubar.xml
+@@ -599,7 +599,6 @@
+     </menu:menu>
+     <menu:menu menu:id=".uno:HelpMenu">
+         <menu:menupopup>
+-            <menu:menuitem menu:id=".uno:HelpIndex"/>
+             <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+             <menu:menuseparator/>
+             <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/starmath/uiconfig/smath/menubar/menubar.xml b/starmath/uiconfig/smath/menubar/menubar.xml
+index 6b45d61..6cff78c 100644
+--- a/starmath/uiconfig/smath/menubar/menubar.xml
++++ b/starmath/uiconfig/smath/menubar/menubar.xml
+@@ -140,7 +140,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sw/uiconfig/sglobal/menubar/menubar.xml b/sw/uiconfig/sglobal/menubar/menubar.xml
+index a9cc741..f23f93e 100644
+--- a/sw/uiconfig/sglobal/menubar/menubar.xml
++++ b/sw/uiconfig/sglobal/menubar/menubar.xml
+@@ -483,7 +483,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sw/uiconfig/sweb/menubar/menubar.xml b/sw/uiconfig/sweb/menubar/menubar.xml
+index b4dce27..4b39edb 100644
+--- a/sw/uiconfig/sweb/menubar/menubar.xml
++++ b/sw/uiconfig/sweb/menubar/menubar.xml
+@@ -413,7 +413,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sw/uiconfig/swform/menubar/menubar.xml b/sw/uiconfig/swform/menubar/menubar.xml
+index e3f2c85..5a7f953 100644
+--- a/sw/uiconfig/swform/menubar/menubar.xml
++++ b/sw/uiconfig/swform/menubar/menubar.xml
+@@ -477,7 +477,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sw/uiconfig/swreport/menubar/menubar.xml b/sw/uiconfig/swreport/menubar/menubar.xml
+index c72ae0f..a4d75e3 100644
+--- a/sw/uiconfig/swreport/menubar/menubar.xml
++++ b/sw/uiconfig/swreport/menubar/menubar.xml
+@@ -479,7 +479,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sw/uiconfig/swriter/menubar/menubar.xml b/sw/uiconfig/swriter/menubar/menubar.xml
+index 2002dad..bba79c1 100644
+--- a/sw/uiconfig/swriter/menubar/menubar.xml
++++ b/sw/uiconfig/swriter/menubar/menubar.xml
+@@ -726,7 +726,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+diff --git a/sw/uiconfig/swxform/menubar/menubar.xml b/sw/uiconfig/swxform/menubar/menubar.xml
+index 288f446..7738ad4 100644
+--- a/sw/uiconfig/swxform/menubar/menubar.xml
++++ b/sw/uiconfig/swxform/menubar/menubar.xml
+@@ -479,7 +479,6 @@
+   </menu:menu>
+   <menu:menu menu:id=".uno:HelpMenu">
+     <menu:menupopup>
+-      <menu:menuitem menu:id=".uno:HelpIndex"/>
+       <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+       <menu:menuseparator/>
+       <menu:menuitem menu:id=".uno:SendFeedback"/>
+-- 
+2.7.0
+

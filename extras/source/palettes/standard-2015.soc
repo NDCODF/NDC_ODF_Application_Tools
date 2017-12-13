@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ooo:color-table xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ooo="http://openoffice.org/2004/office">
+<draw:color draw:name="Black" draw:color="#000000"/>
+<draw:color draw:name="Mostly Black" draw:color="#0a0a0a"/>
+<draw:color draw:name="Very Dark Gray1" draw:color="#141414"/>
+<draw:color draw:name="Very Dark Gray2" draw:color="#1f1f1f"/>
+<draw:color draw:name="Very Dark Gray3" draw:color="#292929"/>
+<draw:color draw:name="Very Dark Gray4" draw:color="#333333"/>
+<draw:color draw:name="Very Dark Gray5" draw:color="#3d3d3d"/>
+<draw:color draw:name="Very Dark Gray6" draw:color="#474747"/>
+<draw:color draw:name="Dark Gray1" draw:color="#525252"/>
+<draw:color draw:name="Dark Gray2" draw:color="#5c5c5c"/>
+<draw:color draw:name="Medium Gray1" draw:color="#666666"/>
+<draw:color draw:name="Medium Gray2" draw:color="#6e6e6e"/>
+<draw:color draw:name="White" draw:color="#ffffff"/>
+<draw:color draw:name="Very Light Gray2" draw:color="#f2f2f2"/>
+<draw:color draw:name="Very Light Gray1" draw:color="#e6e6e6"/>
+<draw:color draw:name="Light Gray" draw:color="#d9d9d9"/>
+<draw:color draw:name="Medium Gray10" draw:color="#cccccc"/>
+<draw:color draw:name="Medium Gray9" draw:color="#bfbfbf"/>
+<draw:color draw:name="Medium Gray8" draw:color="#b3b3b3"/>
+<draw:color draw:name="Medium Gray7" draw:color="#a6a6a6"/>
+<draw:color draw:name="Medium Gray6" draw:color="#999999"/>
+<draw:color draw:name="Medium Gray5" draw:color="#8c8c8c"/>
+<draw:color draw:name="Medium Gray4" draw:color="#808080"/>
+<draw:color draw:name="Medium Gray3" draw:color="#757575"/>
+
+<draw:color draw:name="Luminous Vivid Red (h0 v100 s100)" draw:color="#ff0000"/>
+<draw:color draw:name="Luminous Vivid Orange (h30 v100 s100)" draw:color="#ff8000"/>
+<draw:color draw:name="Luminous Vivid Yellow (h60 v100 s100)" draw:color="#ffff00"/>
+<draw:color draw:name="Luminous Vivid Chartreuse Green (h90 v100 s100)" draw:color="#80ff00"/>
+<draw:color draw:name="Luminous Vivid Green (h120 v100 s100)" draw:color="#00ff00"/>
+<draw:color draw:name="Luminous Vivid Spring Green (h150 v100 s100)" draw:color="#00ff80"/>
+<draw:color draw:name="Luminous Vivid Cyan (h180 v100 s100)" draw:color="#00ffff"/>
+<draw:color draw:name="Luminous Vivid Azure (h210 v100 s100)" draw:color="#0080ff"/>
+<draw:color draw:name="Luminous Vivid Blue (h240 v100 s100)" draw:color="#0000ff"/>
+<draw:color draw:name="Luminous Vivid Violet (h270 v100 s100)" draw:color="#8000ff"/>
+<draw:color draw:name="Luminous Vivid Magenta (h300 v100 s100)" draw:color="#ff00ff"/>
+<draw:color draw:name="Luminous Vivid Rose (h330 v100 s100)" draw:color="#ff0080"/>
+
+<draw:color draw:name="Vivid Red (h0 v100 s90)" draw:color="#ff1919"/>
+<draw:color draw:name="Vivid Orange (h30 v100 s90)" draw:color="#ff8c19"/>
+<draw:color draw:name="Vivid Yellow (h60 v100 s90)" draw:color="#ffff19"/>
+<draw:color draw:name="Vivid Chartreuse Green (h90 v100 s90)" draw:color="#8cff19"/>
+<draw:color draw:name="Vivid Green (h120 v100 s90)" draw:color="#19ff19"/>
+<draw:color draw:name="Vivid Spring Green (h150 v100 s90)" draw:color="#19ff8c"/>
+<draw:color draw:name="Vivid Cyan (h180 v100 s90)" draw:color="#19ffff"/>
+<draw:color draw:name="Vivid Azure (h210 v100 s90)" draw:color="#198cff"/>
+<draw:color draw:name="Vivid Blue (h240 v100 s90)" draw:color="#1919ff"/>
+<draw:color draw:name="Vivid Violet (h270 v100 s90)" draw:color="#8c19ff"/>
+<draw:color draw:name="Vivid Magenta (h300 v100 s90)" draw:color="#ff19ff"/>
+<draw:color draw:name="Vivid Rose (h330 v100 s90)" draw:color="#ff198c"/>
+
+<draw:color draw:name="Brilliant Red (h0 v100 s80)" draw:color="#ff3333"/>
+<draw:color draw:name="Brilliant Orange (h30 v100 s80)" draw:color="#ff9933"/>
+<draw:color draw:name="Brilliant Yellow (h60 v100 s80)" draw:color="#ffff33"/>
+<draw:color draw:name="Brilliant Chartreuse Green (h90 v100 s80)" draw:color="#99ff33"/>
+<draw:color draw:name="Brilliant Green (h120 v100 s80)" draw:color="#33ff33"/>
+<draw:color draw:name="Brilliant Spring Green (h150 v100 s80)" draw:color="#33ff99"/>
+<draw:color draw:name="Brilliant Cyan (h180 v100 s80)" draw:color="#33ffff"/>
+<draw:color draw:name="Brilliant Azure (h210 v100 s80)" draw:color="#3399ff"/>
+<draw:color draw:name="Brilliant Blue (h240 v100 s80)" draw:color="#3333ff"/>
+<draw:color draw:name="Brilliant Violet (h270 v100 s80)" draw:color="#9933ff"/>
+<draw:color draw:name="Brilliant Magenta (h300 v100 s80)" draw:color="#ff33ff"/>
+<draw:color draw:name="Brilliant Rose (h330 v100 s80)" draw:color="#ff3399"/>
+
+<draw:color draw:name="Light Brilliant Red (h0 v100 s70)" draw:color="#ff4d4d"/>
+<draw:color draw:name="Light Brilliant Orange (h30 v100 s70)" draw:color="#ffa64d"/>
+<draw:color draw:name="Light Brilliant Yellow (h60 v100 s70)" draw:color="#ffff4d"/>
+<draw:color draw:name="Light Brilliant Chartreuse Green (h90 v100 s70)" draw:color="#a6ff4d"/>
+<draw:color draw:name="Light Brilliant Green (h120 v100 s70)" draw:color="#4dff4d"/>
+<draw:color draw:name="Light Brilliant Spring Green (h150 v100 s70)" draw:color="#4dffa6"/>
+<draw:color draw:name="Light Brilliant Cyan (h180 v100 s70)" draw:color="#4dffff"/>
+<draw:color draw:name="Light Brilliant Azure (h210 v100 s70)" draw:color="#4da6ff"/>
+<draw:color draw:name="Light Brilliant Blue (h240 v100 s70)" draw:color="#4d4dff"/>
+<draw:color draw:name="Light Brilliant Violet (h270 v100 s70)" draw:color="#a64dff"/>
+<draw:color draw:name="Light Brilliant Magenta (h300 v100 s70)" draw:color="#ff4dff"/>
+<draw:color draw:name="Light Brilliant Rose (h330 v100 s70)" draw:color="#ff4da6"/>
+
+<draw:color draw:name="Light Red (h0 v100 s60)" draw:color="#ff6666"/>
+<draw:color draw:name="Light Orange (h30 v100 s60)" draw:color="#ffb366"/>
+<draw:color draw:name="Light Yellow (h60 v100 s60)" draw:color="#ffff66"/>
+<draw:color draw:name="Light Chartreuse Green (h90 v100 s60)" draw:color="#b3ff66"/>
+<draw:color draw:name="Light Green (h120 v100 s60)" draw:color="#66ff66"/>
+<draw:color draw:name="Light Spring Green (h150 v100 s60)" draw:color="#66ffb3"/>
+<draw:color draw:name="Light Cyan (h180 v100 s60)" draw:color="#66ffff"/>
+<draw:color draw:name="Light Azure (h210 v100 s60)" draw:color="#66b3ff"/>
+<draw:color draw:name="Light Blue (h240 v100 s60)" draw:color="#6666ff"/>
+<draw:color draw:name="Light Violet (h270 v100 s60)" draw:color="#b366ff"/>
+<draw:color draw:name="Light Magenta (h300 v100 s60)" draw:color="#ff66ff"/>
+<draw:color draw:name="Light Rose (h330 v100 s60)" draw:color="#ff66b3"/>
+
+<draw:color draw:name="Very Light Red (h0 v100 s50)" draw:color="#ff8080"/>
+<draw:color draw:name="Very Light Orange (h30 v100 s50)" draw:color="#ffbf80"/>
+<draw:color draw:name="Very Light Yellow (h60 v100 s50)" draw:color="#ffff80"/>
+<draw:color draw:name="Very Light Chartreuse Green (h90 v100 s50)" draw:color="#bfff80"/>
+<draw:color draw:name="Very Light Green (h120 v100 s50)" draw:color="#80ff80"/>
+<draw:color draw:name="Very Light Spring Green (h150 v100 s50)" draw:color="#80ffbf"/>
+<draw:color draw:name="Very Light Cyan (h180 v100 s50)" draw:color="#80ffff"/>
+<draw:color draw:name="Very Light Azure (h210 v100 s50)" draw:color="#80bfff"/>
+<draw:color draw:name="Very Light Blue (h240 v100 s50)" draw:color="#8080ff"/>
+<draw:color draw:name="Very Light Violet (h270 v100 s50)" draw:color="#bf80ff"/>
+<draw:color draw:name="Very Light Magenta (h300 v100 s50)" draw:color="#ff80ff"/>
+<draw:color draw:name="Very Light Rose (h330 v100 s50)" draw:color="#ff80bf"/>
+
+<draw:color draw:name="Pale Red (h0 v100 s40)" draw:color="#ff9999"/>
+<draw:color draw:name="Pale Orange (h30 v100 s40)" draw:color="#ffcc99"/>
+<draw:color draw:name="Pale Yellow (h60 v100 s40)" draw:color="#ffff99"/>
+<draw:color draw:name="Pale Chartreuse Green (h90 v100 s40)" draw:color="#ccff99"/>
+<draw:color draw:name="Pale Green (h120 v100 s40)" draw:color="#99ff99"/>
+<draw:color draw:name="Pale Spring Green (h150 v100 s40)" draw:color="#99ffcc"/>
+<draw:color draw:name="Pale Cyan (h180 v100 s40)" draw:color="#99ffff"/>
+<draw:color draw:name="Pale Azure (h210 v100 s40)" draw:color="#99ccff"/>
+<draw:color draw:name="Pale Blue (h240 v100 s40)" draw:color="#9999ff"/>
+<draw:color draw:name="Pale Violet (h270 v100 s40)" draw:color="#cc99ff"/>
+<draw:color draw:name="Pale Magenta (h300 v100 s40)" draw:color="#ff99ff"/>
+<draw:color draw:name="Pale Rose (h330 v100 s40)" draw:color="#ff99cc"/>
+
+<draw:color draw:name="Very Pale Red (h0 v100 s30)" draw:color="#ffb3b3"/>
+<draw:color draw:name="Very Pale Orange (h30 v100 s30)" draw:color="#ffd9b3"/>
+<draw:color draw:name="Very Pale Yellow (h60 v100 s30)" draw:color="#ffffb3"/>
+<draw:color draw:name="Very Pale Chartreuse Green (h90 v100 s30)" draw:color="#d9ffb3"/>
+<draw:color draw:name="Very Pale Green (h120 v100 s30)" draw:color="#b3ffb3"/>
+<draw:color draw:name="Very Pale Spring Green (h150 v100 s30)" draw:color="#b3ffd9"/>
+<draw:color draw:name="Very Pale Cyan (h180 v100 s30)" draw:color="#b3ffff"/>
+<draw:color draw:name="Very Pale Azure (h210 v100 s30)" draw:color="#b3d9ff"/>
+<draw:color draw:name="Very Pale Blue (h240 v100 s30)" draw:color="#b3b3ff"/>
+<draw:color draw:name="Very Pale Violet (h270 v100 s30)" draw:color="#d9b3ff"/>
+<draw:color draw:name="Very Pale Magenta (h300 v100 s30)" draw:color="#ffb3ff"/>
+<draw:color draw:name="Very Pale Rose (h330 v100 s30)" draw:color="#ffb3d9"/>
+
+<draw:color draw:name="Whitish Red (h0 v100 s20)" draw:color="#ffcccc"/>
+<draw:color draw:name="Whitish Orange (h30 v100 s20)" draw:color="#ffe6cc"/>
+<draw:color draw:name="Whitish Yellow (h60 v100 s20)" draw:color="#ffffcc"/>
+<draw:color draw:name="Whitish Chartreuse Green (h90 v100 s20)" draw:color="#e6ffcc"/>
+<draw:color draw:name="Whitish Green (h120 v100 s20)" draw:color="#ccffcc"/>
+<draw:color draw:name="Whitish Spring Green (h150 v100 s20)" draw:color="#ccffe6"/>
+<draw:color draw:name="Whitish Cyan (h180 v100 s20)" draw:color="#ccffff"/>
+<draw:color draw:name="Whitish Azure (h210 v100 s20)" draw:color="#cce6ff"/>
+<draw:color draw:name="Whitish Blue (h240 v100 s20)" draw:color="#ccccff"/>
+<draw:color draw:name="Whitish Violet (h270 v100 s20)" draw:color="#e6ccff"/>
+<draw:color draw:name="Whitish Magenta (h300 v100 s20)" draw:color="#ffccff"/>
+<draw:color draw:name="Whitish Rose (h330 v100 s20)" draw:color="#ffcce6"/>
+
+<draw:color draw:name="Reddish White (h0 v100 s10)" draw:color="#ffe6e6"/>
+<draw:color draw:name="Orangish White (h30 v100 s10)" draw:color="#fff2e6"/>
+<draw:color draw:name="Yellowish White (h60 v100 s10)" draw:color="#ffffe6"/>
+<draw:color draw:name="Chartreuse Greenish White (h90 v100 s10)" draw:color="#f2ffe6"/>
+<draw:color draw:name="Greenish White (h120 v100 s10)" draw:color="#e6ffe6"/>
+<draw:color draw:name="Spring Greenish White (h150 v100 s10)" draw:color="#e6fff2"/>
+<draw:color draw:name="Cyanish White (h180 v100 s10)" draw:color="#e6ffff"/>
+<draw:color draw:name="Azurish White (h210 v100 s10)" draw:color="#e6f2ff"/>
+<draw:color draw:name="Bluish White (h240 v100 s10)" draw:color="#e6e6ff"/>
+<draw:color draw:name="Violetish White (h270 v100 s10)" draw:color="#f2e6ff"/>
+<draw:color draw:name="Magentaish White (h300 v100 s10)" draw:color="#ffe6ff"/>
+<draw:color draw:name="Rosish White (h330 v100 s10)" draw:color="#ffe6f2"/>
+
+<draw:color draw:name="Strong Red (h0 v80 s100)" draw:color="#cc0000"/>
+<draw:color draw:name="Strong Orange (h30 v80 s100)" draw:color="#cc6600"/>
+<draw:color draw:name="Strong Yellow (h60 v80 s100)" draw:color="#cccc00"/>
+<draw:color draw:name="Strong Chartreuse Green (h90 v80 s100)" draw:color="#66cc00"/>
+<draw:color draw:name="Strong Green (h120 v80 s100)" draw:color="#00cc00"/>
+<draw:color draw:name="Strong Spring Green (h150 v80 s100)" draw:color="#00cc66"/>
+<draw:color draw:name="Strong Cyan (h180 v80 s100)" draw:color="#00cccc"/>
+<draw:color draw:name="Strong Azure (h210 v80 s100)" draw:color="#0066cc"/>
+<draw:color draw:name="Strong Blue (h240 v80 s100)" draw:color="#0000cc"/>
+<draw:color draw:name="Strong Violet (h270 v80 s100)" draw:color="#6600cc"/>
+<draw:color draw:name="Strong Magenta (h300 v80 s100)" draw:color="#cc00cc"/>
+<draw:color draw:name="Strong Rose (h330 v80 s100)" draw:color="#cc0066"/>
+
+<draw:color draw:name="Semi Strong Red (h0 v80 s90)" draw:color="#cc1414"/>
+<draw:color draw:name="Semi Strong Orange (h30 v80 s90)" draw:color="#cc7014"/>
+<draw:color draw:name="Semi Strong Yellow (h60 v80 s90)" draw:color="#cccc14"/>
+<draw:color draw:name="Semi Strong Chartreuse Green (h90 v80 s90)" draw:color="#70cc14"/>
+<draw:color draw:name="Semi Strong Green (h120 v80 s90)" draw:color="#14cc14"/>
+<draw:color draw:name="Semi Strong Spring Green (h150 v80 s90)" draw:color="#14cc70"/>
+<draw:color draw:name="Semi Strong Cyan (h180 v80 s90)" draw:color="#14cccc"/>
+<draw:color draw:name="Semi Strong Azure (h210 v80 s90)" draw:color="#1470cc"/>
+<draw:color draw:name="Semi Strong Blue (h240 v80 s90)" draw:color="#1414cc"/>
+<draw:color draw:name="Semi Strong Violet (h270 v80 s90)" draw:color="#7014cc"/>
+<draw:color draw:name="Semi Strong Magenta (h300 v80 s90)" draw:color="#cc14cc"/>
+<draw:color draw:name="Semi Strong Rose (h330 v80 s90)" draw:color="#cc1470"/>
+
+<draw:color draw:name="Semi Brilliant Red (h0 v80 s80)" draw:color="#cc2929"/>
+<draw:color draw:name="Semi Brilliant Orange (h30 v80 s80)" draw:color="#cc7a29"/>
+<draw:color draw:name="Semi Brilliant Yellow (h60 v80 s80)" draw:color="#cccc29"/>
+<draw:color draw:name="Semi Brilliant Chartreuse Green (h90 v80 s80)" draw:color="#7acc29"/>
+<draw:color draw:name="Semi Brilliant Green (h120 v80 s80)" draw:color="#29cc29"/>
+<draw:color draw:name="Semi Brilliant Spring Green (h150 v80 s80)" draw:color="#29cc7a"/>
+<draw:color draw:name="Semi Brilliant Cyan (h180 v80 s80)" draw:color="#29cccc"/>
+<draw:color draw:name="Semi Brilliant Azure (h210 v80 s80)" draw:color="#297acc"/>
+<draw:color draw:name="Semi Brilliant Blue (h240 v80 s80)" draw:color="#2929cc"/>
+<draw:color draw:name="Semi Brilliant Violet (h270 v80 s80)" draw:color="#7a29cc"/>
+<draw:color draw:name="Semi Brilliant Magenta (h300 v80 s80)" draw:color="#cc29cc"/>
+<draw:color draw:name="Semi Brilliant Rose (h330 v80 s80)" draw:color="#cc297a"/>
+
+<draw:color draw:name="Moderate Red (h0 v80 s70)" draw:color="#cc3d3d"/>
+<draw:color draw:name="Moderate Orange (h30 v80 s70)" draw:color="#cc853d"/>
+<draw:color draw:name="Moderate Yellow (h60 v80 s70)" draw:color="#cccc3d"/>
+<draw:color draw:name="Moderate Chartreuse Green (h90 v80 s70)" draw:color="#85cc3d"/>
+<draw:color draw:name="Moderate Green (h120 v80 s70)" draw:color="#3dcc3d"/>
+<draw:color draw:name="Moderate Spring Green (h150 v80 s70)" draw:color="#3dcc85"/>
+<draw:color draw:name="Moderate Cyan (h180 v80 s70)" draw:color="#3dcccc"/>
+<draw:color draw:name="Moderate Azure (h210 v80 s70)" draw:color="#3d85cc"/>
+<draw:color draw:name="Moderate Blue (h240 v80 s70)" draw:color="#3d3dcc"/>
+<draw:color draw:name="Moderate Violet (h270 v80 s70)" draw:color="#853dcc"/>
+<draw:color draw:name="Moderate Magenta (h300 v80 s70)" draw:color="#cc3dcc"/>
+<draw:color draw:name="Moderate Rose (h330 v80 s70)" draw:color="#cc3d85"/>
+
+<draw:color draw:name="Light Moderate Red (h0 v80 s60)" draw:color="#cc5252"/>
+<draw:color draw:name="Light Moderate Orange (h30 v80 s60)" draw:color="#cc8f52"/>
+<draw:color draw:name="Light Moderate Yellow (h60 v80 s60)" draw:color="#cccc52"/>
+<draw:color draw:name="Light Moderate Chartreuse Green (h90 v80 s60)" draw:color="#8fcc52"/>
+<draw:color draw:name="Light Moderate Green (h120 v80 s60)" draw:color="#52cc52"/>
+<draw:color draw:name="Light Moderate Spring Green (h150 v80 s60)" draw:color="#52cc8f"/>
+<draw:color draw:name="Light Moderate Cyan (h180 v80 s60)" draw:color="#52cccc"/>
+<draw:color draw:name="Light Moderate Azure (h210 v80 s60)" draw:color="#528fcc"/>
+<draw:color draw:name="Light Moderate Blue (h240 v80 s60)" draw:color="#5252cc"/>
+<draw:color draw:name="Light Moderate Violet (h270 v80 s60)" draw:color="#8f52cc"/>
+<draw:color draw:name="Light Moderate Magenta (h300 v80 s60)" draw:color="#cc52cc"/>
+<draw:color draw:name="Light Moderate Rose (h330 v80 s60)" draw:color="#cc528f"/>
+
+<draw:color draw:name="Very Light Moderate Red (h0 v80 s50)" draw:color="#cc6666"/>
+<draw:color draw:name="Very Light Moderate Orange (h30 v80 s50)" draw:color="#cc9966"/>
+<draw:color draw:name="Very Light Moderate Yellow (h60 v80 s50)" draw:color="#cccc66"/>
+<draw:color draw:name="Very Light Moderate Chartreuse Green (h90 v80 s50)" draw:color="#99cc66"/>
+<draw:color draw:name="Very Light Moderate Green (h120 v80 s50)" draw:color="#66cc66"/>
+<draw:color draw:name="Very Light Moderate Spring Green (h150 v80 s50)" draw:color="#66cc99"/>
+<draw:color draw:name="Very Light Moderate Cyan (h180 v80 s50)" draw:color="#66cccc"/>
+<draw:color draw:name="Very Light Moderate Azure (h210 v80 s50)" draw:color="#6699cc"/>
+<draw:color draw:name="Very Light Moderate Blue (h240 v80 s50)" draw:color="#6666cc"/>
+<draw:color draw:name="Very Light Moderate Violet (h270 v80 s50)" draw:color="#9966cc"/>
+<draw:color draw:name="Very Light Moderate Magenta (h300 v80 s50)" draw:color="#cc66cc"/>
+<draw:color draw:name="Very Light Moderate Rose (h330 v80 s50)" draw:color="#cc6699"/>
+
+<draw:color draw:name="Semi Light Grayish Red (h0 v80 s40)" draw:color="#cc7a7a"/>
+<draw:color draw:name="Semi Light Grayish Orange (h30 v80 s40)" draw:color="#cca37a"/>
+<draw:color draw:name="Semi Light Grayish Yellow (h60 v80 s40)" draw:color="#cccc7a"/>
+<draw:color draw:name="Semi Light Grayish Chartreuse Green (h90 v80 s40)" draw:color="#a3cc7a"/>
+<draw:color draw:name="Semi Light Grayish Green (h120 v80 s40)" draw:color="#7acc7a"/>
+<draw:color draw:name="Semi Light Grayish Spring Green (h150 v80 s40)" draw:color="#7acca3"/>
+<draw:color draw:name="Semi Light Grayish Cyan (h180 v80 s40)" draw:color="#7acccc"/>
+<draw:color draw:name="Semi Light Grayish Azure (h210 v80 s40)" draw:color="#7aa3cc"/>
+<draw:color draw:name="Semi Light Grayish Blue (h240 v80 s40)" draw:color="#7a7acc"/>
+<draw:color draw:name="Semi Light Grayish Violet (h270 v80 s40)" draw:color="#a37acc"/>
+<draw:color draw:name="Semi Light Grayish Magenta (h300 v80 s40)" draw:color="#cc7acc"/>
+<draw:color draw:name="Semi Light Grayish Rose (h330 v80 s40)" draw:color="#cc7aa3"/>
+
+<draw:color draw:name="Light Grayish Red (h0 v80 s30)" draw:color="#cc8f8f"/>
+<draw:color draw:name="Light Grayish Orange (h30 v80 s30)" draw:color="#ccad8f"/>
+<draw:color draw:name="Light Grayish Yellow (h60 v80 s30)" draw:color="#cccc8f"/>
+<draw:color draw:name="Light Grayish Chartreuse Green (h90 v80 s30)" draw:color="#adcc8f"/>
+<draw:color draw:name="Light Grayish Green (h120 v80 s30)" draw:color="#8fcc8f"/>
+<draw:color draw:name="Light Grayish Spring Green (h150 v80 s30)" draw:color="#8fccad"/>
+<draw:color draw:name="Light Grayish Cyan (h180 v80 s30)" draw:color="#8fcccc"/>
+<draw:color draw:name="Light Grayish Azure (h210 v80 s30)" draw:color="#8fadcc"/>
+<draw:color draw:name="Light Grayish Blue (h240 v80 s30)" draw:color="#8f8fcc"/>
+<draw:color draw:name="Light Grayish Violet (h270 v80 s30)" draw:color="#ad8fcc"/>
+<draw:color draw:name="Light Grayish Magenta (h300 v80 s30)" draw:color="#cc8fcc"/>
+<draw:color draw:name="Light Grayish Rose (h330 v80 s30)" draw:color="#cc8fad"/>
+
+<draw:color draw:name="Pale Light Grayish Red (h0 v80 s20)" draw:color="#cca3a3"/>
+<draw:color draw:name="Pale Light Grayish Orange (h30 v80 s20)" draw:color="#ccb8a3"/>
+<draw:color draw:name="Pale Light Grayish Yellow (h60 v80 s20)" draw:color="#cccca3"/>
+<draw:color draw:name="Pale Light Grayish Chartreuse Green (h90 v80 s20)" draw:color="#b8cca3"/>
+<draw:color draw:name="Pale Light Grayish Green (h120 v80 s20)" draw:color="#a3cca3"/>
+<draw:color draw:name="Pale Light Grayish Spring Green (h150 v80 s20)" draw:color="#a3ccb8"/>
+<draw:color draw:name="Pale Light Grayish Cyan (h180 v80 s20)" draw:color="#a3cccc"/>
+<draw:color draw:name="Pale Light Grayish Azure (h210 v80 s20)" draw:color="#a3b8cc"/>
+<draw:color draw:name="Pale Light Grayish Blue (h240 v80 s20)" draw:color="#a3a3cc"/>
+<draw:color draw:name="Pale Light Grayish Violet (h270 v80 s20)" draw:color="#b8a3cc"/>
+<draw:color draw:name="Pale Light Grayish Magenta (h300 v80 s20)" draw:color="#cca3cc"/>
+<draw:color draw:name="Pale Light Grayish Rose (h330 v80 s20)" draw:color="#cca3b8"/>
+
+<draw:color draw:name="Light Reddish Gray (h0 v80 s10)" draw:color="#ccb8b8"/>
+<draw:color draw:name="Light Orangeish Gray (h30 v80 s10)" draw:color="#ccc2b8"/>
+<draw:color draw:name="Light Yellowish Gray (h60 v80 s10)" draw:color="#ccccb8"/>
+<draw:color draw:name="Light Chartreuse Greenish Gray (h90 v80 s10)" draw:color="#c2ccb8"/>
+<draw:color draw:name="Light Greenish Gray (h120 v80 s10)" draw:color="#b8ccb8"/>
+<draw:color draw:name="Light Spring Greenish Gray (h150 v80 s10)" draw:color="#b8ccc2"/>
+<draw:color draw:name="Light Cyanish Gray (h180 v80 s10)" draw:color="#b8cccc"/>
+<draw:color draw:name="Light Azurish Gray (h210 v80 s10)" draw:color="#b8c2cc"/>
+<draw:color draw:name="Light Bluish Gray (h240 v80 s10)" draw:color="#b8b8cc"/>
+<draw:color draw:name="Light Violetish Gray (h270 v80 s10)" draw:color="#c2b8cc"/>
+<draw:color draw:name="Light Magentaish Gray (h300 v80 s10)" draw:color="#ccb8cc"/>
+<draw:color draw:name="Light Roseish Gray (h330 v80 s10)" draw:color="#ccb8c2"/>
+
+<draw:color draw:name="Medium Red (h0 v60 s100)" draw:color="#990000"/>
+<draw:color draw:name="Medium Orange (h30 v60 s100)" draw:color="#994d00"/>
+<draw:color draw:name="Medium Yellow (h60 v60 s100)" draw:color="#999900"/>
+<draw:color draw:name="Medium Chartreuse Green (h90 v60 s100)" draw:color="#4d9900"/>
+<draw:color draw:name="Medium Green (h120 v60 s100)" draw:color="#009900"/>
+<draw:color draw:name="Medium Spring Green (h150 v60 s100)" draw:color="#00994d"/>
+<draw:color draw:name="Medium Cyan (h180 v60 s100)" draw:color="#009999"/>
+<draw:color draw:name="Medium Azure (h210 v60 s100)" draw:color="#004d99"/>
+<draw:color draw:name="Medium Blue (h240 v60 s100)" draw:color="#000099"/>
+<draw:color draw:name="Medium Violet (h270 v60 s100)" draw:color="#4d0099"/>
+<draw:color draw:name="Medium Magenta (h300 v60 s100)" draw:color="#990099"/>
+<draw:color draw:name="Medium Rose (h330 v60 s100)" draw:color="#99004d"/>
+
+<draw:color draw:name="Semi Medium Red (h0 v60 s85)" draw:color="#991717"/>
+<draw:color draw:name="Semi Medium Orange (h30 v60 s85)" draw:color="#995817"/>
+<draw:color draw:name="Semi Medium Yellow (h60 v60 s85)" draw:color="#999917"/>
+<draw:color draw:name="Semi Medium Chartreuse Green (h90 v60 s85)" draw:color="#589917"/>
+<draw:color draw:name="Semi Medium Green (h120 v60 s85)" draw:color="#179917"/>
+<draw:color draw:name="Semi Medium Spring Green (h150 v60 s85)" draw:color="#179958"/>
+<draw:color draw:name="Semi Medium Cyan (h180 v60 s85)" draw:color="#179999"/>
+<draw:color draw:name="Semi Medium Azure (h210 v60 s85)" draw:color="#175899"/>
+<draw:color draw:name="Semi Medium Blue (h240 v60 s85)" draw:color="#171799"/>
+<draw:color draw:name="Semi Medium Violet (h270 v60 s85)" draw:color="#581799"/>
+<draw:color draw:name="Semi Medium Magenta (h300 v60 s85)" draw:color="#991799"/>
+<draw:color draw:name="Semi Medium Rose (h330 v60 s85)" draw:color="#991758"/>
+
+<draw:color draw:name="Pale Medium Red (h0 v60 s70)" draw:color="#992e2e"/>
+<draw:color draw:name="Pale Medium Orange (h30 v60 s70)" draw:color="#99632e"/>
+<draw:color draw:name="Pale Medium Yellow (h60 v60 s70)" draw:color="#99992e"/>
+<draw:color draw:name="Pale Medium Chartreuse Green (h90 v60 s70)" draw:color="#63992e"/>
+<draw:color draw:name="Pale Medium Green (h120 v60 s70)" draw:color="#2e992e"/>
+<draw:color draw:name="Pale Medium Spring Green (h150 v60 s70)" draw:color="#2e9963"/>
+<draw:color draw:name="Pale Medium Cyan (h180 v60 s70)" draw:color="#2e9999"/>
+<draw:color draw:name="Pale Medium Azure (h210 v60 s70)" draw:color="#2e6399"/>
+<draw:color draw:name="Pale Medium Blue (h240 v60 s70)" draw:color="#2e2e99"/>
+<draw:color draw:name="Pale Medium Violet (h270 v60 s70)" draw:color="#632e99"/>
+<draw:color draw:name="Pale Medium Magenta (h300 v60 s70)" draw:color="#992e99"/>
+<draw:color draw:name="Pale Medium Rose (h330 v60 s70)" draw:color="#992e63"/>
+
+<draw:color draw:name="Light Pale Medium Red (h0 v60 s55)" draw:color="#994545"/>
+<draw:color draw:name="Light Pale Medium Orange (h30 v60 s55)" draw:color="#996f45"/>
+<draw:color draw:name="Light Pale Medium Yellow (h60 v60 s55)" draw:color="#999945"/>
+<draw:color draw:name="Light Pale Medium Chartreuse Green (h90 v60 s55)" draw:color="#6f9945"/>
+<draw:color draw:name="Light Pale Medium Green (h120 v60 s55)" draw:color="#459945"/>
+<draw:color draw:name="Light Pale Medium Spring Green (h150 v60 s55)" draw:color="#45996f"/>
+<draw:color draw:name="Light Pale Medium Cyan (h180 v60 s55)" draw:color="#459999"/>
+<draw:color draw:name="Light Pale Medium Azure (h210 v60 s55)" draw:color="#456f99"/>
+<draw:color draw:name="Light Pale Medium Blue (h240 v60 s55)" draw:color="#454599"/>
+<draw:color draw:name="Light Pale Medium Violet (h270 v60 s55)" draw:color="#6f4599"/>
+<draw:color draw:name="Light Pale Medium Magenta (h300 v60 s55)" draw:color="#994599"/>
+<draw:color draw:name="Light Pale Medium Rose (h330 v60 s55)" draw:color="#99456f"/>
+
+<draw:color draw:name="Grayish Pale Medium Red (h0 v60 s40)" draw:color="#995c5c"/>
+<draw:color draw:name="Grayish Pale Medium Orange (h30 v60 s40)" draw:color="#997a5c"/>
+<draw:color draw:name="Grayish Pale Medium Yellow (h60 v60 s40)" draw:color="#99995c"/>
+<draw:color draw:name="Grayish Pale Medium Chartreuse Green (h90 v60 s40)" draw:color="#7a995c"/>
+<draw:color draw:name="Grayish Pale Medium Green (h120 v60 s40)" draw:color="#5c995c"/>
+<draw:color draw:name="Grayish Pale Medium Spring Green (h150 v60 s40)" draw:color="#5c997a"/>
+<draw:color draw:name="Grayish Pale Medium Cyan (h180 v60 s40)" draw:color="#5c9999"/>
+<draw:color draw:name="Grayish Pale Medium Azure (h210 v60 s40)" draw:color="#5c7a99"/>
+<draw:color draw:name="Grayish Pale Medium Blue (h240 v60 s40)" draw:color="#5c5c99"/>
+<draw:color draw:name="Grayish Pale Medium Violet (h270 v60 s40)" draw:color="#7a5c99"/>
+<draw:color draw:name="Grayish Pale Medium Magenta (h300 v60 s40)" draw:color="#995c99"/>
+<draw:color draw:name="Grayish Pale Medium Rose (h330 v60 s40)" draw:color="#995c7a"/>
+
+<draw:color draw:name="Pale Medium Reddish Gray (h0 v60 s25)" draw:color="#997373"/>
+<draw:color draw:name="Pale Medium Orangish Gray (h30 v60 s25)" draw:color="#998673"/>
+<draw:color draw:name="Pale Medium Yellowish Gray (h60 v60 s25)" draw:color="#999973"/>
+<draw:color draw:name="Pale Medium Chartreuse Greenish Gray (h90 v60 s25)" draw:color="#869973"/>
+<draw:color draw:name="Pale Medium Greenish Gray (h120 v60 s25)" draw:color="#739973"/>
+<draw:color draw:name="Pale Medium Spring Greenish Gray (h150 v60 s25)" draw:color="#739986"/>
+<draw:color draw:name="Pale Medium Cyanish Gray (h180 v60 s25)" draw:color="#739999"/>
+<draw:color draw:name="Pale Medium Azurish Gray (h210 v60 s25)" draw:color="#738699"/>
+<draw:color draw:name="Pale Medium Bluish Gray (h240 v60 s25)" draw:color="#737399"/>
+<draw:color draw:name="Pale Medium Violetish Gray (h270 v60 s25)" draw:color="#867399"/>
+<draw:color draw:name="Pale Medium Magentaish Gray (h300 v60 s25)" draw:color="#997399"/>
+<draw:color draw:name="Pale Medium Rosish Gray (h330 v60 s25)" draw:color="#997386"/>
+
+<draw:color draw:name="Light Medium Reddish Gray (h0 v60 s10)" draw:color="#998a8a"/>
+<draw:color draw:name="Light Medium Orangish Gray (h30 v60 s10)" draw:color="#99918a"/>
+<draw:color draw:name="Light Medium Yellowish Gray (h60 v60 s10)" draw:color="#99998a"/>
+<draw:color draw:name="Light Medium Chartreuse Greenish Gray (h90 v60 s10)" draw:color="#91998a"/>
+<draw:color draw:name="Light Medium Greenish Gray (h120 v60 s10)" draw:color="#8a998a"/>
+<draw:color draw:name="Light Medium Spring Greenish Gray (h150 v60 s10)" draw:color="#8a9991"/>
+<draw:color draw:name="Light Medium Cyanish Gray (h180 v60 s10)" draw:color="#8a9999"/>
+<draw:color draw:name="Light Medium Azurish Gray (h210 v60 s10)" draw:color="#8a9199"/>
+<draw:color draw:name="Light Medium Bluish Gray (h240 v60 s10)" draw:color="#8a8a99"/>
+<draw:color draw:name="Light Medium Violetish Gray (h270 v60 s10)" draw:color="#918a99"/>
+<draw:color draw:name="Light Medium Magentaish Gray (h300 v60 s10)" draw:color="#998a99"/>
+<draw:color draw:name="Light Medium Rosish Gray (h330 v60 s10)" draw:color="#998a91"/>
+
+<draw:color draw:name="Dark Red (h0 v40 s100)" draw:color="#660000"/>
+<draw:color draw:name="Dark Orange (h30 v40 s100)" draw:color="#663300"/>
+<draw:color draw:name="Dark Yellow (h60 v40 s100)" draw:color="#666600"/>
+<draw:color draw:name="Dark Chartreuse Green (h90 v40 s100)" draw:color="#336600"/>
+<draw:color draw:name="Dark Green (h120 v40 s100)" draw:color="#006600"/>
+<draw:color draw:name="Dark Spring Green (h150 v40 s100)" draw:color="#006633"/>
+<draw:color draw:name="Dark Cyan (h180 v40 s100)" draw:color="#006666"/>
+<draw:color draw:name="Dark Azure (h210 v40 s100)" draw:color="#003366"/>
+<draw:color draw:name="Dark Blue (h240 v40 s100)" draw:color="#000066"/>
+<draw:color draw:name="Dark Violet (h270 v40 s100)" draw:color="#330066"/>
+<draw:color draw:name="Dark Magenta (h300 v40 s100)" draw:color="#660066"/>
+<draw:color draw:name="Dark Rose (h330 v40 s100)" draw:color="#660033"/>
+
+<draw:color draw:name="Semi Dark Red (h0 v40 s85)" draw:color="#660f0f"/>
+<draw:color draw:name="Semi Dark Orange (h30 v40 s85)" draw:color="#663b0f"/>
+<draw:color draw:name="Semi Dark Yellow (h60 v40 s85)" draw:color="#66660f"/>
+<draw:color draw:name="Semi Dark Chartreuse Green (h90 v40 s85)" draw:color="#3b660f"/>
+<draw:color draw:name="Semi Dark Green (h120 v40 s85)" draw:color="#0f660f"/>
+<draw:color draw:name="Semi Dark Spring Green (h150 v40 s85)" draw:color="#0f663b"/>
+<draw:color draw:name="Semi Dark Cyan (h180 v40 s85)" draw:color="#0f6666"/>
+<draw:color draw:name="Semi Dark Azure (h210 v40 s85)" draw:color="#0f3b66"/>
+<draw:color draw:name="Semi Dark Blue (h240 v40 s85)" draw:color="#0f0f66"/>
+<draw:color draw:name="Semi Dark Violet (h270 v40 s85)" draw:color="#3b0f66"/>
+<draw:color draw:name="Semi Dark Magenta (h300 v40 s85)" draw:color="#660f66"/>
+<draw:color draw:name="Semi Dark Rose (h330 v40 s85)" draw:color="#660f3b"/>
+
+<draw:color draw:name="Moderate Dark Red (h0 v40 s70)" draw:color="#661f1f"/>
+<draw:color draw:name="Moderate Dark Orange (h30 v40 s70)" draw:color="#66421f"/>
+<draw:color draw:name="Moderate Dark Yellow (h60 v40 s70)" draw:color="#66661f"/>
+<draw:color draw:name="Moderate Dark Chartreuse Green (h90 v40 s70)" draw:color="#42661f"/>
+<draw:color draw:name="Moderate Dark Green (h120 v40 s70)" draw:color="#1f661f"/>
+<draw:color draw:name="Moderate Dark Spring Green (h150 v40 s70)" draw:color="#1f6642"/>
+<draw:color draw:name="Moderate Dark Cyan (h180 v40 s70)" draw:color="#1f6666"/>
+<draw:color draw:name="Moderate Dark Azure (h210 v40 s70)" draw:color="#1f4266"/>
+<draw:color draw:name="Moderate Dark Blue (h240 v40 s70)" draw:color="#1f1f66"/>
+<draw:color draw:name="Moderate Dark Violet (h270 v40 s70)" draw:color="#421f66"/>
+<draw:color draw:name="Moderate Dark Magenta (h300 v40 s70)" draw:color="#661f66"/>
+<draw:color draw:name="Moderate Dark Rose (h330 v40 s70)" draw:color="#661f42"/>
+
+<draw:color draw:name="Dark Grayish Red (h0 v40 s55)" draw:color="#662e2e"/>
+<draw:color draw:name="Dark Grayish Orange (h30 v40 s55)" draw:color="#664a2e"/>
+<draw:color draw:name="Dark Grayish Yellow (h60 v40 s55)" draw:color="#66662e"/>
+<draw:color draw:name="Dark Grayish Chartreuse Green (h90 v40 s55)" draw:color="#4a662e"/>
+<draw:color draw:name="Dark Grayish Green (h120 v40 s55)" draw:color="#2e662e"/>
+<draw:color draw:name="Dark Grayish Spring Green (h150 v40 s55)" draw:color="#2e664a"/>
+<draw:color draw:name="Dark Grayish Cyan (h180 v40 s55)" draw:color="#2e6666"/>
+<draw:color draw:name="Dark Grayish Azure (h210 v40 s55)" draw:color="#2e4a66"/>
+<draw:color draw:name="Dark Grayish Blue (h240 v40 s55)" draw:color="#2e2e66"/>
+<draw:color draw:name="Dark Grayish Violet (h270 v40 s55)" draw:color="#4a2e66"/>
+<draw:color draw:name="Dark Grayish Magenta (h300 v40 s55)" draw:color="#662e66"/>
+<draw:color draw:name="Dark Grayish Rose (h330 v40 s55)" draw:color="#662e4a"/>
+
+<draw:color draw:name="Dark Reddish Gray (h0 v40 s40)" draw:color="#663d3d"/>
+<draw:color draw:name="Dark Orangish Gray (h30 v40 s40)" draw:color="#66523d"/>
+<draw:color draw:name="Dark Yellowish Gray (h60 v40 s40)" draw:color="#66663d"/>
+<draw:color draw:name="Dark Chartreuse Greenish Gray (h90 v40 s40)" draw:color="#52663d"/>
+<draw:color draw:name="Dark Greenish Gray (h120 v40 s40)" draw:color="#3d663d"/>
+<draw:color draw:name="Dark Spring Greenish Gray (h150 v40 s40)" draw:color="#3d6652"/>
+<draw:color draw:name="Dark Cyanish Gray (h180 v40 s40)" draw:color="#3d6666"/>
+<draw:color draw:name="Dark Azurish Gray (h210 v40 s40)" draw:color="#3d5266"/>
+<draw:color draw:name="Dark Bluish Gray (h240 v40 s40)" draw:color="#3d3d66"/>
+<draw:color draw:name="Dark Violetish Gray (h270 v40 s40)" draw:color="#523d66"/>
+<draw:color draw:name="Dark Magentaish Gray (h300 v40 s40)" draw:color="#663d66"/>
+<draw:color draw:name="Dark Rosish Gray (h330 v40 s40)" draw:color="#663d52"/>
+
+<draw:color draw:name="Deep Red (h0 v20 s100)" draw:color="#330000"/>
+<draw:color draw:name="Deep Orange (h30 v20 s100)" draw:color="#331a00"/>
+<draw:color draw:name="Deep Yellow (h60 v20 s100)" draw:color="#333300"/>
+<draw:color draw:name="Deep Chartreuse Green (h90 v20 s100)" draw:color="#1a3300"/>
+<draw:color draw:name="Deep Green (h120 v20 s100)" draw:color="#003300"/>
+<draw:color draw:name="Deep Spring Green (h150 v20 s100)" draw:color="#00331a"/>
+<draw:color draw:name="Deep Cyan (h180 v20 s100)" draw:color="#003333"/>
+<draw:color draw:name="Deep Azure (h210 v20 s100)" draw:color="#001a33"/>
+<draw:color draw:name="Deep Blue (h240 v20 s100)" draw:color="#000033"/>
+<draw:color draw:name="Deep Violet (h270 v20 s100)" draw:color="#1a0033"/>
+<draw:color draw:name="Deep Magenta (h300 v20 s100)" draw:color="#330033"/>
+<draw:color draw:name="Deep Rose (h330 v20 s100)" draw:color="#33001a"/>
+
+<draw:color draw:name="Semi Deep Red (h0 v20 s70)" draw:color="#330f0f"/>
+<draw:color draw:name="Semi Deep Orange (h30 v20 s70)" draw:color="#33210f"/>
+<draw:color draw:name="Semi Deep Yellow (h60 v20 s70)" draw:color="#33330f"/>
+<draw:color draw:name="Semi Deep Chartreuse Green (h90 v20 s70)" draw:color="#21330f"/>
+<draw:color draw:name="Semi Deep Green (h120 v20 s70)" draw:color="#0f330f"/>
+<draw:color draw:name="Semi Deep Spring Green (h150 v20 s70)" draw:color="#0f3321"/>
+<draw:color draw:name="Semi Deep Cyan (h180 v20 s70)" draw:color="#0f3333"/>
+<draw:color draw:name="Semi Deep Azure (h210 v20 s70)" draw:color="#0f2133"/>
+<draw:color draw:name="Semi Deep Blue (h240 v20 s70)" draw:color="#0f0f33"/>
+<draw:color draw:name="Semi Deep Violet (h270 v20 s70)" draw:color="#210f33"/>
+<draw:color draw:name="Semi Deep Magenta (h300 v20 s70)" draw:color="#330f33"/>
+<draw:color draw:name="Semi Deep Rose (h330 v20 s70)" draw:color="#330f21"/>
+
+<draw:color draw:name="Grayish Deep Red (h0 v20 s40)" draw:color="#331f1f"/>
+<draw:color draw:name="Grayish Deep Orange (h30 v20 s40)" draw:color="#33291f"/>
+<draw:color draw:name="Grayish Deep Yellow (h60 v20 s40)" draw:color="#33331f"/>
+<draw:color draw:name="Grayish Deep Chartreuse Green (h90 v20 s40)" draw:color="#29331f"/>
+<draw:color draw:name="Grayish Deep Green (h120 v20 s40)" draw:color="#1f331f"/>
+<draw:color draw:name="Grayish Deep Spring Green (h150 v20 s40)" draw:color="#1f3329"/>
+<draw:color draw:name="Grayish Deep Cyan (h180 v20 s40)" draw:color="#1f3333"/>
+<draw:color draw:name="Grayish Deep Azure (h210 v20 s40)" draw:color="#1f2933"/>
+<draw:color draw:name="Grayish Deep Blue (h240 v20 s40)" draw:color="#1f1f33"/>
+<draw:color draw:name="Grayish Deep Violet (h270 v20 s40)" draw:color="#291f33"/>
+<draw:color draw:name="Grayish Deep Magenta (h300 v20 s40)" draw:color="#331f33"/>
+<draw:color draw:name="Grayish Deep Rose (h330 v20 s40)" draw:color="#331f29"/>
+</ooo:color-table>

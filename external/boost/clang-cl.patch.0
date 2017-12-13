@@ -1,0 +1,265 @@
+# clang-cl supports constexpr, so BOOST_CHRONO_LIB_CONSTEXPR expands to
+# "constexpr", but MSVC's std::numeric_limits<>::max() isn't marked as
+# constexpr, so clang-cl issues -Winvalid-constexpr:
+--- boost/chrono/duration.hpp
++++ boost/chrono/duration.hpp
+@@ -348,29 +348,36 @@
+         static BOOST_CHRONO_LIB_CONSTEXPR T lowest() BOOST_CHRONO_LIB_NOEXCEPT_OR_THROW {return (std::numeric_limits<T>::min)  ();}
+     };
+ 
++#if defined _MSC_VER && defined __clang__
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Winvalid-constexpr"
++#endif
+     template <>
+     struct chrono_numeric_limits<float,true> {
+         static BOOST_CHRONO_LIB_CONSTEXPR float lowest() BOOST_CHRONO_LIB_NOEXCEPT_OR_THROW
+         {
+             return -(std::numeric_limits<float>::max) ();
+         }
+     };
+ 
+     template <>
+     struct chrono_numeric_limits<double,true> {
+         static BOOST_CHRONO_LIB_CONSTEXPR double lowest() BOOST_CHRONO_LIB_NOEXCEPT_OR_THROW
+         {
+             return -(std::numeric_limits<double>::max) ();
+         }
+     };
+ 
+     template <>
+     struct chrono_numeric_limits<long double,true> {
+         static BOOST_CHRONO_LIB_CONSTEXPR long double lowest() BOOST_CHRONO_LIB_NOEXCEPT_OR_THROW
+         {
+             return -(std::numeric_limits<long double>::max)();
+         }
+     };
++#if defined _MSC_VER && defined __clang__
++#pragma clang diagnostic pop
++#endif
+ 
+     template <class T>
+     struct numeric_limits : chrono_numeric_limits<typename remove_cv<T>::type>
+--- boost/config/stdlib/dinkumware.hpp
++++ boost/config/stdlib/dinkumware.hpp
+@@ -96,7 +96,7 @@
+ #include <exception>
+ #endif
+ #include <typeinfo>
+-#if ( (!_HAS_EXCEPTIONS && !defined(__ghs__)) || (!_HAS_NAMESPACE && defined(__ghs__)) ) && !defined(__TI_COMPILER_VERSION__) && !defined(__VISUALDSPVERSION__)
++#if ( (!_HAS_EXCEPTIONS && !defined(__ghs__)) || (!(defined _HAS_NAMESPACE && _HAS_NAMESPACE) && defined(__ghs__)) ) && !defined(__TI_COMPILER_VERSION__) && !defined(__VISUALDSPVERSION__)
+ #  define BOOST_NO_STD_TYPEINFO
+ #endif  
+ 
+--- boost/date_time/filetime_functions.hpp
++++ boost/date_time/filetime_functions.hpp
+@@ -27,6 +27,16 @@
+ #include <boost/date_time/time.hpp>
+ #include <boost/date_time/date_defs.hpp>
+ 
++#if !defined(BOOST_USE_WINDOWS_H)
++extern "C" {
++    struct _FILETIME; // Windows Kits/8.1/Include/shared/minwindef.h
++    struct _SYSTEMTIME; // Windows Kits/8.1/Include/um/minwinbase.h
++    __declspec(dllimport) void __stdcall GetSystemTimeAsFileTime(_FILETIME* lpFileTime);
++    __declspec(dllimport) int __stdcall FileTimeToLocalFileTime(const _FILETIME* lpFileTime, _FILETIME* lpLocalFileTime);
++    __declspec(dllimport) void __stdcall GetSystemTime(_SYSTEMTIME* lpSystemTime);
++    __declspec(dllimport) int __stdcall SystemTimeToFileTime(const _SYSTEMTIME* lpSystemTime, _FILETIME* lpFileTime);
++}
++#endif
+ namespace boost {
+ 
+ namespace date_time {
+@@ -54,10 +64,6 @@
+             boost::uint16_t wMilliseconds;
+         };
+ 
+-        __declspec(dllimport) void __stdcall GetSystemTimeAsFileTime(FILETIME* lpFileTime);
+-        __declspec(dllimport) int __stdcall FileTimeToLocalFileTime(const FILETIME* lpFileTime, FILETIME* lpLocalFileTime);
+-        __declspec(dllimport) void __stdcall GetSystemTime(SYSTEMTIME* lpSystemTime);
+-        __declspec(dllimport) int __stdcall SystemTimeToFileTime(const SYSTEMTIME* lpSystemTime, FILETIME* lpFileTime);
+ 
+     } // extern "C"
+ 
+@@ -74,7 +80,7 @@
+         GetSystemTimeAsFileTime(&ft_utc);
+         FileTimeToLocalFileTime(&ft_utc, &ft);
+ #elif defined(BOOST_HAS_GETSYSTEMTIMEASFILETIME)
+-        GetSystemTimeAsFileTime(&ft);
++        GetSystemTimeAsFileTime(reinterpret_cast<::_FILETIME *>(&ft));
+ #else
+         system_time st;
+         GetSystemTime(&st);
+--- boost/exception/exception.hpp
++++ boost/exception/exception.hpp
+@@ -5,7 +5,7 @@
+ 
+ #ifndef UUID_274DA366004E11DCB1DDFE2E56D89593
+ #define UUID_274DA366004E11DCB1DDFE2E56D89593
+-#if (__GNUC__*100+__GNUC_MINOR__>301) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
++#if defined __GNUC__ && (__GNUC__*100+__GNUC_MINOR__>301) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
+ #pragma GCC system_header
+ #endif
+ #if defined(_MSC_VER) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
+--- boost/math/special_functions/log1p.hpp
++++ boost/math/special_functions/log1p.hpp
+@@ -396,7 +396,7 @@
+          "log1p<%1%>(%1%)", 0, pol);
+    return ::log1p(x); 
+ }
+-#elif defined(_MSC_VER) && (BOOST_MSVC >= 1400)
++#elif defined(_MSC_VER) && defined BOOST_MSVC && (BOOST_MSVC >= 1400)
+ //
+ // You should only enable this branch if you are absolutely sure
+ // that your compilers optimizer won't mess this code up!!
+--- boost/multi_array/base.hpp
++++ boost/multi_array/base.hpp
+@@ -222,7 +222,7 @@
+ // MSVC 2010 is broken in debug mode: it requires
+ // that an Output Iterator have output_iterator_tag in its iterator_category if 
+ // that iterator is not bidirectional_iterator or random_access_iterator.
+-#if BOOST_WORKAROUND(BOOST_MSVC, >= 1600)
++#if BOOST_WORKAROUND(BOOST_MSVC, >= 1600) || (defined __clang__ && BOOST_WORKAROUND(_MSC_VER, >= 1600))
+ struct mutable_iterator_tag
+  : boost::random_access_traversal_tag, std::input_iterator_tag
+ {
+@@ -274,7 +274,7 @@
+   //
+   // iterator support
+   //
+-#if BOOST_WORKAROUND(BOOST_MSVC, >= 1600)
++#if BOOST_WORKAROUND(BOOST_MSVC, >= 1600) || (defined __clang__ && BOOST_WORKAROUND(_MSC_VER, >= 1600))
+   // Deal with VC 2010 output_iterator_tag requirement
+   typedef array_iterator<T,T*,mpl::size_t<NumDims>,reference,
+                          mutable_iterator_tag> iterator;
+--- boost/multi_array/iterator.hpp
++++ boost/multi_array/iterator.hpp
+@@ -60,7 +60,7 @@
+     , private
+           value_accessor_generator<T,NumDims>::type
+ {
+-  friend class iterator_core_access;
++  friend class boost::iterators::iterator_core_access;
+   typedef detail::multi_array::associated_types<T,NumDims> access_t;
+ 
+   typedef iterator_facade<
+
+# workdir/UnpackedTarball/boost\boost/smart_ptr/detail/yield_k.hpp(63,29) :  error: 'Sleep' redeclared without 'dllimport' attribute: previous 'dll# import' ignored [-Werror,-Winconsistent-dllimport]
+#   extern "C" void __stdcall Sleep( unsigned long ms );
+#                             ^
+# C:/PROGRA~2/WI3CF2~1/8.1/include/um\synchapi.h(908,1) :  note: previous declaration is here
+# Sleep(
+# ^
+--- boost/smart_ptr/detail/yield_k.hpp
++++ boost/smart_ptr/detail/yield_k.hpp
+@@ -61,7 +61,7 @@
+ 
+ #if !defined( BOOST_USE_WINDOWS_H ) && !BOOST_PLAT_WINDOWS_RUNTIME
+ #if !BOOST_COMP_CLANG || !defined __MINGW32__
+-  extern "C" void __stdcall Sleep( unsigned long ms );
++  extern "C" __declspec(dllimport) void __stdcall Sleep( unsigned long ms );
+ #else
+ #include <_mingw.h>
+ #if !defined __MINGW64_VERSION_MAJOR
+--- boost/smart_ptr/intrusive_ptr.hpp
++++ boost/smart_ptr/intrusive_ptr.hpp
+@@ -220,7 +220,7 @@
+     return a != b.get();
+ }
+ 
+-#if __GNUC__ == 2 && __GNUC_MINOR__ <= 96
++#if defined __GUNC__ && __GNUC__ == 2 && __GNUC_MINOR__ <= 96
+ 
+ // Resolve the ambiguity between our op!= and the one in rel_ops
+ 
+--- boost/smart_ptr/shared_ptr.hpp
++++ boost/smart_ptr/shared_ptr.hpp
+@@ -780,7 +780,7 @@
+     return a.get() != b.get();
+ }
+ 
+-#if __GNUC__ == 2 && __GNUC_MINOR__ <= 96
++#if defined __GUNC__ && __GNUC__ == 2 && __GNUC_MINOR__ <= 96
+ 
+ // Resolve the ambiguity between our op!= and the one in rel_ops
+ 
+--- boost/ratio/config.hpp
++++ boost/ratio/config.hpp
+@@ -13,7 +13,7 @@
+ #include <boost/cstdint.hpp>
+ 
+ 
+-#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 5) || !defined(__GXX_EXPERIMENTAL_CXX0X__)
++#if defined __GNUC__ && (__GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 5) || !defined(__GXX_EXPERIMENTAL_CXX0X__))
+ #  if ! defined BOOST_NO_CXX11_U16STRING
+ #    define BOOST_NO_CXX11_U16STRING
+ #  endif
+
+# workdir/UnpackedTarball/boost/libs/thread/src/win32/thread.cpp(1006,36) :  error: dllimport cannot be applied to non-inline function definition
+#     BOOST_THREAD_DECL void __cdecl on_process_enter()
+#                                    ^
+--- boost/thread/detail/config.hpp
++++ boost/thread/detail/config.hpp
+@@ -396,7 +396,7 @@
+ #else //Use default
+ #   if defined(BOOST_THREAD_PLATFORM_WIN32)
+ #       if defined(BOOST_MSVC) || defined(BOOST_INTEL_WIN) \
+-      || defined(__MINGW32__) || defined(MINGW32) || defined(BOOST_MINGW32)
++      || defined(__MINGW32__) || defined(MINGW32) || defined(BOOST_MINGW32) || defined __clang__
+       //For compilers supporting auto-tss cleanup
+             //with Boost.Threads lib, use Boost.Threads lib
+ #           define BOOST_THREAD_USE_LIB
+--- boost/throw_exception.hpp
++++ boost/throw_exception.hpp
+@@ -1,6 +1,6 @@
+ #ifndef UUID_AA15E74A856F11E08B8D93F24824019B
+ #define UUID_AA15E74A856F11E08B8D93F24824019B
+-#if (__GNUC__*100+__GNUC_MINOR__>301) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
++#if defined __GUNC__ && (__GNUC__*100+__GNUC_MINOR__>301) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
+ #pragma GCC system_header
+ #endif
+ #if defined(_MSC_VER) && !defined(BOOST_EXCEPTION_ENABLE_WARNINGS)
+--- boost/type_traits/has_nothrow_assign.hpp
++++ boost/type_traits/has_nothrow_assign.hpp
+@@ -24,7 +24,7 @@
+ #include <boost/type_traits/remove_reference.hpp>
+ #endif
+ #endif
+-#if defined(__GNUC__) || defined(__SUNPRO_CC)
++#if defined(__GNUC__) || defined(__SUNPRO_CC) || defined __clang__
+ #include <boost/type_traits/is_const.hpp>
+ #include <boost/type_traits/is_volatile.hpp>
+ #include <boost/type_traits/is_assignable.hpp>
+--- boost/type_traits/has_nothrow_constructor.hpp
++++ boost/type_traits/has_nothrow_constructor.hpp
+@@ -17,7 +17,7 @@
+ #if defined(BOOST_MSVC) || defined(BOOST_INTEL)
+ #include <boost/type_traits/has_trivial_constructor.hpp>
+ #endif
+-#if defined(__GNUC__ ) || defined(__SUNPRO_CC)
++#if defined(__GNUC__ ) || defined(__SUNPRO_CC) || defined __clang__
+ #include <boost/type_traits/is_default_constructible.hpp>
+ #endif
+ 
+--- boost/type_traits/has_trivial_destructor.hpp
++++ boost/type_traits/has_trivial_destructor.hpp
+@@ -21,7 +21,7 @@
+ #include <boost/type_traits/is_same.hpp>
+ #endif
+ 
+-#if defined(__GNUC__) || defined(__clang) || defined(__SUNPRO_CC)
++#if defined(__GNUC__) || defined(__clang__) || defined(__SUNPRO_CC)
+ #include <boost/type_traits/is_destructible.hpp>
+ #endif
+ 
+--- boost/typeof/typeof.hpp
++++ boost/typeof/typeof.hpp
+@@ -49,7 +49,7 @@
+ #       endif
+ #   endif
+ 
+-#elif defined(__GNUC__)
++#elif defined(__GNUC__) || defined __clang__
+ #   ifndef BOOST_TYPEOF_EMULATION
+ #       ifndef BOOST_TYPEOF_NATIVE
+ #           define BOOST_TYPEOF_NATIVE

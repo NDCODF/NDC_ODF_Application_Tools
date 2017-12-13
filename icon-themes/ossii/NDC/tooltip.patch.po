@@ -1,0 +1,13 @@
+diff --git a/source/zh-TW/scp2/source/ooo.po b/source/zh-TW/scp2/source/ooo.po
+index 69dee821e51..f267ef3ec7f 100644
+--- a/source/zh-TW/scp2/source/ooo.po
++++ b/source/zh-TW/scp2/source/ooo.po
+@@ -38,7 +38,7 @@ msgctxt ""
+ "STR_FI_TOOLTIP_SOFFICE\n"
+ "LngText.text"
+ msgid "LibreOffice, the office productivity suite provided by The Document Foundation. See http://www.documentfoundation.org"
+-msgstr "LibreOffice，由文件基金會提供的辦公生產力套裝軟體。請見 http://www.documentfoundation.org"
++msgstr "%PRODUCTNAME"
+ 
+ #: module_helppack.ulf
+ msgctxt ""

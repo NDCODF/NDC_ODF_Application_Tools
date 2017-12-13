@@ -1,0 +1,266 @@
+/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+#include <cuires.hrc>
+#include "cfg.hrc"
+#include "helpid.hrc"
+
+#define TEXT_RENAME \
+    Text [ en-US ] = "Rename..." ;\
+
+#define TEXT_DELETE_NODOTS \
+    Text [ en-US ] = "Delete" ;\
+
+Menu MODIFY_TOOLBAR
+{
+    ItemList =
+    {
+        MenuItem
+        {
+            Identifier = ID_RENAME ;
+            TEXT_RENAME
+        };
+        MenuItem
+        {
+            Identifier = ID_DELETE ;
+            TEXT_DELETE_NODOTS
+        };
+        MenuItem
+        {
+            Separator = TRUE ;
+        };
+        MenuItem
+        {
+            Identifier = ID_DEFAULT_STYLE ;
+            Text [ en-US ] = "Restore Default Settings" ;
+        };
+        MenuItem
+        {
+            Separator = TRUE ;
+        };
+        MenuItem
+        {
+            Identifier = ID_ICONS_ONLY ;
+            RadioCheck = TRUE ;
+            AutoCheck = TRUE ;
+            Text [ en-US ] = "Icons Only" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_TEXT_ONLY ;
+            RadioCheck = TRUE ;
+            AutoCheck = TRUE ;
+            Text [ en-US ] = "Text only" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_ICONS_AND_TEXT ;
+            RadioCheck = TRUE ;
+            AutoCheck = TRUE ;
+            Text [ en-US ] = "Icons & Text" ;
+        };
+    };
+};
+
+Menu MODIFY_TOOLBAR_CONTENT
+{
+    ItemList =
+    {
+        MenuItem
+        {
+            Identifier = ID_RENAME ;
+            TEXT_RENAME
+        };
+        MenuItem
+        {
+            Identifier = ID_DELETE ;
+            TEXT_DELETE_NODOTS
+        };
+        MenuItem
+        {
+            Identifier = ID_DEFAULT_COMMAND ;
+            Text [ en-US ] = "Restore Default Command" ;
+        };
+        MenuItem
+        {
+            Separator = TRUE ;
+        };
+        MenuItem
+        {
+            Identifier = ID_BEGIN_GROUP ;
+            Text [ en-US ] = "Add Separator" ;
+        };
+        MenuItem
+        {
+            Separator = TRUE ;
+        };
+        MenuItem
+        {
+            Identifier = ID_CHANGE_SYMBOL ;
+            Text [ en-US ] = "Change Icon..." ;
+        };
+        MenuItem
+        {
+            Identifier = ID_RESET_SYMBOL ;
+            Text [ en-US ] = "Reset Icon" ;
+        };
+    };
+};
+
+/* %n will be replaced at runtime by a number starting with 1 and increasing as necessary */
+String RID_SVXSTR_NEW_MENU
+{
+    Text [ en-US ] = "New Menu %n";
+};
+
+/* %n will be replaced at runtime by a number starting with 1 and increasing as necessary */
+String RID_SVXSTR_NEW_TOOLBAR
+{
+    Text [ en-US ] = "New Toolbar %n";
+};
+
+String RID_SVXSTR_MOVE_MENU
+{
+    Text [ en-US ] = "Move Menu";
+};
+
+String RID_SVXSTR_ADD_SUBMENU
+{
+    Text [ en-US ] = "Add Submenu";
+};
+
+String RID_SVXSTR_SUBMENU_NAME
+{
+    Text [ en-US ] = "Submenu name";
+};
+
+String RID_SVXSTR_MENU_ADDCOMMANDS_DESCRIPTION
+{
+    Text [ en-US ] = "To add a command to a menu, select the category and then the command. You can also drag the command to the Commands list of the Menus tab page in the Customize dialog.";
+};
+
+#ifndef IMAGE_STDBTN_COLOR
+#define IMAGE_STDBTN_COLOR Color { Red = 0xFFFF; Green = 0x0000; Blue = 0xFFFF; }
+#endif
+
+// Strings ---------------------------------------------------------------
+String RID_SVXSTR_IMPORT_ICON_ERROR
+{
+    Text [ en-US ] = "The files listed below could not be imported. The file format could not be interpreted." ;
+};
+
+String RID_SVXSTR_DELETE_ICON_CONFIRM  //added for issue73355
+{
+    Text [ en-US ] = "Are you sure to delete the image?" ;
+};
+
+String RID_SVXSTR_REPLACE_ICON_WARNING  //added for issue73355
+{
+    Text [ en-US ] = "The icon %ICONNAME is already contained in the image list.\nWould you like to replace the existing icon?";
+};
+
+String RID_SVXSTR_REPLACE_ICON_CONFIRM //added for issue73355
+{
+    Text [ en-US ] = "Confirm Icon Replacement";
+};
+
+String RID_SVXSTR_YESTOALL //added for issue73355
+{
+    Text [ en-US ] = "Yes to All";
+};
+
+String RID_SVXSTR_PRODUCTNAME_TOOLBARS
+{
+    Text [ en-US ] = "%PRODUCTNAME %MODULENAME Toolbars" ;
+};
+
+String RID_SVXSTR_PRODUCTNAME_CONTEXTMENUS
+{
+    Text [ en-US ] = "%PRODUCTNAME %MODULENAME Context Menus" ;
+};
+
+String RID_SVXSTR_TOOLBAR
+{
+    Text [ en-US ] = "Toolbar" ;
+};
+
+String RID_SVXSTR_TOOLBAR_CONTENT
+{
+    Text [ en-US ] = "Toolbar Content" ;
+};
+
+String RID_SVXSTR_COMMANDS
+{
+    Text [ en-US ] = "Commands" ;
+};
+
+String RID_SVXSTR_COMMAND
+{
+    Text [ en-US ] = "Command" ;
+};
+
+String RID_SVXSTR_TOOLBAR_NAME
+{
+    Text [ en-US ] = "Toolbar Name" ;
+};
+
+String RID_SXVSTR_CONFIRM_DELETE_TOOLBAR
+{
+    Text [ en-US ] = "There are no more commands on the toolbar. Do you want to delete the toolbar?";
+};
+
+/* Translators: Do not translate %SAVE IN SELECTION% It is a placeholder
+   and will be replaced at runtime by the name of the selected application
+   or document.
+*/
+String RID_SVXSTR_CONFIRM_MENU_RESET
+{
+    Text [ en-US ] = "The menu configuration for %SAVE IN SELECTION% will be reset to the default settings. Do you want to continue?";
+};
+
+String RID_SVXSTR_CONFIRM_TOOLBAR_RESET
+{
+    Text [ en-US ] = "The toolbar configuration for %SAVE IN SELECTION% will be reset to the default settings. Do you want to continue?";
+};
+
+String RID_SVXSTR_CONFIRM_RESTORE_DEFAULT
+{
+    Text [ en-US ] = "This will delete all changes previously made to this toolbar. Do you really want to reset the toolbar?";
+};
+
+String RID_SVXSTR_MNUCFG_ALREADY_INCLUDED
+{
+    Text [ en-US ] = "Function is already included in this popup." ;
+};
+
+String RID_SVXSTR_LABEL_NEW_NAME
+{
+    Text [ en-US ] = "~New name";
+};
+
+String RID_SVXSTR_RENAME_MENU
+{
+    Text [ en-US ] = "Rename Menu";
+};
+
+String RID_SVXSTR_RENAME_TOOLBAR
+{
+    Text [ en-US ] = "Rename Toolbar";
+};
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */

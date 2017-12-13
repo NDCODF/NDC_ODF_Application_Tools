@@ -1,0 +1,42 @@
+From 96cccaa8a3553c2e026d69e522cb312e08e967e8 Mon Sep 17 00:00:00 2001
+From: AlanTom <alan.tang@ossii.com.tw>
+Date: Tue, 14 Nov 2017 11:54:59 +0800
+Subject: [PATCH] NDC: patch file add: 0013: writer : use NDC ODF default
+ Template for windows
+
+Change-Id: I1f230b67870f626632a254e1e44daf5902edb8d0
+---
+ scp2/source/ooo/file_extra_ooo.scp | 7 +++++++
+ scp2/source/ooo/module_ooo.scp     | 1 +
+ 2 files changed, 8 insertions(+)
+
+diff --git a/scp2/source/ooo/file_extra_ooo.scp b/scp2/source/ooo/file_extra_ooo.scp
+index 11c6ffa..a76e6a2 100644
+--- a/scp2/source/ooo/file_extra_ooo.scp
++++ b/scp2/source/ooo/file_extra_ooo.scp
+@@ -281,3 +281,10 @@ File gid_File_Extra_Wordbook_sl
+     Styles = (PACKED, FORCELANGUAGEPACK);
+     Name = "sl.dic";
+ End
++
++File gid_File_Extra_Tplndcodf
++    Dir = FILELIST_DIR;
++    TXT_FILE_BODY;
++    Styles = (FILELIST);
++    Name = "extras_tplndcodf.filelist";
++End
+diff --git a/scp2/source/ooo/module_ooo.scp b/scp2/source/ooo/module_ooo.scp
+index 35fd16c..2b88af2 100644
+--- a/scp2/source/ooo/module_ooo.scp
++++ b/scp2/source/ooo/module_ooo.scp
+@@ -81,6 +81,7 @@ Module gid_Module_Root
+              gid_File_Extra_Tplpersonal,
+              gid_File_Extra_Tplwizbitmap,
+              gid_File_Extra_Tplwizletter,
++             gid_File_Extra_Tplndcodf,
+              gid_File_Basic_Form,
+              gid_File_Extra_Cfgsrv,
+              gid_File_sd_web,
+-- 
+2.7.4
+

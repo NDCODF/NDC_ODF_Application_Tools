@@ -1,0 +1,106 @@
+/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+
+#include <svtools/svtools.hrc>
+#include "fileview.hrc"
+#include <svtools/helpid.hrc>
+
+// strings --------------------------------------------------------------------
+
+String STR_SVT_FILEVIEW_COLUMN_TITLE
+{
+    Text [ en-US ] = "Name";
+};
+
+String STR_SVT_FILEVIEW_COLUMN_SIZE
+{
+    Text [ en-US ] = "Size";
+};
+
+String STR_SVT_FILEVIEW_COLUMN_DATE
+{
+    Text [ en-US ] = "Date modified";
+};
+
+String STR_SVT_FILEVIEW_COLUMN_TYPE
+{
+    Text [ en-US ] = "Type";
+};
+
+String STR_SVT_FILEVIEW_ERR_MAKEFOLDER
+{
+    Text [ en-US ] = "Could not create the folder %1.";
+};
+
+String STR_SVT_BYTES
+{
+    Text [ en-US ] = "Bytes" ;
+};
+
+String STR_SVT_KB
+{
+    Text [ en-US ] = "KB" ;
+};
+
+String STR_SVT_MB
+{
+    Text [ en-US ] = "MB" ;
+};
+
+String STR_SVT_GB
+{
+    Text [ en-US ] = "GB" ;
+};
+
+// Images ---------------------------------------------------------------------
+
+Image IMG_SVT_FOLDER
+{
+    ImageBitmap = Bitmap { File = "folder.png" ; };
+    MaskColor = Color { Red = 0xFFFF ; Green = 0x0000 ; Blue = 0xFFFF ; };
+};
+
+Image IMG_SVT_FOLDER_OPEN
+{
+    ImageBitmap = Bitmap { File = "folderop.png" ; };
+    MaskColor = Color { Red = 0xFFFF ; Green = 0x0000 ; Blue = 0xFFFF ; };
+};
+
+// Menus -----------------------------------------------------------------
+
+Menu RID_FILEVIEW_CONTEXTMENU
+{
+    ItemList =
+    {
+        MenuItem
+        {
+            Identifier = MID_FILEVIEW_DELETE ;
+            HelpId = HID_FILEVIEW_MENU_DELETE ;
+            Text [ en-US ] = "~Delete";
+        };
+        MenuItem
+        {
+            Identifier = MID_FILEVIEW_RENAME ;
+            HelpId = HID_FILEVIEW_MENU_RENAME ;
+            Text [ en-US ] = "~Rename";
+        };
+    };
+};
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */

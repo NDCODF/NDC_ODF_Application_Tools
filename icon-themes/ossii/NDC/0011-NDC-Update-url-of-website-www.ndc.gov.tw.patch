@@ -1,0 +1,39 @@
+From b14d99ff522116879ce9b6d9f8d83231b8238243 Mon Sep 17 00:00:00 2001
+From: Wind <yc.yan@ossii.com.tw>
+Date: Wed, 8 Nov 2017 16:15:46 +0800
+Subject: [PATCH] NDC: Update url of website: www.ndc.gov.tw
+
+Change-Id: I5889c48a381213a5aa01ac15c9785b4ba08bcc53
+---
+ cui/source/dialogs/about.cxx         | 1 -
+ postprocess/CustomTarget_registry.mk | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/cui/source/dialogs/about.cxx b/cui/source/dialogs/about.cxx
+index de6b4dc..136dce2 100644
+--- a/cui/source/dialogs/about.cxx
++++ b/cui/source/dialogs/about.cxx
+@@ -117,7 +117,6 @@ IMPL_LINK_TYPED( AboutDialog, HandleClick, Button*, pButton, void )
+     else if (pButton == m_pWebsiteButton)
+     {
+         sURL = officecfg::Office::Common::Help::StartCenter::InfoURL::get();
+-        localizeWebserviceURI(sURL);
+     }
+ 
+     // If the URL is empty, don't do anything
+diff --git a/postprocess/CustomTarget_registry.mk b/postprocess/CustomTarget_registry.mk
+index d6fab99..14a2cd1 100644
+--- a/postprocess/CustomTarget_registry.mk
++++ b/postprocess/CustomTarget_registry.mk
+@@ -543,7 +543,7 @@ postprocess_main_SED := \
+ 	-e 's,$${PRODUCTVERSION},$(PRODUCTVERSION),g' \
+ 	-e 's,$${PRODUCTEXTENSION},,g' \
+ 	-e 's,$${STARTCENTER_ADDFEATURE_URL},http://extensions.libreoffice.org/,g' \
+-	-e 's,$${STARTCENTER_INFO_URL},http://www.openoffice.com.tw/,g' \
++	-e 's,$${STARTCENTER_INFO_URL},http://www.ndc.gov.tw/,g' \
+ 	-e 's,$${STARTCENTER_HIDE_EXTERNAL_LINKS},0,g' \
+ 	-e 's,$${STARTCENTER_TEMPLREP_URL},http://templates.libreoffice.org/,g' \
+ 	-e 's,$${SYSTEM_LIBEXTTEXTCAT_DATA},$(SYSTEM_LIBEXTTEXTCAT_DATA),g' \
+-- 
+2.7.0
+

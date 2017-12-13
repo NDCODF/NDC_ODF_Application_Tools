@@ -1,0 +1,297 @@
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+
+#include "macros.inc"
+
+
+Module gid_Module_Optional_Extensions
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS);
+    ParentID = gid_Module_Optional;
+    Files = ( );
+    Default = YES;
+    Styles = ( );
+End
+
+/* *** Additional Extensions *** */
+
+#ifdef WITH_EXTENSION_INTEGRATION
+
+/* ** MediaWiki Publisher** */
+
+#ifndef WITHOUT_EXTENSION_MEDIAWIKI
+Module gid_Module_Optional_Extensions_MEDIAWIKI
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_MEDIAWIKI);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_MediaWiki );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Numbertext ** */
+
+#ifdef WITH_EXTENSION_NUMBERTEXT
+
+#include "AutoInstall/extensions_numbertext"
+
+Module gid_Module_Optional_Extensions_NumberText
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_NUMBERTEXT);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (auto_extensions_numbertext_ALL);
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Hungarian Cross-reference Toolbar ** */
+
+#ifdef WITH_EXTENSION_HUNART
+Module gid_Module_Optional_Extensions_HunArt
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_HUNART);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_HunArt );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Typography Toolbar ** */
+
+#ifdef WITH_EXTENSION_TYPO
+Module gid_Module_Optional_Extensions_Typo
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_TYPO);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_Typo );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** ConvertTextToNumber ** */
+
+#ifdef WITH_EXTENSION_CT2N
+
+#include "AutoInstall/extensions_ct2n"
+
+Module gid_Module_Optional_Extensions_CT2N
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_CT2N);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (auto_extensions_ct2n_ALL);
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** OSSIIMenus ** */
+
+#ifdef WITH_EXTENSION_OSIMNU
+Module gid_Module_Optional_Extensions_OSIMNU
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_OSIMNU);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_OSIMNU );
+    Minimal = NO;
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** OSSIIConverter ** */
+
+#ifdef WITH_EXTENSION_OSICONV
+Module gid_Module_Optional_Extensions_OSICONV
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_OSICONV);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_OSICONV );
+    Minimal = NO;
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Watch Window ** */
+
+#ifdef WITH_EXTENSION_WATCH_WINDOW
+Module gid_Module_Optional_Extensions_Watch_Window
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_WATCH_WINDOW);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_Watch_Window );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Diagram ** */
+
+#ifdef WITH_EXTENSION_DIAGRAM
+Module gid_Module_Optional_Extensions_Diagram
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_DIAGRAM);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_Diagram );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Validator ** */
+
+#ifdef WITH_EXTENSION_VALIDATOR
+Module gid_Module_Optional_Extensions_Validator
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_VALIDATOR);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_Validator );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Barcode ** */
+
+#ifdef WITH_EXTENSION_BARCODE
+Module gid_Module_Optional_Extensions_Barcode
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_BARCODE);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_Barcode );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Google Docs ** */
+
+#ifdef WITH_EXTENSION_GOOGLE_DOCS
+Module gid_Module_Optional_Extensions_Google_Docs
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_GOOGLE_DOCS);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_Google_Docs );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** NLPSolver ** */
+
+#ifdef WITH_EXTENSION_NLPSOLVER
+Module gid_Module_Optional_Extensions_NLPSolver
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_NLPSOLVER);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_NLPSolver );
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** LanguageTool ** */
+
+#ifdef WITH_EXTENSION_LANGUAGETOOL
+Module gid_Module_Optional_Extensions_LanguageTool
+ PackageInfo = "packinfo_extensions.txt";
+ MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_LANGUAGETOOL);
+ ParentID = gid_Module_Optional_Extensions;
+ Files = (
+ gid_File_Oxt_LanguageTool );
+ Default = YES;
+ Styles = ( );
+End
+#endif
+
+/* ** MySQL Connector ** */
+
+#ifdef WITH_EXTENSION_MARIADBC
+Module gid_Module_Optional_Extensions_MySQLConnector
+ PackageInfo = "packinfo_extensions.txt";
+ MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_MARIADBC);
+ ParentID = gid_Module_Optional_Extensions;
+ Files = (
+ gid_File_Oxt_MySQLConnector );
+ Default = YES;
+ Styles = ( );
+End
+#endif
+
+/* ** Sun Template Pack ** */
+
+#ifdef WITH_EXTENSION_SUN_TEMPLATE_PACK
+Module gid_Module_Optional_Extensions_Sun_Template_Pack
+    ParentID = gid_Module_Optional_Extensions;
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_SUN_TEMPLATE_PACK);
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
+/* ** Script provider for BeanShell ** */
+
+#if defined ENABLE_JAVA && !defined WITHOUT_SCRIPTING_BEANSHELL
+
+#include "AutoInstall/extensions_bsh"
+
+Module gid_Module_Optional_Extensions_Script_Provider_For_BS
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_SCRIPT_PROVIDER_FOR_BEANSHELL);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (auto_extensions_bsh_ALL,
+        gid_File_Rdb_Scriptproviderforbeanshell );
+    Default = YES;
+    Styles = ( );
+End
+
+#endif
+
+/* ** Script provider for JavaScript ** */
+
+#if defined ENABLE_JAVA && !defined WITHOUT_SCRIPTING_JAVASCRIPT
+
+#include "AutoInstall/extensions_rhino"
+
+Module gid_Module_Optional_Extensions_Script_Provider_For_JS
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_SCRIPT_PROVIDER_FOR_JAVASCRIPT);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (auto_extensions_rhino_ALL,
+        gid_File_Rdb_Scriptproviderforjavascript );
+    Default = YES;
+    Styles = ( );
+End
+
+#endif
+
+#endif

@@ -1,0 +1,44 @@
+From f2ccbde2696fd4fbc7926d0c3f6cfde943872212 Mon Sep 17 00:00:00 2001
+From: Wind <yc.yan@ossii.com.tw>
+Date: Wed, 28 Jun 2017 09:47:26 +0800
+Subject: [PATCH 3/3] Revert "sfx2: change url of start help page to
+ openoffice.com.tw"
+
+This reverts commit 8168dc53366d572dd3aa9a95ebb2163e2feb6060.
+---
+ sfx2/source/appl/appserv.cxx | 13 -------------
+ 1 file changed, 13 deletions(-)
+
+diff --git a/sfx2/source/appl/appserv.cxx b/sfx2/source/appl/appserv.cxx
+index 4ccee05..24eda7c 100644
+--- a/sfx2/source/appl/appserv.cxx
++++ b/sfx2/source/appl/appserv.cxx
+@@ -467,25 +467,12 @@ void SfxApplication::MiscExec_Impl( SfxRequest& rReq )
+         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+         case SID_HELPINDEX:
+         {
+-#if 0
+             Help* pHelp = Application::GetHelp();
+             if ( pHelp )
+             {
+                 pHelp->Start( ".uno:HelpIndex", nullptr ); // show start page
+                 bDone = true;
+             }
+-#else
+-            OUString sURL("http://www.openoffice.com.tw/aboutoxoffice.php");
+-            try
+-            {
+-                uno::Reference< com::sun::star::system::XSystemShellExecute > xSystemShellExecute(
+-                    com::sun::star::system::SystemShellExecute::create(::comphelper::getProcessComponentContext()) );
+-                xSystemShellExecute->execute( sURL, OUString(), com::sun::star::system::SystemShellExecuteFlags::URIS_ONLY );
+-            }
+-            catch ( uno::Exception& )
+-            {
+-            }
+-#endif
+             break;
+         }
+ 
+-- 
+2.7.0
+

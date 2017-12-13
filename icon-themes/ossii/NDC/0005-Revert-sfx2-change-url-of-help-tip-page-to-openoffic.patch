@@ -1,0 +1,27 @@
+From 421333d6acfc4282ca339c0ece86d2abbf9b6eb1 Mon Sep 17 00:00:00 2001
+From: Wind <yc.yan@ossii.com.tw>
+Date: Wed, 28 Jun 2017 09:46:00 +0800
+Subject: [PATCH 2/3] Revert "sfx2: change url of help-tip page to
+ openoffice.com.tw"
+
+This reverts commit 16611e4941cbba426cad80b2cd2e554f1aec20a7.
+---
+ sfx2/source/appl/sfxhelp.cxx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sfx2/source/appl/sfxhelp.cxx b/sfx2/source/appl/sfxhelp.cxx
+index ff36cba..9b46a53 100644
+--- a/sfx2/source/appl/sfxhelp.cxx
++++ b/sfx2/source/appl/sfxhelp.cxx
+@@ -518,7 +518,7 @@ static bool impl_showOnlineHelp( const OUString& rURL )
+     if ( rURL.getLength() <= aInternal.getLength() || !rURL.startsWith(aInternal) )
+         return false;
+ 
+-    OUString aHelpLink( "http://www.openoffice.com.tw/?"  );
++    OUString aHelpLink( "http://help.libreoffice.org/"  );
+     aHelpLink += rURL.copy( aInternal.getLength() );
+     aHelpLink = aHelpLink.replaceAll("%2F","/");
+     try
+-- 
+2.7.0
+

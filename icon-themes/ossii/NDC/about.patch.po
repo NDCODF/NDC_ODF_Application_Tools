@@ -1,0 +1,15 @@
+diff --git a/source/zh-TW/cui/uiconfig/ui.po b/source/zh-TW/cui/uiconfig/ui.po
+index 20a37a5..bf7925a 100644
+--- a/source/zh-TW/cui/uiconfig/ui.po
++++ b/source/zh-TW/cui/uiconfig/ui.po
+@@ -177,8 +177,8 @@ msgctxt ""
+ "string.text"
+ msgid "%PRODUCTNAME is a modern, easy-to-use, open source productivity suite for word processing, spreadsheets, presentations and more."
+ msgstr ""
+-"%PRODUCTNAME 是款適用於亞洲語系環境、企業應用，\n"
+-"並具備商業服務支援的辦公室生產力套件軟體。"
++"本軟體是一套開放文件格式(ODF)應用工具組合，\n"
++"用以協助單位人員產出符合基礎開放文件格式(ODF)之應用軟體套件。"
+ 
+ #: aboutdialog.ui
+ msgctxt ""

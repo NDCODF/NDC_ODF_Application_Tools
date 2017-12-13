@@ -1,0 +1,97 @@
+From 397a0b289d13cb7e46ada8c518503eefc2a04bc4 Mon Sep 17 00:00:00 2001
+From: Wind <yc.yan@ossii.com.tw>
+Date: Thu, 1 Jun 2017 12:36:25 +0800
+Subject: [PATCH] =?UTF-8?q?PRODUCT=20CODES=20for=20=E5=9C=8B=E7=99=BC?=
+ =?UTF-8?q?=E6=9C=83?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Change-Id: I5c00a92f1f247c288d037fad548520138e598770
+---
+ instsetoo_native/inc_ooohelppack/windows/msi_templates/codes.txt  | 8 ++++----
+ .../inc_ooohelppack/windows/msi_templates/ooo_patchcodes.txt      | 2 +-
+ instsetoo_native/inc_openoffice/windows/msi_templates/codes.txt   | 8 ++++----
+ 3 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/instsetoo_native/inc_ooohelppack/windows/msi_templates/codes.txt b/instsetoo_native/inc_ooohelppack/windows/msi_templates/codes.txt
+index ed072ed..acf4a33 100644
+--- a/instsetoo_native/inc_ooohelppack/windows/msi_templates/codes.txt
++++ b/instsetoo_native/inc_ooohelppack/windows/msi_templates/codes.txt
+@@ -17,7 +17,7 @@
+ #
+ 
+ [PRODUCTCODE]
+-en-US = "{0F961BE5-98E8-408E-9F74-23CBA0523922}"
++en-US = "{c2aba7bf-c8a5-49f4-8a7f-6ad92268dfbe}"
+ pt = "{2C127D50-B7E4-46C3-A845-CF6684481024}"
+ ru = "{8B523028-4AAC-4607-9711-667AA6C37D45}"
+ el = "{F980E77E-21FD-40B8-BE66-8BC60284D24B}"
+@@ -42,13 +42,13 @@ et = "{956362F1-C89B-4008-B15F-968BD4023F3F}"
+ ja = "{01C118C0-57AB-4745-8D4C-5A34E6677E8D}"
+ ko = "{B0DEE1A7-88FC-423B-AA1F-F51D94D02996}"
+ zh-CN = "{0C596167-BA94-4D5A-B63B-6566FE06259A}"
+-zh-TW = "{C31C87A1-5918-4178-8696-DDD36EDAEE99}"
++zh-TW = "{db2f768c-5ca6-4e96-bb42-a47dbc0b175f}"
+ tr = "{467D9E65-2614-4D19-B40F-0B12FE6E472F}"
+ hi = "{61B2E7EA-DC12-4A51-B152-2B95A4FC2ABF}"
+ ar = "{FF72555B-A96D-49F8-8998-9359E9F9F7E1}"
+ he = "{F59C6731-12DA-4A46-BE6D-30934E7CD763}"
+ multiwestern = "{FA30E08E-DD61-4E47-B3D6-51B2814CA881}"
+-multiasia = "{222033CB-A588-4302-9942-311F160B63B1}"
++multiasia = "{6956b63a-fe0e-4c95-9a45-6b97a8e06c1b}"
+ 
+ [UPGRADECODE]
+ af = "{07F4C39E-72F9-495A-A8DE-8B3691607EA7}"
+@@ -73,7 +73,7 @@ dgo = "{43E5D518-02EA-4C82-AAB5-98954C12109A}"
+ dz = "{0E79A6B5-D088-4670-ACDF-E0081C9ABFAE}"
+ el = "{1E5DDBF3-B05A-4E78-A496-332C8193F4C8}"
+ en-GB = "{3EBBFCD8-8009-4D31-AA5E-C1BED7B17A61}"
+-en-US = "{40C2DB8E-E9D6-4451-BE31-DAD1343EC3DF}"
++en-US = "{47de8145-2a11-4851-80a0-c0017d166b63}"
+ en-ZA = "{764FA135-A8CE-4C79-A5D7-0B413CC9E911}"
+ eo = "{1955D5A5-375E-410F-B84F-9FDB4E6A05E5}"
+ es = "{4F776850-4235-4E93-847F-C657E04A35AB}"
+diff --git a/instsetoo_native/inc_ooohelppack/windows/msi_templates/ooo_patchcodes.txt b/instsetoo_native/inc_ooohelppack/windows/msi_templates/ooo_patchcodes.txt
+index e65b073..ecab727 100644
+--- a/instsetoo_native/inc_ooohelppack/windows/msi_templates/ooo_patchcodes.txt
++++ b/instsetoo_native/inc_ooohelppack/windows/msi_templates/ooo_patchcodes.txt
+@@ -18,4 +18,4 @@
+ 
+ # OpenOffice 2 UpgradeCodes
+ 
+-{9094905f-3fd6-4466-9e54-0bb02e05b744}	# OOo UpgradeCode
++{47de8145-2a11-4851-80a0-c0017d166b63}  # OOo UpgradeCode
+diff --git a/instsetoo_native/inc_openoffice/windows/msi_templates/codes.txt b/instsetoo_native/inc_openoffice/windows/msi_templates/codes.txt
+index 90741b2..e76305d 100644
+--- a/instsetoo_native/inc_openoffice/windows/msi_templates/codes.txt
++++ b/instsetoo_native/inc_openoffice/windows/msi_templates/codes.txt
+@@ -17,7 +17,7 @@
+ #
+ 
+ [PRODUCTCODE]
+-en-US = "{aaff0cd7-677d-4d88-83bf-9480ae5b44fb}"
++en-US = "{c2aba7bf-c8a5-49f4-8a7f-6ad92268dfbe}"
+ pt = "{C3E6BC6A-034D-490D-866E-AFCAE0F4595F}"
+ ru = "{2AE6A570-1393-4D9D-B044-D3067FC28769}"
+ el = "{C61808D3-AE08-4EAA-9427-8B1E71B66973}"
+@@ -43,13 +43,13 @@ km = "{062A1AD1-05AD-4D46-872B-B0ADA08DC3FC}"
+ ja = "{1FBD7128-5220-4F02-B94D-40AA38A63A16}"
+ ko = "{B5B62297-3658-4C79-A3E3-CD714250DE0C}"
+ zh-CN = "{12ed38bb-fcf8-46da-a042-b418a1e9e58e}"
+-zh-TW = "{7cbd866e-a96a-48ad-bd02-1d02ae58dbd6}"
++zh-TW = "{db2f768c-5ca6-4e96-bb42-a47dbc0b175f}"
+ tr = "{F8FB0DCF-96C0-4C03-B748-951C679FD7C6}"
+ hi = "{CA5E7AB5-DA2A-4F3B-8728-E97164034DD6}"
+ ar = "{19F11268-068A-488F-B139-848ACA080B94}"
+ he = "{CDF16F28-D75D-4BE8-AF81-EB85825DA252}"
+ multiwestern = "{0DECDE88-DD1C-4E9F-8348-19C5BC6FDF26}"
+-multiasia = "{5e5f96c6-8a66-4312-8047-d3ea291ec350}"
++multiasia = "{6956b63a-fe0e-4c95-9a45-6b97a8e06c1b}"
+ 
+ [UPGRADECODE]
+-en-US = "{9094905f-3fd6-4466-9e54-0bb02e05b744}"
++en-US = "{47de8145-2a11-4851-80a0-c0017d166b63}"
+-- 
+2.7.0
+

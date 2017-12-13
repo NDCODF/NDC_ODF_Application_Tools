@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LibreOfficeTheme" parent="LibreOfficeTheme.Base"/>
+
+    <style name="LibreOfficeTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="BrowserTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <style name="ListItemText">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="LibreOfficeTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolbar_background</item>
+    </style>
+
+</resources>

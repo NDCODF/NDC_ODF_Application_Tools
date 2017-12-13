@@ -1,0 +1,50 @@
+diff -ru python3.orig/Modules/_ctypes/libffi/src/x86/ffi64.c python3/Modules/_ctypes/libffi/src/x86/ffi64.c
+--- Modules/_ctypes/libffi/src/x86/ffi64.c	2015-07-05 18:50:07.000000000 +0200
++++ Modules/_ctypes/libffi/src/x86/ffi64.c	2015-07-26 20:18:56.457153323 +0200
+@@ -548,11 +548,15 @@
+   tramp = (volatile unsigned short *) &closure->tramp[0];
+ 
+   tramp[0] = 0xbb49;		/* mov <code>, %r11	*/
+-  *((unsigned long long * volatile) &tramp[1])
+-    = (unsigned long) ffi_closure_unix64;
++  tramp[1] = (unsigned long) ffi_closure_unix64;
++  tramp[2] = ((unsigned long) ffi_closure_unix64) >> 16;
++  tramp[3] = ((unsigned long) ffi_closure_unix64) >> 32;
++  tramp[4] = ((unsigned long) ffi_closure_unix64) >> 48;
+   tramp[5] = 0xba49;		/* mov <data>, %r10	*/
+-  *((unsigned long long * volatile) &tramp[6])
+-    = (unsigned long) codeloc;
++  tramp[6] = (unsigned long) codeloc;
++  tramp[7] = ((unsigned long) codeloc) >> 16;
++  tramp[8] = ((unsigned long) codeloc) >> 32;
++  tramp[9] = ((unsigned long) codeloc) >> 48;
+ 
+   /* Set the carry bit iff the function uses any sse registers.
+      This is clc or stc, together with the first byte of the jmp.  */
+diff -ru python3.orig/Objects/listobject.c python3/Objects/listobject.c
+--- Objects/listobject.c	2015-07-05 18:50:08.000000000 +0200
++++ Objects/listobject.c	2015-07-26 20:22:30.539167695 +0200
+@@ -641,7 +641,7 @@
+             goto Error;
+         }
+     }
+-    memcpy(recycle, &item[ilow], s);
++    if (s != 0) memcpy(recycle, &item[ilow], s);
+ 
+     if (d < 0) { /* Delete -d items */
+         Py_ssize_t tail;
+--- Modules/_ctypes/_ctypes.c
++++ Modules/_ctypes/_ctypes.c
+@@ -1358,8 +1358,10 @@
+         goto error;
+     }
+     stgdict->shape[0] = length;
+-    memmove(&stgdict->shape[1], itemdict->shape,
+-        sizeof(Py_ssize_t) * (stgdict->ndim - 1));
++    if (itemdict->shape) {
++        memmove(&stgdict->shape[1], itemdict->shape,
++            sizeof(Py_ssize_t) * (stgdict->ndim - 1));
++    }
+ 
+     itemsize = itemdict->size;
+     if (length * itemsize < 0) {

@@ -1,0 +1,101 @@
+# -*- Mode: Diff -*-
+--- firebird.org/builds/posix/darwin.defaults
++++ firebird/builds/posix/darwin.defaults
+@@ -32,17 +32,17 @@
+ LINK_EMPTY_SYMBOLS=$(LIB_LINK_MAPFILE)$(ROOT)/builds/posix/empty.darwin.vers
+ LINK_FIREBIRD_SYMBOLS=$(LIB_LINK_MAPFILE)$(ROOT)/builds/posix/firebird.darwin.vers
+ 
+-LIB_LINK_RPATH:=-install_name /Library/Frameworks/Firebird.framework/Versions/A/Libraries/
+-LIB_EMBED_LINK_OPTIONS:=-install_name /Library/Frameworks/Firebird.framework/Versions/A/Firebird
+-LIB_CLIENT_LINK_OPTIONS:=-install_name /Library/Frameworks/Firebird.framework/Versions/A/Firebird
+-FBEMBED_LINK:=-F../gen/firebird -framework Firebird -L$(LIB) -lfbembed $(ICU_LIBS)
++LIB_LINK_RPATH:=
++LIB_EMBED_LINK_OPTIONS:=-install_name @__________________________________________________OOO/libfbembed.dylib
++LIB_CLIENT_LINK_OPTIONS:=
++FBEMBED_LINK:=-L$(LIB) -lfbembed $(ICU_LIBS)
+ PLATFORM_FALLBACK=os/posix
+ 
+-PLAT_CLASSIC_PRE_TARGET=darwin_setup_framework
+-PLAT_CLASSIC_POST_TARGET=darwin_finish_cs_framework
++PLAT_CLASSIC_PRE_TARGET=
++PLAT_CLASSIC_POST_TARGET=
+ 
+-PLAT_SUPER_PRE_TARGET=darwin_setup_framework
+-PLAT_SUPER_POST_TARGET=darwin_finish_ss_framework
++PLAT_SUPER_PRE_TARGET=
++PLAT_SUPER_POST_TRAGET=
+ 
+ PLATFORM_POSTBUILD_TARGET=darwin_postbuild_target
+ 
+diff -ur firebird.org/builds/posix/postfix.darwin firebird/builds/posix/postfix.darwin
+--- firebird.org/builds/posix/postfix.darwin	2013-07-12 20:55:46.000000000 +0200
++++ firebird/builds/posix/postfix.darwin	2013-07-15 12:07:36.000000000 +0200
+@@ -54,9 +54,9 @@
+ 	cp -r ../gen/firebird/include $(FB_FW)/Versions/A/Headers
+ 	cp ../gen/firebird/lib/libfbembed.dylib $(FB_FW)/Versions/A/Firebird
+ 	cp ../gen/firebird/lib/libfbclient.dylib $(FB_FW)/Versions/A/Libraries/libfbclient.dylib
+-	cp ../gen/firebird/lib/libicudata.dylib $(FB_FW)/Versions/A/Libraries/libicudata.dylib
+-	cp ../gen/firebird/lib/libicui18n.dylib $(FB_FW)/Versions/A/Libraries/libicui18n.dylib
+-	cp ../gen/firebird/lib/libicuuc.dylib $(FB_FW)/Versions/A/Libraries/libicuuc.dylib
++	#cp ../gen/firebird/lib/libicudata.dylib $(FB_FW)/Versions/A/Libraries/libicudata.dylib
++	#cp ../gen/firebird/lib/libicui18n.dylib $(FB_FW)/Versions/A/Libraries/libicui18n.dylib
++	#cp ../gen/firebird/lib/libicuuc.dylib $(FB_FW)/Versions/A/Libraries/libicuuc.dylib
+ 	cp ../gen/firebird/lib/libib_util.dylib $(FB_FW)/Versions/A/Libraries/libib_util.dylib
+ 	cp ../gen/firebird/firebird.msg \
+ 			$(FB_FW)/Resources/English.lproj/var/firebird.msg
+@@ -68,8 +68,8 @@
+ 		$(FB_FW)/Resources/English.lproj/var/intl/fbintl.conf
+ 	chmod a+rx $(FB_FW)/Resources/English.lproj/var/intl/fbintl
+ 	mkdir -p $(FB_FW)/Resources/English.lproj/var/plugins
+-	cp ../gen/firebird/plugins/libfbtrace.dylib \
+-		$(FB_FW)/Resources/English.lproj/var/plugins/libfbtrace.dylib
++#	cp ../gen/firebird/plugins/libfbtrace.dylib \
++#		$(FB_FW)/Resources/English.lproj/var/plugins/libfbtrace.dylib
+ 	cp -r ../gen/firebird/help $(FB_FW)/Resources/English.lproj/var/help
+ 	cp ../gen/firebird/security2.fdb $(FB_FW)/Resources/English.lproj/var
+ 	mkdir -p $(FB_FW)/Resources/doc
+--- firebird.org/builds/posix/prefix.darwin_i386
++++ firebird/builds/posix/prefix.darwin_i386
+@@ -24,7 +24,7 @@
+ # 4. for  CFLAGS, CXXFLAGS, LDFLAGS export '-m32 -arch i386'
+ # 5. export MACOSX_DEPLOYMENT_TARGET=10.7
+ 
+-DYLD_LIBRARY_PATH=$(FIREBIRD)/lib
++DYLD_LIBRARY_PATH:=$(FIREBIRD)/lib:$(DYLD_LIBRARY_PATH)
+ export DYLD_LIBRARY_PATH
+ 
+ MACOSX_DEPLOYMENT_TARGET=10.7
+@@ -34,8 +34,8 @@
+ 
+ OS_ServerFiles=inet_server.cpp
+ 
+-PROD_FLAGS=-O1 -DDARWIN -pipe -p -MMD -fPIC -fno-common -arch i386 -mmacosx-version-min=10.7
+-DEV_FLAGS=-ggdb -DDARWIN -pipe -p -MMD -fPIC -fno-common -Wall -arch i386 -mmacosx-version-min=10.7
++PROD_FLAGS=-O1 -DDARWIN -pipe -p -MMD -fPIC -fno-common -arch i386
++DEV_FLAGS=-ggdb -DDARWIN -pipe -p -MMD -fPIC -fno-common -Wall -arch i386
+ CXXFLAGS:=$(CXXFLAGS) -fvisibility-inlines-hidden -fvisibility=hidden
+ EMBED_UTIL_TARGETS=gstat gsec fbguard nbackup fb_lock_print fbsvcmgr fbtracemgr
+ CLIENT_UTIL_TARGETS=gstat gsec fbguard fbmgr_bin nbackup fb_lock_print fbsvcmgr fbtracemgr
+--- firebird.org/builds/posix/prefix.darwin_x86_64
++++ firebird/builds/posix/prefix.darwin_x86_64
+@@ -19,7 +19,7 @@
+ #
+ # Default build from 10.7 using Clang
+ 
+-DYLD_LIBRARY_PATH=$(FIREBIRD)/lib
++DYLD_LIBRARY_PATH:=$(FIREBIRD)/lib:$(DYLD_LIBRARY_PATH)
+ export DYLD_LIBRARY_PATH
+ 
+ MACOSX_DEPLOYMENT_TARGET=10.7
+@@ -27,8 +27,8 @@
+ 
+ OS_ServerFiles=inet_server.cpp
+ 
+-PROD_FLAGS=-O1 -DDARWIN -pipe -MMD -fPIC -fno-common -mmacosx-version-min=10.7
+-DEV_FLAGS=-ggdb -DDARWIN -pipe -MMD -fPIC -fno-common -Wall -mmacosx-version-min=10.7
++PROD_FLAGS=-O1 -DDARWIN -pipe -MMD -fPIC -fno-common
++DEV_FLAGS=-ggdb -DDARWIN -pipe -MMD -fPIC -fno-common -Wall
+ CXXFLAGS:=$(CXXFLAGS) -fvisibility-inlines-hidden -fvisibility=hidden
+ EMBED_UTIL_TARGETS=gstat gsec fbguard nbackup fb_lock_print fbsvcmgr fbtracemgr
+ CLIENT_UTIL_TARGETS=gstat gsec fbguard fbmgr_bin nbackup fb_lock_print fbsvcmgr fbtracemgr 
+

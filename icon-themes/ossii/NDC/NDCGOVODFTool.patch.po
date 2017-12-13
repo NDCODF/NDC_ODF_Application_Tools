@@ -1,0 +1,21 @@
+diff --git a/source/zh-TW/sfx2/source/doc.po b/source/zh-TW/sfx2/source/doc.po
+index d009913..c55e054 100644
+--- a/source/zh-TW/sfx2/source/doc.po
++++ b/source/zh-TW/sfx2/source/doc.po
+@@ -657,6 +657,16 @@ msgstr "商務信函"
+ msgctxt ""
+ "doctempl.src\n"
+ "TEMPLATE_LONG_NAMES_ARY\n"
++"NDCGOVODFTool\n"
++"itemlist.text"
++msgid "NDCGOVODFTool"
++msgstr "全國機關共用範本"
++
++
++#: doctempl.src
++msgctxt ""
++"doctempl.src\n"
++"TEMPLATE_LONG_NAMES_ARY\n"
+ "Other Business Documents\n"
+ "itemlist.text"
+ msgid "Other Business Documents"

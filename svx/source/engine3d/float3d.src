@@ -1,0 +1,105 @@
+/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+
+#include <svx/dialogs.hrc>
+#include "float3d.hrc"
+#include <svx/svxcommands.h>
+
+#define WIDTH               158
+#define HEIGHT              209
+#define BORDER              3
+#define BUTTON_WIDTH        13
+#define BUTTON_HEIGHT       13
+#define VT_BUTTON_WIDTH     18
+#define GROUP_WIDTH         (WIDTH - 2 * BORDER)
+#define IMG_BUTTON_HEIGHT   15
+#define IMG_BUTTON_NEXT     (IMG_BUTTON_HEIGHT + 2)
+#define IMG_BUTTON_SIZE     MAP_APPFONT( BUTTON_WIDTH, IMG_BUTTON_HEIGHT )
+#define FIXED_LINE_HEIGHT   8
+#define FIXED_LINE_SIZE     MAP_APPFONT( GROUP_WIDTH, FIXED_LINE_HEIGHT )
+#define TOP_FIXED_LINE_POS  MAP_APPFONT( BORDER, 2+BORDER + IMG_BUTTON_HEIGHT )
+#define FT_WIDTH_SHORT      56
+#define FT_WIDTH_LONG       89
+#define FT_HEIGHT           8
+#define FT_OFFSET_NEXT      (FT_HEIGHT + 6)
+#define FT_INDENT           (BORDER + 6)
+#define FIRST_FT_START_Y    (2+BORDER+IMG_BUTTON_HEIGHT + 13)
+#define SEGMENTS_START_Y    (FIRST_FT_START_Y + 3*FT_OFFSET_NEXT + 13)
+#define NORMALS_START_Y     (SEGMENTS_START_Y + 2*13)
+#define NORMALS_BT_START_Y  (SEGMENTS_START_Y + 2*13 +11)
+#define SHADOW_START_Y      (FIRST_FT_START_Y + 13)
+#define CAMERA_START_Y      (SHADOW_START_Y + FT_OFFSET_NEXT + 13)
+#define SPECULAR_START_Y    (FIRST_FT_START_Y + 2*FT_OFFSET_NEXT + 13)
+
+#define MASKCOLOR   MaskColor = Color { Red=0xFFFF; Green=0x0000; Blue=0xFFFF; };
+
+Image RID_SVXIMAGE_LIGHT_ON
+{
+    ImageBitmap = Bitmap { File = "lighton.bmp" ; };
+    MASKCOLOR
+};
+
+Image RID_SVXIMAGE_LIGHT_OFF
+{
+    ImageBitmap = Bitmap { File = "light.bmp" ; };
+    MASKCOLOR
+};
+
+Image RID_SVXIMAGE_COLORDLG
+{
+    ImageBitmap = Bitmap { File = "colordlg.bmp" ; };
+    MASKCOLOR
+};
+
+String RID_SVXFLOAT3D_FAVORITE
+{
+    Text [ en-US ] = "Favorite";
+};
+
+String RID_SVXFLOAT3D_FIX_X
+{
+    Text [ en-US ] = "X";
+};
+
+String RID_SVXFLOAT3D_FIX_Y
+{
+    Text [ en-US ] = "Y";
+};
+
+String RID_SVXFLOAT3D_FIX_Z
+{
+    Text [ en-US ] = "Z";
+};
+
+String RID_SVXFLOAT3D_FIX_R
+{
+    Text [ en-US ] = "R:";
+};
+
+String RID_SVXFLOAT3D_FIX_G
+{
+    Text [ en-US ] = "G:";
+};
+
+String RID_SVXFLOAT3D_FIX_B
+{
+    Text [ en-US ] = "B:";
+};
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */

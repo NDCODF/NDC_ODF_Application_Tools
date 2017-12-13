@@ -1,0 +1,111 @@
+/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+#include <svx/dialogs.hrc>
+#include "ruler.hrc"
+
+Menu RID_SVXMN_RULER
+{
+    ItemList =
+    {
+        MenuItem
+        {
+            Identifier = ID_MM ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Millimeter" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_CM ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Centimeter" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_M ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Meter" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_KM ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Kilometer" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_INCH ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Inch" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_FOOT ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Foot" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_MILE ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Miles" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_POINT ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Point" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_PICA ;
+            RadioCheck = TRUE ;
+            Text [ en-US ] = "Pica" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_CHAR ;
+            RadioCheck = TRUE ;
+            Text[ en-US ] = "Char" ;
+        };
+        MenuItem
+        {
+            Identifier = ID_LINE ;
+            RadioCheck = TRUE ;
+            Text[ en-US ] = "Line" ;
+        };
+    };
+};
+String RID_SVXSTR_RULER_TAB_LEFT
+{
+    Text [ en-US ] = "Left" ;
+};
+String RID_SVXSTR_RULER_TAB_RIGHT
+{
+    Text [ en-US ] = "Right" ;
+};
+String RID_SVXSTR_RULER_TAB_CENTER
+{
+    Text [ en-US ] = "Center" ;
+};
+String RID_SVXSTR_RULER_TAB_DECIMAL
+{
+    Text [ en-US ] = "Decimal" ;
+};
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */

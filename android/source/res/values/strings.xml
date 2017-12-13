@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LibreOffice Viewer</string>
+    <string name="app_name_settings">LibreOffice Viewer Settings</string>
+
+    <string name="app_about_name"><b>LibreOffice Viewer \'Beta\'</b></string>
+    <string name="app_version">Version: $VERSION\nBuild ID: $BUILDID</string>
+    <string name="app_description">LibreOffice Viewer is a document viewer based on LibreOffice.</string>
+    <string name="app_credits">http://www.libreoffice.org</string>
+    <string name="app_vendor">This release was supplied by $VENDOR.</string>
+    <string name="temp_file_saving_disabled">This file is read-only, saving is disabled.</string>
+
+    <string name="about_license">Show License</string>
+    <string name="about_notice">Show Notice</string>
+    <string name="about_moreinfo">More Info</string>
+    <string name="back_again_to_quit">Press back again to quit</string>
+
+    <string name="browser_app_name">LibreOffice Browser</string>
+    <string name="menu_search">Search</string>
+    <string name="list_view">List</string>
+    <string name="grid_view">Grid</string>
+    <string name="sort_smallest">Smallest first</string>
+    <string name="sort_largest">Largest first</string>
+    <string name="sort_az">A-Z</string>
+    <string name="sort_za">Z-A</string>
+    <string name="sort_oldest">Oldest first</string>
+    <string name="sort_newest">Newest first</string>
+    <string name="menu_sort_size">Sort By Size</string>
+    <string name="menu_sort_az">Sort A-Z</string>
+    <string name="menu_sort_modified">Sort by Date</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="file_icon_desc">fileicon</string>
+    <!-- Pref keys as resources ; Not currently used -->
+    <string name="EXPLORER_VIEW_TYPE_KEY">EXPLORER_VIEW_TYPE</string>
+    <string name="CURRENT_DIRECTORY_KEY">CURRENT_DIRECTORY</string>
+    <string name="pref_category_explorer">Explorer View Defaults</string>
+    <string name="pref_category_general">General</string>
+    <string name="pref_experimental_editing">Experimental Mode</string>
+    <string name="pref_experimental_editing_summary">Enable the experimental editing mode. Use at your own risk.</string>
+
+    <string name="action_about">About</string>
+    <string name="action_parts">Parts</string>
+    <string name="action_settings">Settings</string>
+    <string name="open">Open</string>
+    <string name="share">Share</string>
+    <string name="share_via">Share via</string>
+
+    <!-- Document provider names -->
+    <string name="document_locations">Document locations</string>
+    <string name="close_document_locations">Close document locations</string>
+    <string name="local_documents">Local documents</string>
+    <string name="local_file_system">Local file system</string>
+    <string name="external_sd_file_system">External SD</string>
+    <string name="otg_file_system">OTG device (experimental)</string>
+    <string name="owncloud">ownCloud</string>
+
+    <string name="owncloud_wrong_connection">Cannot connect to ownCloud server. Check your configuration.</string>
+    <string name="owncloud_unauthorized">Cannot log into ownCloud server. Check your configuration.</string>
+    <string name="owncloud_unspecified_error">Unspecified error connecting to ownCloud server. Check your configuration and/or try later.</string>
+
+    <string name="ext_document_provider_error">Invalid root file. Check your configuration.</string>
+    <string name="legacy_extsd_missing_error">Invalid root file. Check your external sd card and/or configuration.</string>
+    <string name="otg_missing_error">Invalid root file. Check your OTG device and/or configuration.</string>
+
+    <!-- Edit action names -->
+    <string name="action_bold">Bold</string>
+    <string name="action_underline">Underline</string>
+    <string name="action_italic">Italic</string>
+    <string name="action_strikeout">Strike Out</string>
+    <string name="action_keyboard">Show keyboard</string>
+    <string name="action_save">Save</string>
+    <string name="action_fromat">Enable Format</string>
+    <string name="action_search">Search</string>
+
+    <!-- Feedback messages -->
+    <string name="message_saved">Save complete</string>
+    <string name="message_saving">Saving the document…</string>
+    <string name="message_save_incomplete">Save incomplete. Were there any changes?</string>
+
+    <!-- Document provider settings -->
+    <string name="storage_provider_settings">Storage provider settings</string>
+    <string name="owncloud_settings">ownCloud settings</string>
+    <string name="physical_storage_settings">Physical storage settings</string>
+    <string name="external_sd_path">External SD path</string>
+    <string name="otg_device_path">OTG device path</string>
+    <string name="otg_warning">Experimental Feature: Use only if OTG device is writable.</string>
+    <string name="server_url">Server URL</string>
+    <string name="server_url_and_port">URL and port of the ownCloud server.</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_redo">Redo</string>
+
+    <!-- Directory browser strings -->
+    <string name="up_description">To parent directory</string>
+    <string name="confirm_label">Confirm</string>
+    <string name="cancel_label">Cancel</string>
+    <string name="search_label">Go</string>
+    <string name="directory_browser_label">Choose Directory</string>
+    <string name="bad_directory">Invalid directory path</string>
+
+
+</resources>

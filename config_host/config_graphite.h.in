@@ -1,0 +1,8 @@
+#ifndef CONFIG_GRAPHITE_H
+#define CONFIG_GRAPHITE_H
+
+#define ENABLE_GRAPHITE 0
+
+#define ENABLE_GRAPHITE_DWRITE 1
+
+#endif

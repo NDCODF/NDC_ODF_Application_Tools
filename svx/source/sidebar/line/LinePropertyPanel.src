@@ -1,0 +1,70 @@
+/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+#include "LinePropertyPanel.hrc"
+#include <sfx2/sidebar/ResourceDefinitions.hrc>
+#include <svx/dialogs.hrc>
+#include "helpid.hrc"
+
+Image IMG_NONE_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/blank.png";};
+};
+
+Image IMG_WIDTH1_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width1.png";};
+};
+Image IMG_WIDTH2_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width2.png";};
+};
+Image IMG_WIDTH3_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width3.png";};
+};
+Image IMG_WIDTH4_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width4.png";};
+};
+Image IMG_WIDTH5_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width5.png";};
+};
+Image IMG_WIDTH6_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width6.png";};
+};
+Image IMG_WIDTH7_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width7.png";};
+};
+Image IMG_WIDTH8_ICON
+{
+    ImageBitmap = Bitmap{File = "symphony/width8.png";};
+};
+Image RID_SVXIMG_WIDTH_CUSTOM
+{
+    ImageBitmap = Bitmap{File = "symphony/last_custom_common.png";};
+};
+Image RID_SVXIMG_WIDTH_CUSTOM_GRAY
+{
+    ImageBitmap = Bitmap{File = "symphony/last_custom_common_grey.png";};
+};
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */

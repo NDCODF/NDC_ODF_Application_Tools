@@ -1,0 +1,481 @@
+/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+
+#include "cmdid.h"
+#include "globals.hrc"
+#include "utlui.hrc"
+#include "navipi.hrc"
+#include "helpid.h"
+#include "access.hrc"
+
+Window DLG_NAVIGATION_PI
+{
+    HelpID = HID_NAVIGATION_PI ;
+    OutputSize = TRUE ;
+    DialogControl = TRUE ;
+    SVLook = TRUE ;
+    Size = MAP_PIXEL ( 282 , 59 ) ;
+    Hide = TRUE ;
+    Text [ en-US ] = "Navigator" ;
+    ExtraData =
+    {
+        198;
+    };
+
+    ImageList IL_CONTENT
+    {
+        Prefix = "sc";
+        MaskColor = IMAGE_MASK_COLOR ;
+        IdList =
+        {
+            FN_UP ;
+            FN_DOWN ;
+            FN_SELECT_HEADER ;
+            FN_SELECT_FOOTER ;
+            FN_SELECT_FOOTNOTE ;
+            FN_SHOW_CONTENT_BOX ;
+            FN_SHOW_ROOT ;
+            FN_ITEM_UP ;
+            FN_ITEM_DOWN ;
+            FN_ITEM_LEFT ;
+            FN_ITEM_RIGHT ;
+            FN_DROP_REGION ;
+            FN_OUTLINE_LEVEL ;
+            FN_SELECT_SET_AUTO_BOOKMARK ;
+            FN_DROP_REGION_LINK ;
+            FN_DROP_REGION_COPY ;
+            FN_GLOBAL_SWITCH ;
+            FN_GLOBAL_EDIT ;
+            FN_GLOBAL_UPDATE ;
+            FN_GLOBAL_OPEN ;
+            FN_GLOBAL_SAVE_CONTENT ;
+            FN_CREATE_NAVIGATION ;
+        };
+        IdCount = { 21 ; };
+    };
+    Toolbox TB_CONTENT
+    {
+        Pos = MAP_PIXEL ( 5 , 5 ) ;
+        Size = MAP_PIXEL ( 300 , 47 ) ;
+        LineCount = 2 ;
+        ItemList =
+        {
+            ToolBoxItem
+            {
+                Identifier = FN_GLOBAL_SWITCH ;
+                HelpID = HID_NAVI_TBX17 ;
+                Text [ en-US ] = "Toggle Master View" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_CREATE_NAVIGATION ;
+                HelpID = HID_NAVI_TBX24 ;
+                Text [ en-US ] = "Navigation" ;
+                DropDown = TRUE ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_UP ;
+                HelpID = HID_NAVI_TBX2 ;
+                Text [ en-US ] = "Back" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_DOWN ;
+                HelpID = HID_NAVI_TBX3 ;
+                Text [ en-US ] = "Forward" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_DROP_REGION ;
+                HelpID = HID_NAVI_TBX4 ;
+                DropDown = TRUE ;
+                Text [ en-US ] = "Drag Mode" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_ITEM_UP ;
+                HelpID = HID_NAVI_TBX5 ;
+                Text [ en-US ] = "Promote Chapter" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_ITEM_DOWN ;
+                HelpID = HID_NAVI_TBX6 ;
+                Text [ en-US ] = "Demote Chapter" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_BREAK ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_SHOW_CONTENT_BOX ;
+                HelpID = HID_NAVI_TBX7 ;
+                Text [ en-US ] = "List Box On/Off" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_SHOW_ROOT ;
+                HelpID = HID_NAVI_TBX8 ;
+                Text [ en-US ] = "Content Navigation View" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_SELECT_SET_AUTO_BOOKMARK ;
+                HelpID = HID_NAVI_TBX9 ;
+                Text [ en-US ] = "Set Reminder" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_SELECT_HEADER ;
+                HelpID = HID_NAVI_TBX10 ;
+                Text [ en-US ] = "Header" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_SELECT_FOOTER ;
+                HelpID = HID_NAVI_TBX11 ;
+                Text [ en-US ] = "Footer" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_SELECT_FOOTNOTE ;
+                HelpID = HID_NAVI_TBX12 ;
+                Text [ en-US ] = "Anchor<->Text" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_OUTLINE_LEVEL ;
+                HelpID = HID_NAVI_TBX13 ;
+                Text [ en-US ] = "Heading Levels Shown" ;
+                DropDown = TRUE ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_ITEM_LEFT ;
+                HelpID = HID_NAVI_TBX14 ;
+                Text [ en-US ] = "Promote Level" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_ITEM_RIGHT ;
+                HelpID = HID_NAVI_TBX15 ;
+                Text [ en-US ] = "Demote Level" ;
+            };
+        };
+    };
+    ToolBox TB_GLOBAL
+    {
+        Pos = MAP_PIXEL ( 5 , 5 ) ;
+        Size = MAP_PIXEL ( 300 , 47 ) ;
+        LineCount = 1 ;
+        Hide = TRUE ;
+        ItemList =
+        {
+            ToolBoxItem
+            {
+                Identifier = FN_GLOBAL_SWITCH ;
+                HelpID = HID_NAVI_TBX17 ;
+                Text [ en-US ] = "Toggle Master View" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_GLOBAL_EDIT ;
+                HelpID = HID_NAVI_TBX18 ;
+                Text [ en-US ] = "Edit" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_GLOBAL_UPDATE ;
+                HelpID = HID_NAVI_TBX19 ;
+                Text [ en-US ] = "Update" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_GLOBAL_OPEN ;
+                HelpID = HID_NAVI_TBX20 ;
+                Text [ en-US ] = "Insert" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_GLOBAL_SAVE_CONTENT ;
+                HelpID = HID_NAVI_TBX21 ;
+                Text [ en-US ] = "Save Contents as well" ;
+            };
+            ToolBoxItem
+            {
+                Type = TOOLBOXITEM_SEPARATOR ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_ITEM_UP ;
+                HelpID = HID_NAVI_TBX22 ;
+                Text [ en-US ] = "Move Up" ;
+            };
+            ToolBoxItem
+            {
+                Identifier = FN_ITEM_DOWN ;
+                HelpID = HID_NAVI_TBX23 ;
+                Text [ en-US ] = "Move Down" ;
+            };
+        };
+    };
+    /* TreeListBox */
+    Control TL_CONTENT
+    {
+        HelpID = HID_NAVI_CONTENT ;
+        Border = TRUE ;
+        Pos = MAP_PIXEL ( 5 , 62 ) ;
+        Size = MAP_PIXEL ( 274 , 112 ) ;
+        TabStop = TRUE ;
+        ClipChildren = TRUE ;
+        Hide = TRUE ;
+    };
+    Control TL_GLOBAL
+    {
+        HelpID = HID_NAVI_GLOBAL ;
+        Border = TRUE ;
+        Pos = MAP_PIXEL ( 5 , 34 ) ;
+        Size = MAP_PIXEL ( 274 , 112 ) ;
+        TabStop = TRUE ;
+        ClipChildren = TRUE ;
+        Hide = TRUE ;
+    };
+    ListBox LB_DOCS
+    {
+        Border = TRUE ;
+        Pos = MAP_PIXEL ( 5 , 115 ) ;
+        Size = MAP_APPFONT ( 150 , 50 ) ;
+        DropDown = TRUE ;
+    };
+    NumericField NF_PAGE
+    {
+        Border = TRUE ;
+        Pos = MAP_PIXEL ( 50 , 29 ) ;
+        Size = MAP_PIXEL ( 34 , 20 ) ;
+        TabStop = TRUE ;
+        Left = TRUE ;
+        Repeat = TRUE ;
+        Spin = TRUE ;
+        Minimum = 1 ;
+        First = 1 ;
+         // Outline as default
+        Maximum = 5 ;
+        Last = 5 ;
+        Value = 5 ;
+    };
+};
+
+ImageList IMG_NAVI_ENTRYBMP
+{
+    Prefix = "nc";
+    MaskColor = IMAGE_MASK_COLOR ;
+    IdList =
+    {
+        20000 ;
+        20001 ;
+        20002 ;
+        20003 ;
+        20004 ;
+        20005 ;
+        20006 ;
+        20007 ;
+        20008 ;
+        20009 ;
+        20010 ;
+        20011 ;
+    };
+    IdCount = { 12 ; };
+};
+
+String STR_ACCESS_TL_GLOBAL
+{
+    Text [ en-US ] = "Global View";
+};
+String STR_ACCESS_TL_CONTENT
+{
+    Text [ en-US ] = "Content Navigation View";
+};
+String STR_OUTLINE_LEVEL
+{
+    Text [ en-US ] = "Outline Level" ;
+};
+String STR_DRAGMODE
+{
+    Text [ en-US ] = "Drag Mode" ;
+};
+String STR_HYPERLINK
+{
+    Text [ en-US ] = "Insert as Hyperlink" ;
+};
+String STR_LINK_REGION
+{
+    Text [ en-US ] = "Insert as Link" ;
+};
+String STR_COPY_REGION
+{
+    Text [ en-US ] = "Insert as Copy" ;
+};
+String STR_DISPLAY
+{
+    Text [ en-US ] = "Display" ;
+};
+String STR_ACTIVE_VIEW
+{
+    Text [ en-US ] = "Active Window" ;
+};
+String STR_HIDDEN
+{
+    Text [ en-US ] = "hidden" ;
+};
+String STR_ACTIVE
+{
+    Text [ en-US ] = "active" ;
+};
+String STR_INACTIVE
+{
+    Text [ en-US ] = "inactive" ;
+};
+String STR_EDIT_ENTRY
+{
+    Text [ en-US ] = "Edit..." ;
+};
+String STR_UPDATE
+{
+    Text [ en-US ] = "~Update" ;
+};
+String STR_EDIT_CONTENT
+{
+    Text [ en-US ] = "Edit" ;
+};
+String STR_EDIT_LINK
+{
+    Text [ en-US ] = "Edit link";
+};
+String STR_EDIT_INSERT
+{
+    Text [ en-US ] = "Insert" ;
+};
+String STR_INDEX
+{
+    Text [ en-US ] = "~Index";
+};
+String STR_FILE
+{
+    Text [ en-US ] = "File" ;
+};
+String STR_NEW_FILE
+{
+    Text [ en-US ] = "New Document" ;
+};
+String STR_INSERT_TEXT
+{
+    Text [ en-US ] = "Text" ;
+};
+String STR_DELETE
+{
+    Text [ en-US ] = "Delete" ;
+};
+String STR_DELETE_ENTRY
+{
+    Text [ en-US ] = "~Delete" ;
+};
+String STR_UPDATE_SEL
+{
+    Text [ en-US ] = "Selection" ;
+};
+String STR_UPDATE_INDEX
+{
+    Text [ en-US ] = "Indexes" ;
+};
+String STR_UPDATE_LINK
+{
+    Text [ en-US ] = "Links" ;
+};
+String STR_UPDATE_ALL
+{
+    Text [ en-US ] = "All" ;
+};
+String STR_REMOVE_INDEX
+{
+    Text [ en-US ] = "~Remove Index" ;
+};
+String STR_REMOVE_TBL_PROTECTION
+{
+    Text [ en-US ] = "~Unprotect" ;
+};
+String STR_INVISIBLE
+{
+    Text [ en-US ] = "hidden";
+};
+String STR_BROKEN_LINK
+{
+    Text [ en-US ] = "File not found: ";
+};
+String STR_RENAME
+{
+    Text [ en-US ] = "~Rename";
+};
+String STR_READONLY_IDX
+{
+    Text [ en-US ] = "Read-~only";
+};
+String STR_POSTIT_SHOW
+{
+    Text [ en-US ] = "Show All";
+};
+String STR_POSTIT_HIDE
+{
+    Text [ en-US ] = "Hide All";
+};
+String STR_POSTIT_DELETE
+{
+    Text [ en-US ] = "Delete All";
+};
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */

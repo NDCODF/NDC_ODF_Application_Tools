@@ -1,0 +1,275 @@
+/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/*
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This file incorporates work covered by the following license notice:
+ *
+ *   Licensed to the Apache Software Foundation (ASF) under one or more
+ *   contributor license agreements. See the NOTICE file distributed
+ *   with this work for additional information regarding copyright
+ *   ownership. The ASF licenses this file to you under the Apache
+ *   License, Version 2.0 (the "License"); you may not use this file
+ *   except in compliance with the License. You may obtain a copy of
+ *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
+ */
+
+#include "app.hrc"
+#include "newhelp.hrc"
+#include "helpid.hrc"
+
+#define MASKCOLOR_MAGENTA \
+    MaskColor = Color { Red = 0xFFFF ; Green = 0x0000 ; Blue = 0xFFFF ; };
+
+Image IMG_HELP_TOOLBOX_INDEX_ON
+{
+    ImageBitmap = Bitmap { File = "indexon_small.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_INDEX_OFF
+{
+    ImageBitmap = Bitmap { File = "indexoff_small.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_START
+{
+    ImageBitmap = Bitmap { File = "sc06303.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_PREV
+{
+    ImageBitmap = Bitmap { File = "sc06301.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_NEXT
+{
+    ImageBitmap = Bitmap { File = "sc06300.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_PRINT
+{
+    ImageBitmap = Bitmap { File = "sc05504.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_BOOKMARKS
+{
+    ImageBitmap = Bitmap { File = "favourite.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_SEARCHDIALOG
+{
+    ImageBitmap = Bitmap { File = "sc05961.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_COPY
+{
+    ImageBitmap = Bitmap { File = "sc05711.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_CONTENT_BOOK_OPEN
+{
+    ImageBitmap = Bitmap { File = "hlpbookopen.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_CONTENT_BOOK_CLOSED
+{
+    ImageBitmap = Bitmap { File = "hlpbookclosed.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_CONTENT_DOC
+{
+    ImageBitmap = Bitmap { File = "hlpdoc.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+String STR_HELP_WINDOW_TITLE
+{
+    Text [ en-US ] = "%PRODUCTNAME Help";
+};
+
+String STR_HELP_BUTTON_INDEX_ON
+{
+    Text [ en-US ] = "Show Navigation Pane";
+};
+
+String STR_HELP_BUTTON_INDEX_OFF
+{
+    Text [ en-US ] = "Hide Navigation Pane";
+};
+
+String STR_HELP_BUTTON_START
+{
+    Text [ en-US ] = "First Page";
+};
+
+String STR_HELP_BUTTON_PREV
+{
+    Text [ en-US ] = "Previous Page";
+};
+
+String STR_HELP_BUTTON_NEXT
+{
+    Text [ en-US ] = "Next Page";
+};
+
+String STR_HELP_BUTTON_PRINT
+{
+    Text [ en-US ] = "Print...";
+};
+
+String STR_HELP_BUTTON_ADDBOOKMARK
+{
+    Text [ en-US ] = "Add to Bookmarks...";
+};
+
+String STR_HELP_BUTTON_SEARCHDIALOG
+{
+    Text [ en-US ] = "Find on this Page...";
+};
+
+String STR_HELP_BUTTON_SOURCEVIEW
+{
+    Text [ en-US ] = "HTML Source";
+};
+
+String STR_HELP_FIRST_MESSAGE
+{
+    Text [ en-US ] = "The Help is being started...";
+};
+
+String STR_HELP_FIRST_HTML
+{
+    Text = "<html></head><body><center><br></br><br></br><p><tt>%1</tt></center></body></html>";
+};
+
+String STR_HELP_MENU_TEXT_SELECTION_MODE
+{
+    Text [ en-US ] = "Select Text";
+};
+
+String STR_HELP_MENU_TEXT_COPY
+{
+    Text [ en-US ] = "~Copy" ;
+};
+
+Menu MENU_HELP_BOOKMARKS
+{
+    ItemList =
+    {
+        MenuItem
+        {
+            Identifier = MID_OPEN ;
+            HelpId = HID_HELP_BOOKMARKS_OPEN;
+            Text [ en-US ] = "Display";
+        };
+        MenuItem
+        {
+            Separator = TRUE ;
+        };
+        MenuItem
+        {
+            Identifier = MID_RENAME ;
+            HelpId = HID_HELP_BOOKMARKS_RENAME;
+            Text [ en-US ] = "Rename...";
+        };
+        MenuItem
+        {
+            Identifier = MID_DELETE ;
+            HelpId = HID_HELP_BOOKMARKS_DELETE;
+            Text [ en-US ] = "Delete";
+        };
+    };
+};
+
+String STR_INFO_NOSEARCHRESULTS
+{
+    Text [ en-US ] = "No topics found.";
+};
+
+String STR_INFO_NOSEARCHTEXTFOUND
+{
+    Text [ en-US ] = "The text you entered was not found.";
+};
+
+Image IMG_HELP_TOOLBOX_L_INDEX_ON
+{
+    ImageBitmap = Bitmap { File = "indexon_big.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_INDEX_OFF
+{
+    ImageBitmap = Bitmap { File = "indexoff_big.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_START
+{
+    ImageBitmap = Bitmap { File = "lc06303.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_PREV
+{
+    ImageBitmap = Bitmap { File = "lc06301.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_NEXT
+{
+    ImageBitmap = Bitmap { File = "lc06300.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_PRINT
+{
+    ImageBitmap = Bitmap { File = "lc05504.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_BOOKMARKS
+{
+    ImageBitmap = Bitmap { File = "favourite_big.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_SEARCHDIALOG
+{
+    ImageBitmap = Bitmap { File = "lc05961.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+Image IMG_HELP_TOOLBOX_L_COPY
+{
+    ImageBitmap = Bitmap { File = "lc05711.bmp" ; };
+    MASKCOLOR_MAGENTA
+};
+
+CheckBox RID_HELP_ONSTARTUP_BOX
+{
+    HelpId = HID_HELP_ONSTARTUP_BOX;
+    Hide = TRUE;
+    TabStop = TRUE;
+    Size = MAP_APPFONT ( 200 , 10 ) ;
+};
+
+String RID_HELP_ONSTARTUP_TEXT
+{
+    Text [ en-US ] = "~Display %PRODUCTNAME %MODULENAME Help at Startup";
+};
+
+/* vim:set shiftwidth=4 softtabstop=4 expandtab: */

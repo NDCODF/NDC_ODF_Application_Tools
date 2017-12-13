@@ -1,0 +1,427 @@
+# -*- Mode: makefile-gmake; tab-width: 4; indent-tabs-mode: t -*-
+#
+# This file is part of the LibreOffice project.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+
+gb_Top_MODULE_CHECK_TARGETS := slowcheck unitcheck subsequentcheck perfcheck
+
+.PHONY : all check-if-root bootstrap gbuild build build-non-l10n-only build-l10n-only check clean clean-build clean-host test-install distclean distro-pack-install docs download etags fetch findunusedcode get-submodules id install install-strip tags debugrun help showmodules translations packageinfo internal.clean $(gb_Top_MODULE_CHECK_TARGETS)
+
+MAKECMDGOALS?=all
+build_goal:=$(if $(filter build check,$(MAKECMDGOALS)),all)\
+ $(if $(filter build-nocheck,$(MAKECMDGOALS)),build)\
+ $(if $(filter check,$(MAKECMDGOALS)),subsequentcheck)\
+ $(filter all build-l10n-only build-non-l10n-only debugrun help showmodules translations $(gb_Top_MODULE_CHECK_TARGETS) check packageinfo,$(MAKECMDGOALS))
+
+SRCDIR := @SRC_ROOT@
+BUILDDIR := @BUILDDIR@
+GIT_BUILD :=
+
+# Run autogen.sh if needed and force make to restart itself.
+# ... but there are several cases where we do not want to run
+# autogen.sh:
+# 1. if we are building from tarballs, not git checkout (I do not
+#    think packagers would ever want that. I certainly do not.)
+# 2. if we are making help, clean or distclean, because they do not
+#    need updated configuration
+ifeq (,$(MAKE_RESTARTS)$(if $(GIT_BUILD),,T)$(if $(filter-out help showmodules clean distclean,$(MAKECMDGOALS)),,T))
+
+.PHONY : force-restart
+Makefile: $(BUILDDIR)/config_host.mk $(BUILDDIR)/config_host_lang.mk force-restart
+	@touch $@
+
+# run configure in an environment not polluted by config_host.mk
+$(BUILDDIR)/config_host.mk : $(wildcard \
+		$(SRCDIR)/config_host.mk.in \
+		$(SRCDIR)/config_host_lang.mk.in \
+		$(SRCDIR)/Makefile.in \
+		$(SRCDIR)/instsetoo_native/util/openoffice.lst.in \
+		$(SRCDIR)/configure.ac \
+		$(SRCDIR)/config_host/*.h.in \
+		$(BUILDDIR)/autogen.input \
+		$(BUILDDIR)/autogen.lastrun \
+		$(BUILDDIR)/autogen.sh \
+		) \
+		$(shell . $(SRCDIR)/bin/get_config_variables JAVA_HOME && \
+			if test -n "$${JAVA_HOME}" -a ! -d "$${JAVA_HOME}/bin"; then echo force-restart; fi)
+	sh -c $(SRCDIR)/autogen.sh
+
+else # MAKE_RESTARTS
+
+all: check-if-root build
+
+check-if-root:
+	@if test `id -u` = 0; then \
+		echo; \
+		echo 'No. You make ME a sandwich.'; \
+		echo; \
+		exit 1; \
+	fi
+
+gb_Side ?= host
+
+include $(BUILDDIR)/config_$(gb_Side).mk
+
+export GMAKE_OPTIONS?=-r$(if $(verbose),,s)$(value $(MAKEFLAGS))
+
+PARALLELISM_OPTION := $(if $(filter-out 0,$(PARALLELISM)),-j $(PARALLELISM),)
+
+IWYU_OPTION := $(if $(IWYU_PATH),-k CC=$(IWYU_PATH) CXX=$(IWYU_PATH),)
+
+# don't want to have a dependency to iwyudummy.generate because it's
+# useful to manually edit the generated StaticLibrary_iwyudummy.mk
+iwyudummy: bootstrap fetch
+	$(if $(wildcard $(BUILDDIR)/iwyudummy),,$(error first call "make iwyudummy.generate"))
+	cd $(BUILDDIR)/iwyudummy && $(MAKE) $(IWYU_OPTION) $(GMAKE_OPTIONS)
+
+iwyudummy.generate:
+	$(SRCDIR)/bin/gen-iwyu-dummy-lib
+
+#
+# Partial Build
+#
+define gb_Top_GbuildModuleRules
+.PHONY: $(1) $(1).all $(1).build $(1).check $(1).clean $(1).showdeliverables $(foreach target,$(gb_Top_MODULE_CHECK_TARGETS),$(1).$(target))
+
+$(1): bootstrap fetch
+	cd $(SRCDIR)/$(2) && $$(MAKE) $(IWYU_OPTION) $(PARALLELISM_OPTION) $(GMAKE_OPTIONS)
+
+$(1).build $(1).check $(1).clean $(1).showdeliverables $(foreach target,$(gb_Top_MODULE_CHECK_TARGETS),$(1).$(target)):
+	cd $(SRCDIR)/$(2) && $$(MAKE) $(PARALLELISM_OPTION) $(GMAKE_OPTIONS) $$(patsubst $(1).%,%,$$@)
+
+$(1).all: bootstrap fetch
+	$$(MAKE) $(PARALLELISM_OPTION) $(IWYU_OPTION) $(GMAKE_OPTIONS) -f $(SRCDIR)/Makefile.gbuild $(WORKDIR)/Module/$(1) $(if $(CROSS_COMPILING),,$(WORKDIR)/Module/check/$(1) $(WORKDIR)/Module/slowcheck/$(1))
+
+endef
+
+define gb_Top_GbuildModulesRules
+$(foreach m,$(1),$(call gb_Top_GbuildModuleRules,$(notdir $(m)),$(m)))
+endef
+
+gbuild_modules := $(patsubst $(SRCDIR)/%/,%,$(dir $(wildcard $(SRCDIR)/*/Module_*.mk $(SRCDIR)/external/*/Module_*.mk)))
+
+gbuild_internal_modules := $(filter-out odk external,$(patsubst $(SRCDIR)/%/,%,$(dir $(wildcard $(SRCDIR)/*/Module_*.mk))))
+
+internal.clean: $(addsuffix .clean,$(gbuild_internal_modules))
+
+
+$(eval $(call gb_Top_GbuildModulesRules,$(gbuild_modules)))
+
+gbuild_TARGETS := AllLangHelp \
+	AllLangPackage \
+	AllLangResTarget \
+	AutoInstall \
+	CliLibrary \
+	CliNativeLibrary \
+	CliUnoApi \
+	Configuration \
+	CppunitTest \
+	CustomTarget \
+	Dictionary \
+	Executable \
+	Extension \
+	ExtensionPackage \
+	ExtensionPackageSet \
+	ExternalPackage \
+	ExternalProject \
+	Gallery \
+	GeneratedPackage \
+	InstallModule \
+	InstallScript \
+	InternalUnoApi \
+	Jar \
+	JunitTest \
+	Library \
+	Module \
+	Package \
+	PackageSet \
+	Pagein \
+	Postprocess \
+	Pyuno \
+	PythonTest \
+	Rdb \
+	StaticLibrary \
+	UIConfig \
+	UnoApi \
+	UnpackedTarball \
+	WinResTarget \
+	Zip \
+
+# build a generic gbuild target
+$(foreach target,$(gbuild_TARGETS),$(target)_% $(foreach module,$(gbuild_modules),$(target)_$(module)/%)) %.genpatch: bootstrap fetch
+	$(MAKE) $(PARALLELISM_OPTION) $(GMAKE_OPTIONS) -f $(SRCDIR)/Makefile.gbuild $@
+
+#
+# Clean
+#
+clean: clean-host clean-build
+
+clean-host:
+	rm -fr $(TESTINSTALLDIR)
+	rm -fr $(INSTDIR)
+	rm -fr $(WORKDIR)
+
+clean-build:
+ifneq ($(CROSS_COMPILING),)
+	rm -fr $(INSTDIR_FOR_BUILD)
+	rm -fr $(WORKDIR_FOR_BUILD)
+endif
+
+include $(SRCDIR)/compilerplugins/Makefile.mk
+
+#
+# Distclean
+#
+distclean : clean compilerplugins-clean
+	rm -fr \
+        $(BUILDDIR)/Makefile \
+        $(BUILDDIR)/aclocal.m4 \
+        $(BUILDDIR)/autom4te.cache \
+        $(BUILDDIR)/config.log \
+        $(BUILDDIR)/config.Build.log \
+        $(BUILDDIR)/config.status \
+        $(BUILDDIR)/config_build.mk \
+        $(BUILDDIR)/config_build_lang.mk \
+        $(BUILDDIR)/config_build/*.h \
+        $(BUILDDIR)/config_host.mk \
+        $(BUILDDIR)/config_host.mk.stamp \
+        $(BUILDDIR)/config_host_lang.mk \
+        $(BUILDDIR)/config_host_lang.mk.stamp \
+        $(BUILDDIR)/config_host/*.h \
+        $(BUILDDIR)/configure \
+        $(BUILDDIR)/instsetoo_native/util/openoffice.lst \
+        $(BUILDDIR)/ios/lo.xcconfig \
+        $(BUILDDIR)/lo.xcent \
+        $(BUILDDIR)/sysui/desktop/macosx/Info.plist
+	$(FIND) $(SRCDIR)/solenv/gdb -name \*.pyc -exec rm {} \;
+
+#
+# custom command
+#
+cmd:
+	echo "custom cmd" && ( $(cmd) )
+
+#
+# Fetch
+#
+ifneq ($(DO_FETCH_TARBALLS),)
+include $(SRCDIR)/Makefile.fetch
+fetch: download
+fetch: get-submodules
+
+ifneq (,$(wildcard $(SRCDIR)/.git))
+get-submodules:
+ifneq ($(foreach i,$(GIT_NEEDED_SUBMODULES),$(i)/.git),$(wildcard $(foreach i,$(GIT_NEEDED_SUBMODULES),$(i)/.git)))
+	cd $(SRCDIR) && ./g -f clone
+endif
+	@cd $(SRCDIR) && ./g -z # make sure the git hooks are in place even if no submodules are needed
+
+else # these sources are from a tarball, so get the other source tarballs
+gb_LO_VER := $(shell . $(SRCDIR)/sources.ver && echo $$lo_sources_ver)
+$(if $(gb_LO_VER),,$(error Error while retrieving $$lo_sources_ver from $(SRCDIR)/sources.ver))
+
+get-submodules: | download
+ifneq ($(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),$(SRCDIR)/src/libreoffice-$(i)-$(gb_LO_VER)),$(wildcard $(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),$(SRCDIR)/src/libreoffice-$(i)-$(gb_LO_VER))))
+	$(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),\
+		$(call fetch_Download_item_unchecked,http://download.documentfoundation.org/libreoffice/src/$(shell echo $(gb_LO_VER) | sed -e "s/\([0-9]*\.[0-9]*\.[0-9]*\).*/\1/"),libreoffice-$(i)-$(gb_LO_VER).tar.xz))
+	$(SRCDIR)/bin/unpack-sources $(SRCDIR) $(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),\
+		$(TARFILE_LOCATION)/libreoffice-$(i)-$(gb_LO_VER).tar.xz)
+endif
+
+endif
+
+else
+fetch:
+	@echo "Automatic fetching of external tarballs is disabled."
+
+endif
+
+#
+# Bootstap
+#
+bootstrap: compilerplugins
+
+#
+# Build
+#
+# Note: this will pipe through all gbuild targets to ... gbuild
+#       with some translations like "build"->"all" for historic reasons
+#
+build: bootstrap fetch $(if $(CROSS_COMPILING),cross-toolset)
+ifneq ($(filter-out WNT MACOSX IOS,$(OS)),)
+	mkdir -p $(INSTDIR)
+	$(SRCDIR)/solenv/bin/install-gdb-printers -a $(INSTDIR) -c
+endif
+	$(MAKE) $(PARALLELISM_OPTION) $(IWYU_OPTION) $(GMAKE_OPTIONS) -f $(SRCDIR)/Makefile.gbuild $(build_goal)
+ifeq ($(OS),IOS)
+	$(MAKE) $(PARALLELISM_OPTION) $(GMAKE_OPTIONS) ios
+endif
+
+build-non-l10n-only build-l10n-only build-nocheck check debugrun translations packageinfo $(gb_Top_MODULE_CHECK_TARGETS): build
+
+help showmodules:
+	$(MAKE) $(PARALLELISM_OPTION) $(GMAKE_OPTIONS) -f $(SRCDIR)/Makefile.gbuild $@
+
+cross-toolset: bootstrap fetch
+	$(MAKE) gb_Side=build $(PARALLELISM_OPTION) $(GMAKE_OPTIONS) -f $(SRCDIR)/Makefile.gbuild build-tools
+
+
+#
+# Install
+#
+
+define gb_Top_DoInstall
+echo "$(1) in $(INSTALLDIR) ..." && \
+$(SRCDIR)/solenv/bin/ooinstall $(2) "$(INSTALLDIR)"
+
+endef
+
+ifneq ($(OS),MACOSX)
+define gb_Top_InstallFinished
+echo && echo "If you want to edit the .ui files with glade first execute:" && \
+echo && echo "export GLADE_CATALOG_SEARCH_PATH=$(2)/share/glade" && \
+echo && echo "$(1) finished, you can now execute:" && \
+echo "$(2)/program/soffice"
+
+endef
+else
+define gb_Top_InstallFinished
+echo && echo "$(1) finished, you can now run: " && \
+echo "open $(2)/$(PRODUCTNAME).app" && \
+echo "" && \
+echo "To debug: gdb $(2)/$(PRODUCTNAME).app/Contents/MacOS/soffice"
+
+endef
+endif
+
+ifneq ($(OS),MACOSX)
+install:
+	@$(call gb_Top_DoInstall,Installing,)
+	@$(call gb_Top_InstallFinished,Installation,$(INSTALLDIR))
+
+install-strip:
+	@$(call gb_Top_DoInstall,Installing and stripping binaries,--strip)
+	@$(call gb_Top_InstallFinished,Installation,$(INSTALLDIR))
+endif # !MACOSX
+
+test-install: build
+	@rm -rf $(TESTINSTALLDIR)
+	@mkdir -p $(TESTINSTALLDIR)
+ifeq ($(OS_FOR_BUILD),WNT)
+	cd $(SRCDIR)/instsetoo_native && $(MAKE) LIBO_TEST_INSTALL=TRUE $(GMAKE_OPTIONS)
+else
+	@$(SRCDIR)/solenv/bin/ooinstall $(TESTINSTALLDIR)
+ifneq ($(MACOSX_CODESIGNING_IDENTITY),)
+#
+# Create Resources/*.lproj directories for languages supported by OS X
+	set -x; for lang in ca cs da de el en es fi fr hr hu id it ja ko ms nl no pl pt pt_PT ro ru sk sv th tr uk vi zh_CN zh_TW; do \
+		lproj=$(TESTINSTALLDIR)/LibreOffice$(if $(ENABLE_RELEASE_BUILD),,Dev).app/Contents/Resources/$$lang.lproj; \
+		mkdir $$lproj; \
+	done
+#
+# And remove the "bin" folder which should not be there
+	rm -rf $(TESTINSTALLDIR)/LibreOffice$(if $(ENABLE_RELEASE_BUILD),,Dev).app/Contents/bin
+#
+# Remove unnecessary executables in the LibreOfficePython framework
+	rm -rf $(TESTINSTALLDIR)/LibreOffice$(if $(ENABLE_RELEASE_BUILD),,Dev).app/Contents/Frameworks/LibreOfficePython.framework/Versions/[1-9]*/bin
+#
+# Remove the python.o object file which is weird and interferes with app store uploading
+# And with it removed, presumably the other stuff in the Python lib/python3.3/config-3.3m probably does not make sense either.
+	rm -rf $(TESTINSTALLDIR)/LibreOffice$(if $(ENABLE_RELEASE_BUILD),,Dev).app/Contents/Frameworks/LibreOfficePython.framework/Versions/[1-9]*/lib/python[1-9]*/config-[1-9]*
+#
+ifneq ($ENABLE_MACOSX_SANDBOX),)
+# Remove the gengal.bin binary and unopkg script that we don't want
+	rm $(TESTINSTALLDIR)/LibreOffice$(if $(ENABLE_RELEASE_BUILD),,Dev).app/Contents/MacOS/gengal.bin
+	rm $(TESTINSTALLDIR)/LibreOffice$(if $(ENABLE_RELEASE_BUILD),,Dev).app/Contents/MacOS/unopkg
+endif
+#
+# Then use the macosx-codesign-app-bundle script
+	@$(SRCDIR)/solenv/bin/macosx-codesign-app-bundle $(TESTINSTALLDIR)/LibreOffice$(if $(ENABLE_RELEASE_BUILD),,Dev).app
+endif
+endif
+	@$(call gb_Top_InstallFinished,Test Installation,$(TESTINSTALLDIR))
+
+mac-app-store-package: test-install
+ifneq ($(MACOSX_PACKAGE_SIGNING_IDENTITY),)
+	rm -rf "$(MACOSX_APP_NAME).app"
+	mv "$(TESTINSTALLDIR)/$(PRODUCTNAME).app" "$(MACOSX_APP_NAME).app"
+	productbuild --component "$(MACOSX_APP_NAME).app" /Applications --sign $(MACOSX_PACKAGE_SIGNING_IDENTITY) $(shell echo "$(MACOSX_APP_NAME)" | tr ' ' '-').pkg
+else
+	@echo You did not provide an installer signing identity with --enable-macosx-package-signing
+	@exit 1
+endif
+
+distro-pack-install: install
+	$(SRCDIR)/bin/distro-install-clean-up
+	$(SRCDIR)/bin/distro-install-desktop-integration
+	$(SRCDIR)/bin/distro-install-sdk
+	$(SRCDIR)/bin/distro-install-file-lists
+
+install-package-%:
+	$(MAKE) $(GMAKE_OPTIONS) -f $(SRCDIR)/Makefile.gbuild $@
+
+id:
+	@$(SRCDIR)/solenv/bin/create-ids
+
+tags:
+	@$(SRCDIR)/solenv/bin/create-tags
+
+etags:
+	@$(SRCDIR)/solenv/bin/create-tags -e
+
+docs:
+	@$(SRCDIR)/solenv/bin/mkdocs.sh $(SRCDIR)/docs $(SRCDIR)/solenv/inc/doxygen.cfg
+
+findunusedcode:
+	@$(SRCDIR)/bin/findunusedcode $(SRCDIR) $(MAKE)
+
+findunusedheaders:
+	$(SRCDIR)/bin/find-unusedheaders.pl
+
+symbols:
+	rm -fr $(WORKDIR)/symbols/
+	mkdir -p $(WORKDIR)/symbols/
+ifeq ($(OS),WNT)
+	$(SRCDIR)/bin/symbolstore.py $(WORKDIR)/UnpackedTarball/breakpad/src/tools/windows/binaries/dump_syms.exe $(WORKDIR)/symbols/ $(INSTDIR)/program/*
+else
+	$(SRCDIR)/bin/symbolstore.py $(WORKDIR)/UnpackedTarball/breakpad/src/tools/linux/dump_syms/dump_syms $(WORKDIR)/symbols/ $(INSTDIR)/program/*
+endif
+
+	cd $(WORKDIR)/symbols/ && zip -r $(WORKDIR)/symbols.zip *
+
+upload-symbols:
+	$(MAKE) -f $(SRCDIR)/Makefile.gbuild upload-symbols
+
+dump-deps:
+	@$(SRCDIR)/bin/module-deps.pl $(MAKE) $(SRCDIR)/Makefile.gbuild
+
+dump-deps-png:
+	@$(SRCDIR)/bin/module-deps.pl $(MAKE) $(SRCDIR)/Makefile.gbuild | dot -Tpng -o lo.png
+
+dump-deps-sort:
+	@$(SRCDIR)/bin/module-deps.pl -t $(MAKE) $(SRCDIR)/Makefile.gbuild
+
+define gb_Top_GbuildToIdeIntegration
+$(1)-ide-integration:
+	cd $(SRCDIR) && (LC_MESSAGES=C $(MAKE) cmd="$(MAKE) -npf Makefile.gbuild all" cmd || true) | $(SRCDIR)/bin/gbuild-to-ide --ide $(1)
+
+endef
+
+$(foreach ide,\
+	debug \
+	kdevelop \
+	vs2012 \
+	vs2013 \
+	vim \
+	xcode \
+	qtcreator \
+        eclipsecdt,\
+$(eval $(call gb_Top_GbuildToIdeIntegration,$(ide))))
+
+endif # MAKE_RESTARTS
+
+# vim: set noet sw=4 ts=4:
