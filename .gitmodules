@@ -1,3 +1,6 @@
 [submodule "dictionaries"]
 	path = dictionaries
 	url = git://gerrit.libreoffice.org/dictionaries
+[submodule "translations"]
+	path = translations
+	url = git://gerrit.libreoffice.org/translations
