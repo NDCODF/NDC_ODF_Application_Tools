@@ -1,0 +1,3 @@
+[submodule "dictionaries"]
+	path = dictionaries
+	url = git://gerrit.libreoffice.org/dictionaries
