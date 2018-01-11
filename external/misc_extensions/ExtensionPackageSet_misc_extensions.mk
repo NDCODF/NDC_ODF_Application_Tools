@@ -69,4 +69,6 @@ endif
 
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,cpmlibre,cpmlibre.oxt))
 
+$(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,hyperlink,hyperlink.oxt))
+
 # vim: set noet sw=4 ts=4:

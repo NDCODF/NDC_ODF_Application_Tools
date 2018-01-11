@@ -11524,6 +11524,7 @@ libo_CHECK_EXTENSION([Barcode],[BARCODE],[barcode],[barcode],[3ed18025a766f1e955
 libo_CHECK_EXTENSION([ConvertTextToNumber],[CT2N],[ct2n],[ct2n],[])
 libo_CHECK_EXTENSION([NDCHelp],[NDCHELP],[ndchelp],[ndchelp],[])
 libo_CHECK_EXTENSION([CpmLibre],[CPMLIBRE],[cpmlibre],[cpmlibre],[])
+libo_CHECK_EXTENSION([HyperLink],[HYPERLINK],[hyperlink],[hyperlink],[])
 libo_CHECK_EXTENSION([OSSIIMenus],[OSIMNU],[ossiimenus],[ossiimenus],[])
 libo_CHECK_EXTENSION([OSSIIConverter],[OSICONV],[ossiiconverter],[ossiiconverter],[])
 libo_CHECK_EXTENSION([Numbertext],[NUMBERTEXT],[numbertext],[numbertext],[b7cae45ad2c23551fd6ccb8ae2c1f59e-numbertext_0.9.5.oxt])

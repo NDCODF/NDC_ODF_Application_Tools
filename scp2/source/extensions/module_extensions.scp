@@ -105,6 +105,21 @@ Module gid_Module_Optional_Extensions_CT2N
 End
 #endif
 
+/* ** HYPERLINK ** */
+
+#ifdef WITH_EXTENSION_HYPERLINK
+Module gid_Module_Optional_Extensions_HYPERLINK
+    PackageInfo = "packinfo_extensions.txt";
+    MOD_NAME_DESC(MODULE_OPTIONAL_EXTENSIONS_HYPERLINK);
+    ParentID = gid_Module_Optional_Extensions;
+    Files = (
+        gid_File_Oxt_HYPERLINK );
+    Minimal = NO;
+    Default = YES;
+    Styles = ( );
+End
+#endif
+
 /* ** CPMLIBRE ** */
 
 #ifdef WITH_EXTENSION_CPMLIBRE
