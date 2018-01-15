@@ -17,6 +17,7 @@ if test $1 = "9" ; then
         patch -p1 -f < ../icon-themes/ossii/NDC/Hyperlink_NDC.patch.po > /dev/null 2>&1
     fi
     patch -p1 -f < ../icon-themes/ossii/NDC/tooltip.patch.po > /dev/null 2>&1
+    patch -p1 -f < ../icon-themes/ossii/NDC/sfx2_uiconfig_ui.patch.po > /dev/null 2>&1
 fi
 
 cd -

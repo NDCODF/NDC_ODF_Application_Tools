@@ -13,7 +13,7 @@ index f1cb3128a52..c9e1a067d67 100644
 +"Label\n"
 +"value.text"
 +msgid "~Hyperlink(NDC)..."
-+msgstr "超連~結(NDC)..."
++msgstr "NDC超連結(~K)..."
 +
  #: GenericCommands.xcu
  msgctxt ""

@@ -1,0 +1,22 @@
+diff --git a/source/zh-TW/sfx2/uiconfig/ui.po b/source/zh-TW/sfx2/uiconfig/ui.po
+index 6e100a5889b..b434730e03f 100644
+--- a/source/zh-TW/sfx2/uiconfig/ui.po
++++ b/source/zh-TW/sfx2/uiconfig/ui.po
+@@ -1742,7 +1742,7 @@ msgctxt ""
+ "title\n"
+ "string.text"
+ msgid "Templates"
+-msgstr "範本"
++msgstr "%PRODUCTNAME 範本"
+ 
+ #: templatedlg.ui
+ msgctxt ""
+@@ -1760,7 +1760,7 @@ msgctxt ""
+ "label\n"
+ "string.text"
+ msgid "Filter"
+-msgstr "篩選器"
++msgstr "範本類型"
+ 
+ #: templatedlg.ui
+ msgctxt ""
