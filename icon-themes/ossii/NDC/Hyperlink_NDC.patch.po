@@ -1,5 +1,5 @@
 diff --git a/source/zh-TW/officecfg/registry/data/org/openoffice/Office/UI.po b/source/zh-TW/officecfg/registry/data/org/openoffice/Office/UI.po
-index f1cb3128a52..c9e1a067d67 100644
+index f1cb3128a52..b59b0109981 100644
 --- a/source/zh-TW/officecfg/registry/data/org/openoffice/Office/UI.po
 +++ b/source/zh-TW/officecfg/registry/data/org/openoffice/Office/UI.po
 @@ -17991,6 +17991,15 @@ msgctxt ""
@@ -18,3 +18,12 @@ index f1cb3128a52..c9e1a067d67 100644
  #: GenericCommands.xcu
  msgctxt ""
  "GenericCommands.xcu\n"
+@@ -19366,7 +19375,7 @@ msgctxt ""
+ "Label\n"
+ "value.text"
+ msgid "Send Feedback..."
+-msgstr "傳送意見回饋..."
++msgstr "軟體更新資訊..."
+ 
+ #: GenericCommands.xcu
+ msgctxt ""

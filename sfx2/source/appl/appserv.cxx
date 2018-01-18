@@ -438,7 +438,7 @@ void SfxApplication::MiscExec_Impl( SfxRequest& rReq )
 
         case SID_SEND_FEEDBACK:
         {
-            OUString sURL("http://www.openoffice.com.tw/feedback.php");
+            OUString sURL("https://www.ndc.gov.tw/cp.aspx?n=32A75A78342B669D");
             try
             {
                 uno::Reference< css::system::XSystemShellExecute > xSystemShellExecute(
