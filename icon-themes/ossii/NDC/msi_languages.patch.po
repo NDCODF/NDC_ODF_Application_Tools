@@ -1,0 +1,15 @@
+diff --git a/source/zh-TW/instsetoo_native/inc_openoffice/windows/msi_languages.po b/source/zh-TW/instsetoo_native/inc_openoffice/windows/msi_languages.po
+old mode 100644
+new mode 100755
+index 7c5387879b3..cb486cb225f
+--- a/source/zh-TW/instsetoo_native/inc_openoffice/windows/msi_languages.po
++++ b/source/zh-TW/instsetoo_native/inc_openoffice/windows/msi_languages.po
+@@ -1670,7 +1670,7 @@ msgctxt ""
+ "OOO_CONTROL_124\n"
+ "LngText.text"
+ msgid "Build contributed in collaboration with the community by [Manufacturer]. For credits, see: http://www.documentfoundation.org"
+-msgstr "由 [Manufacturer] 的社群共同合作所貢獻的組建產品。若要瞭解貢獻者，請見：http://www.documentfoundation.org"
++msgstr "由 [Manufacturer] 與社群共同合作所貢獻的組建產品。若要瞭解貢獻者，請見：http://www.documentfoundation.org"
+ 
+ #: Control.ulf
+ msgctxt ""
