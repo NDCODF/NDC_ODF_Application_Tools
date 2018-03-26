@@ -71,4 +71,6 @@ $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,cpmlibre,cpml
 
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,hyperlink,hyperlink.oxt))
 
+$(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,onekey2odf,onekey2odf.oxt))
+
 # vim: set noet sw=4 ts=4:
