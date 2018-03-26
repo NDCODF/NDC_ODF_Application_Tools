@@ -67,4 +67,14 @@ String RID_CNT_STR_WAITING
     Text [ en-US ] = "The templates are being initialized for first-time usage." ;
 };
 
+String RID_CNT_STR_CACHE
+{
+    Text [ en-US ] = "The templates are being initialized for thumbnail cache." ;
+};
+
+String RID_CNT_STR_LOAD
+{
+    Text [ en-US ] = "Loading..." ;
+};
+
 /* vim:set shiftwidth=4 softtabstop=4 expandtab: */

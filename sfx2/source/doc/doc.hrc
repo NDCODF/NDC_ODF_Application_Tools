@@ -55,6 +55,8 @@
 #define TEMPLATE_LONG_NAMES_ARY             (RID_SFX_DOC_START+ 81)
 #define TEMPLATE_SHORT_NAMES_ARY            (RID_SFX_DOC_START+ 82)
 #define RID_CNT_STR_WAITING                 (RID_SFX_DOC_START+ 83)
+#define RID_CNT_STR_CACHE                   (RID_SFX_DOC_START+ 84)
+#define RID_CNT_STR_LOAD                    (RID_SFX_DOC_START+ 85)
 
 #define STR_EXPORTBUTTON                    (RID_SFX_DOC_START+93)
 

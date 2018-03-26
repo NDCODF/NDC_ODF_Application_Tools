@@ -322,6 +322,7 @@ void BackingWindow::initializeLocalView()
     if (!mbLocalViewInitialized)
     {
         mbLocalViewInitialized = true;
+        mpLocalView->readlistdata();
         mpLocalView->Populate();
         mpLocalView->filterItems(ViewFilter_Application(FILTER_APPLICATION::NONE));
         mpLocalView->showAllTemplates();

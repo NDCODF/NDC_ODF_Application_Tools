@@ -1,5 +1,5 @@
 diff --git a/source/zh-TW/sfx2/source/doc.po b/source/zh-TW/sfx2/source/doc.po
-index d009913e20e..58617f996cf 100644
+index d009913e20e..8defacc9e43 100644
 --- a/source/zh-TW/sfx2/source/doc.po
 +++ b/source/zh-TW/sfx2/source/doc.po
 @@ -653,6 +653,24 @@ msgctxt ""
@@ -27,3 +27,26 @@ index d009913e20e..58617f996cf 100644
  #: doctempl.src
  msgctxt ""
  "doctempl.src\n"
+@@ -742,6 +760,22 @@ msgctxt ""
+ msgid "The templates are being initialized for first-time usage."
+ msgstr "現在首次初始化需要使用的範本檔案。"
+ 
++#: doctempl.src
++msgctxt ""
++"doctempl.src\n"
++"RID_CNT_STR_CACHE\n"
++"string.text"
++msgid "The templates are being initialized for thumbnail cache."
++msgstr "現在初始化需要使用的範本縮圖暫存檔案。"
++
++#: doctempl.src
++msgctxt ""
++"doctempl.src\n"
++"RID_CNT_STR_LOAD\n"
++"string.text"
++msgid "Loading..."
++msgstr "載入中..."
++
+ #: templatelocnames.src
+ msgctxt ""
+ "templatelocnames.src\n"

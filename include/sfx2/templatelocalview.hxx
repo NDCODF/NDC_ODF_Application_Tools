@@ -49,6 +49,8 @@ public:
 
     void createContextMenu(const bool bIsDefault );
 
+    void readlistdata();
+
     DECL_LINK_TYPED(ContextMenuSelectHdl, Menu*, bool);
 
     sal_uInt16 getCurRegionItemId () const;

@@ -281,6 +281,7 @@ SfxTemplateManagerDlg::SfxTemplateManagerDlg(vcl::Window *parent)
     createRepositoryMenu();
     createDefaultTemplateMenu();
 
+    mpLocalView->readlistdata();
     mpLocalView->Populate();
     mpCurView->filterItems(ViewFilter_Application(FILTER_APPLICATION::NONE));
 
