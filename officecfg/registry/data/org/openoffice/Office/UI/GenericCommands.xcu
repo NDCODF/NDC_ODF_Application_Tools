@@ -3605,14 +3605,6 @@
           <value>9</value>
         </prop>
       </node>
-      <node oor:name=".uno:NDCHyperlinkDialog" oor:op="replace">
-        <prop oor:name="Label" oor:type="xs:string">
-          <value xml:lang="en-US">~Hyperlink(NDC)...</value>
-        </prop>
-        <prop oor:name="TargetURL" oor:type="xs:string">
-          <value>vnd.sun.star.script:hypherlink.Main.run?language=Basic&amp;location=application</value>
-        </prop>
-      </node>
       <node oor:name=".uno:Merge" oor:op="replace">
         <prop oor:name="Label" oor:type="xs:string">
           <value xml:lang="en-US">~Merge</value>

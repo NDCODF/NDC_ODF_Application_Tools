@@ -9,7 +9,9 @@
 
 $(eval $(call gb_ExtensionPackageSet_ExtensionPackageSet,misc_extensions))
 
+ifeq ($(NDC_WITH_EXTENSION_NDCHELP),yes)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,NDCHelp,NDCHelp.oxt))
+endif
 
 ifneq ($(BARCODE_EXTENSION_PACK),)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,Barcode,$(BARCODE_EXTENSION_PACK)))
@@ -67,10 +69,16 @@ ifneq ($(WATCH_WINDOW_EXTENSION_PACK),)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,WatchWindow,$(WATCH_WINDOW_EXTENSION_PACK)))
 endif
 
+ifeq ($(NDC_WITH_EXTENSION_CPMLIBRE),yes)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,cpmlibre,cpmlibre.oxt))
+endif
 
+ifeq ($(NDC_WITH_EXTENSION_HYPERLINK),yes)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,hyperlink,hyperlink.oxt))
+endif
 
+ifeq ($(NDC_WITH_EXTENSION_ONEKEY2ODF),yes)
 $(eval $(call gb_ExtensionPackageSet_add_extension,misc_extensions,onekey2odf,onekey2odf.oxt))
+endif
 
 # vim: set noet sw=4 ts=4:

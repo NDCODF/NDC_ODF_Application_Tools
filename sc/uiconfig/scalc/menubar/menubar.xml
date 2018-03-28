@@ -206,7 +206,6 @@
             <menu:menuitem menu:id=".uno:InsertObjectFloatingFrame"/>
             <menu:menuseparator/>
             <menu:menuitem menu:id=".uno:HyperlinkDialog"/>
-            <menu:menuitem menu:id=".uno:NDCHyperlinkDialog"/>
             <menu:menuseparator/>
             <menu:menuitem menu:id=".uno:InsertSymbol"/>
             <menu:menu menu:id=".uno:FormattingMarkMenu">

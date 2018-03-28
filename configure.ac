@@ -11537,6 +11537,46 @@ if test "x$with_java" != "xno"; then
     libo_CHECK_EXTENSION([LanguageTool],[LANGUAGETOOL],[languagetool],[languagetool],[])
 fi
 
+# Check whether --enable-ext-ndchelp was given.
+# AC_MSG_CHECKING([for ndchelp])
+if test -z "${enable_ext_ndchelp+set}"; then :
+    NDC_WITH_EXTENSION_NDCHELP=no
+else
+    NDC_WITH_EXTENSION_NDCHELP=yes
+fi
+$as_echo "NDC_WITH_EXTENSION_NDCHELP = $NDC_WITH_EXTENSION_NDCHELP"
+AC_SUBST(NDC_WITH_EXTENSION_NDCHELP)
+
+# Check whether --enable-ext-cpmlibre was given.
+# AC_MSG_CHECKING([for cpmlibre])
+if test -z "${enable_ext_cpmlibre+set}"; then :
+    NDC_WITH_EXTENSION_CPMLIBRE=no
+else
+    NDC_WITH_EXTENSION_CPMLIBRE=yes
+fi
+$as_echo "NDC_WITH_EXTENSION_CPMLIBRE = $NDC_WITH_EXTENSION_CPMLIBRE"
+AC_SUBST(NDC_WITH_EXTENSION_CPMLIBRE)
+
+# Check whether --enable-ext-hyperlink was given.
+# AC_MSG_CHECKING([for hyperlink])
+if test -z "${enable_ext_hyperlink+set}"; then :
+    NDC_WITH_EXTENSION_HYPERLINK=no
+else
+    NDC_WITH_EXTENSION_HYPERLINK=yes
+fi
+$as_echo "NDC_WITH_EXTENSION_HYPERLINK = $NDC_WITH_EXTENSION_HYPERLINK"
+AC_SUBST(NDC_WITH_EXTENSION_HYPERLINK)
+
+# Check whether --enable-ext-onekey2odf was given.
+# AC_MSG_CHECKING([for onekey2odf])
+if test -z "${enable_ext_onekey2odf+set}"; then :
+    NDC_WITH_EXTENSION_ONEKEY2ODF=no
+else
+    NDC_WITH_EXTENSION_ONEKEY2ODF=yes
+fi
+$as_echo "NDC_WITH_EXTENSION_ONEKEY2ODF = $NDC_WITH_EXTENSION_ONEKEY2ODF"
+AC_SUBST(NDC_WITH_EXTENSION_ONEKEY2ODF)
+
 dnl ===================================================================
 dnl Test whether to include Sun Professional Template Pack
 dnl ===================================================================
