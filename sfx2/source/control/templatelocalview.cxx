@@ -39,13 +39,20 @@
 
 #include <tools/stream.hxx>
 #include <vcl/pngwrite.hxx>
-#include <direct.h>
-#include <systools/win32/uwinapi.h>
 #include <sys/stat.h>
 #include <fstream>
 #include <iostream>
 #include <vcl/svapp.hxx>
 #include <vcl/wrkwin.hxx>
+#if defined(_WIN32)
+#include <direct.h>
+#include <systools/win32/uwinapi.h>
+#else
+#include <rtl/bootstrap.hxx>
+#include <osl/file.h>
+#include <osl/file.hxx>
+#include <unotools/pathoptions.hxx>
+#endif
 
 sal_uInt16 firstrun = 0, exist_listfile = 0;
 using namespace std;
@@ -150,11 +157,16 @@ void TemplateLocalView::dispose()
 #if TemplateCache
 OUString getCacheFolder()
 {
-    OUString url("${$BRAND_BASE_DIR/" LIBO_ETC_FOLDER "/" SAL_CONFIGFILE("bootstrap") ":UserInstallation}/cache/");
-
+    #if defined(_WIN32)
+        OUString url("${$BRAND_BASE_DIR/" LIBO_ETC_FOLDER "/" SAL_CONFIGFILE("bootstrap") ":UserInstallation}/cache/");
+    #else
+        //~ OUString url("$${$$BRAND_BASE_DIR/$(LIBO_ETC_FOLDER)/$(call gb_Helper_get_rcfile,bootstrap):UserInstallation}/cache");
+        SvtPathOptions aPathOpt;
+        OUString url = aPathOpt.GetUserConfigPath() + "/../../cache";
+    #endif
     rtl::Bootstrap::expandMacros(url);
+    osl::Directory::create(url);
 
-    OUString aSysPath;
     if( url.startsWith( "file://" ) )
     {
         OUString aSysPath;
@@ -194,7 +206,7 @@ void TemplateLocalView::readlistdata()
 
             for (sal_uInt16 j = 0; j < nEntries; ++j)
             {
-                OUString aName = mpDocTemplates->GetName(i,j);
+                //~ OUString aName = mpDocTemplates->GetName(i,j);
                 OUString OUS_mapname;
                 if(exist_listfile)
                     OUS_mapname += OStringToOUString(string(cachedata[nAllCount].filename).c_str(), RTL_TEXTENCODING_UTF8);
@@ -222,22 +234,38 @@ void TemplateLocalView::Populate ()
 
     VclPtrInstance< WaitWindow_Impl > pWin(firstrun);
     #define PATH_SIZE 256
+    #if defined(_WIN32)
     OUString PicPath = getCacheFolder() + "\\pic";
+    #else
+    OUString PicPath = getCacheFolder() + "/pic";
+    #endif
     FILE* fstream = NULL;
     sal_uInt16 nAllCount = 1, nAllCount2 = 0;
-    char cList[PATH_SIZE],cIndex[PATH_SIZE],cDir[PATH_SIZE],cDirB[PATH_SIZE],cDirS[PATH_SIZE],cFile[PATH_SIZE];
+    char cList[PATH_SIZE],cIndex[PATH_SIZE],cDir[PATH_SIZE],cDirB[PATH_SIZE],cDirS[PATH_SIZE];
+    char cFile[PATH_SIZE],csFile[PATH_SIZE];
     snprintf(cDir,PATH_SIZE,"%s",OUStringToOString( PicPath, RTL_TEXTENCODING_UTF8 ).getStr());
+    #if defined(_WIN32)
     snprintf(cDirB,PATH_SIZE,"%s\\b",cDir);
     snprintf(cDirS,PATH_SIZE,"%s\\s",cDir);
     snprintf(cList,PATH_SIZE,"%s\\list.txt",cDir);
-
+    #else
+    snprintf(cDirB,PATH_SIZE,"%s/b",cDir);
+    snprintf(cDirS,PATH_SIZE,"%s/s",cDir);
+    snprintf(cList,PATH_SIZE,"%s/list.txt",cDir);
+    #endif
     /* if directory does not exist, create it */
     struct stat *cDirbuf = (struct stat *) malloc(sizeof(struct stat));
     struct stat *cFilebuf = (struct stat *) malloc(sizeof(struct stat));
     if (stat(cDirB, cDirbuf) != 0 || stat(cDirS, cDirbuf) != 0){
+        #if defined(_WIN32)
         CreateDirectory(cDir, NULL);
         CreateDirectory(cDirB, NULL);
         CreateDirectory(cDirS, NULL);
+        #else
+        mkdir(cDir,S_IRWXU | S_IRWXG |S_IRWXO);
+        mkdir(cDirB,S_IRWXU | S_IRWXG |S_IRWXO);
+        mkdir(cDirS,S_IRWXU | S_IRWXG |S_IRWXO);
+        #endif
     }else{
         if( remove( cList ) != 0 )
             perror( "Error deleting file" );
@@ -275,16 +303,26 @@ void TemplateLocalView::Populate ()
 #if TemplateCache
             std::fill_n(cIndex, 256, 0);
             std::fill_n(cFile, 256, 0);
+            std::fill_n(csFile, 256, 0);
             BitmapEx cImg;
-            OUString imgurl,imgurl2;
+            OUString imgurl/*,imgurl2*/;
             OUString ii = OStringToOUString(std::to_string(i).c_str(), RTL_TEXTENCODING_UTF8);
             OUString jj = OStringToOUString(std::to_string(j).c_str(), RTL_TEXTENCODING_UTF8);
-            if(getThumbnailWidth() < 180){
+            #if defined(_WIN32)
+            if(mnThumbnailWidth < 180){
                 imgurl += PicPath + "\\s\\" + ii + jj +".png";
                 firstrun = 0;
             }else{
                 imgurl += PicPath + "\\b\\" + ii + jj +".png";
             }
+            #else
+            if(mnThumbnailWidth < 180){
+                imgurl += PicPath + "/s/" + ii + jj +".png";
+                firstrun = 0;
+            }else{
+                imgurl += PicPath + "/b/" + ii + jj +".png";
+            }
+            #endif
             snprintf(cFile,PATH_SIZE,OUStringToOString( imgurl, RTL_TEXTENCODING_UTF8 ).getStr());
 
             // check png file exist
@@ -293,6 +331,9 @@ void TemplateLocalView::Populate ()
                 OUS_mapname += OStringToOUString(string(cachedata[nAllCount2].filename).c_str(), RTL_TEXTENCODING_UTF8);
             if((aName.compareTo(OUS_mapname) != 0) || (stat(cFile, cFilebuf) != 0))
             {
+                snprintf(csFile,PATH_SIZE,OUStringToOString( OUString(PicPath + "/s/" + ii + jj +".png"), RTL_TEXTENCODING_UTF8 ).getStr());
+                remove(csFile);
+
                 // wirte list.txt
                 snprintf(cIndex,256,"%-4d %-20s  %d%d  %-s\n",nAllCount++,"Sun Oct 29 15:03:07 2015",i,j,OUStringToOString( aName, RTL_TEXTENCODING_UTF8 ).getStr());
                 fwrite(cIndex,1,strlen(cIndex),fstream);
@@ -308,12 +349,21 @@ void TemplateLocalView::Populate ()
                 fwrite(cIndex,1,strlen(cIndex),fstream);
 
                 OUString PngURL;
-                if(getThumbnailWidth() < 180)
+                #if defined(_WIN32)
+                if(mnThumbnailHeight < 180)
                 {
                     PngURL += PicPath + "\\s\\" + OStringToOUString(string(cachedata[nAllCount2].mapname).c_str(), RTL_TEXTENCODING_UTF8) +".png";
                 }else{
                     PngURL += PicPath + "\\b\\" + OStringToOUString(string(cachedata[nAllCount2].mapname).c_str(), RTL_TEXTENCODING_UTF8) +".png";
                 }
+                #else
+                if(mnThumbnailHeight < 180)
+                {
+                    PngURL += PicPath + "/s/" + OStringToOUString(string(cachedata[nAllCount2].mapname).c_str(), RTL_TEXTENCODING_UTF8) +".png";
+                }else{
+                    PngURL += PicPath + "/b/" + OStringToOUString(string(cachedata[nAllCount2].mapname).c_str(), RTL_TEXTENCODING_UTF8) +".png";
+                }
+                #endif
                 SvFileStream aFileStream(PngURL, StreamMode::READ);
                 vcl::PNGReader aPNGReader(aFileStream);
                 cImg = aPNGReader.Read();
