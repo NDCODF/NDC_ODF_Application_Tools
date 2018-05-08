@@ -8,11 +8,11 @@ Globals
             URELAYERVERSION 1
             REFERENCEOOOMAJORMINOR 4.1
             WINDOWSBASISROOTNAME @PRODUCTNAME@ @USERDIRPRODUCTVERSION@
-            UNIXBASISROOTNAME oxoffice@USERDIRPRODUCTVERSION@
+            UNIXBASISROOTNAME ndcodfapplicationtools@USERDIRPRODUCTVERSION@
             HIDELICENSEDIALOG 1
             PACKAGEPREFIX
             BASISPACKAGEPREFIX oxobasis
-            UREPACKAGEPREFIX oxoffice
+            UREPACKAGEPREFIX ndcodfapplicationtools
             SOLSUREPACKAGEPREFIX libreoffice
             REGISTRATION_HOST https://registration.libreoffice.org/RegistrationWeb
             REGISTRATIONURL http://survey.libreoffice.org/user/index.php
