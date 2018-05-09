@@ -38,6 +38,7 @@ $(eval $(call gb_Module_add_moduledirs,external,\
 	$(call gb_Helper_optional,CT2N,ct2n) \
 	$(call gb_Helper_optional,OSIMNU,ossiimenus) \
 	$(call gb_Helper_optional,OSICONV,ossiiconverter) \
+	$(call gb_Helper_optional,ONEKEY2ODF,onekey2odf) \
 	$(call gb_Helper_optional,CURL,curl) \
 	$(call gb_Helper_optional,EBOOK,libebook) \
 	$(call gb_Helper_optional,EPM,epm) \

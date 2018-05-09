@@ -11567,6 +11567,7 @@ fi
 $as_echo "NDC_WITH_EXTENSION_HYPERLINK = $NDC_WITH_EXTENSION_HYPERLINK"
 AC_SUBST(NDC_WITH_EXTENSION_HYPERLINK)
 
+if test "$GNUMAKE_WIN_NATIVE" = "TRUE" ; then
 # Check whether --enable-ext-onekey2odf was given.
 # AC_MSG_CHECKING([for onekey2odf])
 if test -z "${enable_ext_onekey2odf+set}"; then :
@@ -11576,6 +11577,7 @@ else
 fi
 $as_echo "NDC_WITH_EXTENSION_ONEKEY2ODF = $NDC_WITH_EXTENSION_ONEKEY2ODF"
 AC_SUBST(NDC_WITH_EXTENSION_ONEKEY2ODF)
+fi
 
 dnl ===================================================================
 dnl Test whether to include Sun Professional Template Pack

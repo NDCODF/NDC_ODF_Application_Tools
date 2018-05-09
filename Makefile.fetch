@@ -122,6 +122,7 @@ $(WORKDIR)/download: $(BUILDDIR)/config_host.mk $(SRCDIR)/download.lst $(SRCDIR)
 		$(call fetch_Optional,CT2N,CT2N_TARBALL) \
 		$(call fetch_Optional,OSIMNU,OSIMNU_TARBALL) \
 		$(call fetch_Optional,OSICONV,OSICONV_TARBALL) \
+		$(call fetch_Optional,ONEKEY2ODF,ONEKEY2ODF_TARBALL) \
 		$(call fetch_Optional,CURL,CURL_TARBALL) \
 		$(call fetch_Optional,EBOOK,EBOOK_TARBALL) \
 		$(call fetch_Optional,EPM,EPM_TARBALL) \
