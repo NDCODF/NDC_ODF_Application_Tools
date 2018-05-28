@@ -267,6 +267,8 @@ OUString AboutDialog::GetVersionString()
 
 #ifdef _WIN64
     sVersion += " (x64)";
+#else
+    sVersion += " (x86)";
 #endif
 
     OUString sBuildId = GetBuildId();
