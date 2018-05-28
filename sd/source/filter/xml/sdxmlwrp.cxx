@@ -70,6 +70,11 @@
 
 #include <sfx2/frame.hxx>
 
+#if defined(_WIN32)
+#include <config_folders.h>
+#include <rtl/bootstrap.hxx>
+#endif
+
 using namespace com::sun::star;
 using namespace com::sun::star::uno;
 using namespace com::sun::star::lang;
@@ -791,6 +796,24 @@ bool SdXMLFilter::Import( ErrCode& nError )
     return nRet == 0;
 }
 
+#if defined(_WIN32)
+OUString getCacheFolder()
+{
+    OUString url("${$BRAND_BASE_DIR/" LIBO_ETC_FOLDER "/" SAL_CONFIGFILE("bootstrap") ":UserInstallation}/cache/");
+
+    rtl::Bootstrap::expandMacros(url);
+
+    OUString aSysPath;
+    if( url.startsWith( "file://" ) )
+    {
+        OUString aSysPath;
+        if( osl_getSystemPathFromFileURL( url.pData, &aSysPath.pData ) == osl_File_E_None )
+            url = aSysPath;
+    }
+    return url;
+}
+#endif
+
 bool SdXMLFilter::Export()
 {
     SvXMLEmbeddedObjectHelper*  pObjectHelper = nullptr;
@@ -937,6 +960,9 @@ bool SdXMLFilter::Export()
 
             XML_SERVICEMAP* pServices = aServices;
 
+            char checkbuf[100];
+            char *loc = NULL;
+
             // doc export
             do
             {
@@ -945,6 +971,28 @@ bool SdXMLFilter::Export()
                 uno::Reference<io::XOutputStream> xDocOut;
                 if( xStorage.is() )
                 {
+
+                    snprintf(checkbuf,100,"%s",pServices->mpStream);
+                    loc = strstr(checkbuf, "content.xml");
+
+                    if(loc != NULL) {
+                        #if defined(_WIN32)
+                            OUString getshapeflag = getCacheFolder() + "\\getshapeflag";
+                            FILE *file = NULL;
+                            if ((file = fopen (OUStringToOString( getshapeflag, RTL_TEXTENCODING_UTF8 ).getStr(), "w")) != NULL) {
+                                //~ printf("create the file!!!!!!\n");
+                                fclose(file);
+                            }
+                        #else
+                            //~ printf("create /tmp/getshapeflag\n");
+                            FILE *file = fopen("/tmp/getshapeflag", "w");
+                            if (file!=NULL){
+                                //~ printf("create the file!!!!!!\n");
+                                fclose(file);
+                            }
+                        #endif
+                    }
+
                     const OUString sDocName( OUString::createFromAscii( pServices->mpStream ) );
                     uno::Reference<io::XStream> xStream =
                             xStorage->openStreamElement( sDocName,
