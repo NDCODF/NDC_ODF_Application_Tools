@@ -119,13 +119,15 @@
 
 #if defined(_WIN32)
 #include <config_folders.h>
-#include <rtl/bootstrap.hxx>
+//~ #include <rtl/bootstrap.hxx>
+#include <unotools/configmgr.hxx>
 #include <io.h>
 #endif
 
 using namespace ::com::sun::star;
 using namespace ::xmloff::EnhancedCustomShapeToken;
 using namespace ::xmloff::token;
+
 
 struct XmlShapeAttr
 {
@@ -135,11 +137,53 @@ struct XmlShapeAttr
 XmlShapeAttr axmlshapeattr;
 
 #if defined(_WIN32)
+
+OUString readurlfile()
+{
+    FILE *pf = NULL;
+    char str[256];
+    OUString URL;
+    
+    if ((pf = fopen("c:\\temp\\createurlfile.txt","r")) == NULL) {
+        printf("could not open file\n");    
+    } else {
+        //~ printf("Success open file\n");
+        fgets(str, 256, pf);
+        fclose(pf);
+    }
+    URL += OStringToOUString(OString(str), RTL_TEXTENCODING_UTF8);
+    return URL;
+}
+
 OUString shapeexport_getCacheFolder()
 {
-    OUString url("${$BRAND_BASE_DIR/" LIBO_ETC_FOLDER "/" SAL_CONFIGFILE("bootstrap") ":UserInstallation}/cache/");
-
-    rtl::Bootstrap::expandMacros(url);
+    //~ OUString url("${$BRAND_BASE_DIR/" LIBO_ETC_FOLDER "/" SAL_CONFIGFILE("bootstrap") ":UserInstallation}/cache/");
+    //~ rtl::Bootstrap::expandMacros(url);
+	//~ char* a = getenv("OS");
+	//~ printf("OS = %s\n",a);
+	//~ char* b = getenv("APPDATA");
+	//~ printf("APPDATA = %s\n",b);
+	//~ char* c = getenv("USERPROFILE");
+	//~ printf("USERPROFILE = %s\n",c);
+	//~ char* d = getenv("BOOST_BUILD_USER_CONFIG");
+	//~ printf("BOOST_BUILD_USER_CONFIG = %s\n",d);
+	//~ char* e = getenv("XDG_CONFIG_HOME");
+	//~ printf("XDG_CONFIG_HOME = %s\n",e);
+	OUString url("file:///");
+	url += OStringToOUString(OString(getenv("APPDATA")), RTL_TEXTENCODING_UTF8);
+	url += "/NDCODFApplicationTools/6/cache/";
+	url = url.replace('\\', '/');
+	//~ OUString sProductName(SAL_CONFIGFILE("bootstrap"):UserInstallation);
+	//~ printf( "sProductName = %s \n",OUStringToOString( sProductName, RTL_TEXTENCODING_UTF8 ).getStr());
+	printf( "url = %s \n",OUStringToOString( url, RTL_TEXTENCODING_UTF8 ).getStr());
+    /*OUString aBootStrap;
+    rtl::Bootstrap::get( OUString("BRAND_BASE_DIR"), aBootStrap );
+    aBootStrap += "/" LIBO_ETC_FOLDER "/" SAL_CONFIGFILE( "bootstrap" );
+    rtl::Bootstrap aBootstrap( aBootStrap );
+    OUString url;
+    aBootstrap.getFrom( OUString( "UserInstallation" ), url );
+    url += "/cache/";
+    printf( "url = %s \n",OUStringToOString( url, RTL_TEXTENCODING_UTF8 ).getStr());*/
 
     OUString aSysPath;
     if( url.startsWith( "file://" ) )
@@ -149,7 +193,9 @@ OUString shapeexport_getCacheFolder()
             url = aSysPath;
     }
     return url;
+    //~ return readurlfile();
 }
+
 OUString getshapeflag = shapeexport_getCacheFolder() + "\\getshapeflag";
 #endif
 
