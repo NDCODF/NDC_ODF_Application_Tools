@@ -981,7 +981,7 @@ void WinSalInstance::AddToRecentDocumentList(const OUString& rFileUrl, const OUS
 
                     if ( !sApplicationName.isEmpty() )
                     {
-                        OUString sApplicationID("TheDocumentFoundation.LibreOffice.");
+                        OUString sApplicationID("NationalDevelopmentCouncil.NdcOffice.");
                         sApplicationID += sApplicationName;
 
 #if _WIN32_WINNT < _WIN32_WINNT_WIN7

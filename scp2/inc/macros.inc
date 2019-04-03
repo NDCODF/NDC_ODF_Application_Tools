@@ -279,7 +279,7 @@ End
         ComponentCondition = STRING(VersionNT >= 601); \
         Subkey = STRING(CONCAT2(OxOffice.,name)); \
         Name = STRING(AppUserModelID); \
-        Value = STRING(CONCAT2(TheDocumentFoundation.OxOffice.,doc_type)); \
+        Value = STRING(CONCAT2(NationalDevelopmentCouncil.NdcOffice.,doc_type)); \
     End
 
 #define REGISTRY_ENTRY_ICON(name,modid,icon_id) \

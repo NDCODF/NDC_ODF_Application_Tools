@@ -283,7 +283,7 @@ RegistryItem gid_Regitem_Soffice_Stardrawdocument_6_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "oxoffice.StarDrawDocument.6";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Draw";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Draw";
 End
 
 RegistryItem gid_Regitem_Soffice_Stardrawdocument_6_FriendlyTypeName
@@ -397,7 +397,7 @@ RegistryItem gid_Regitem_Soffice_Stardrawtemplate_6_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "oxoffice.StarDrawTemplate.6";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Draw";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Draw";
 End
 
 RegistryItem gid_Regitem_Soffice_Stardrawtemplate_6_FriendlyTypeName
@@ -704,7 +704,7 @@ RegistryItem gid_Regitem_Openoffice_Drawdocument_1_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "OxOffice.DrawDocument.1";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Draw";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Draw";
 End
 
 RegistryItem gid_Regitem_Openoffice_Drawdocument_1_FriendlyTypeName
@@ -910,7 +910,7 @@ RegistryItem gid_Regitem_Openoffice_Drawtemplate_1_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "OxOffice.DrawTemplate.1";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Draw";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Draw";
 End
 
 RegistryItem gid_Regitem_Openoffice_Drawtemplate_1_FriendlyTypeName

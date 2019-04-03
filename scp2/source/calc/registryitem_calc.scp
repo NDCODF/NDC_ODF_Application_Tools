@@ -283,7 +283,7 @@ RegistryItem gid_Regitem_Soffice_Starcalcdocument_6_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "oxoffice.StarCalcDocument.6";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Calc";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Calc";
 End
 
 RegistryItem gid_Regitem_Soffice_Starcalcdocument_6_FriendlyTypeName
@@ -397,7 +397,7 @@ RegistryItem gid_Regitem_Soffice_Starcalctemplate_6_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "oxoffice.StarCalcTemplate.6";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Calc";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Calc";
 End
 
 RegistryItem gid_Regitem_Soffice_Starcalctemplate_6_FriendlyTypeName
@@ -704,7 +704,7 @@ RegistryItem gid_Regitem_Openoffice_Calcdocument_1_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "OxOffice.CalcDocument.1";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Calc";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Calc";
 End
 
 RegistryItem gid_Regitem_Openoffice_Calcdocument_1_FriendlyTypeName
@@ -910,7 +910,7 @@ RegistryItem gid_Regitem_Openoffice_Calctemplate_1_AppUserModelID
     ComponentCondition = "VersionNT >= 601";
     Subkey = "OxOffice.CalcTemplate.1";
     Name = "AppUserModelID";
-    Value = "TheDocumentFoundation.LibreOffice.Calc";
+    Value = "NationalDevelopmentCouncil.NdcOffice.Calc";
 End
 
 RegistryItem gid_Regitem_Openoffice_Calctemplate_1_FriendlyTypeName
